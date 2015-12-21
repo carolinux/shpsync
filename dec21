@@ -1,0 +1,3372 @@
+Content-Type: multipart/alternative;
+ boundary="------------010103040303030009020801"
+
+This is a multi-part message in MIME format.
+--------------010103040303030009020801
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hey Karolina,
+
+I think I forgot to write in the specs, that whenever a geometry is
+adjusted the derived fields will also need to be updated. Do you think
+this requires a big additional effort?
+
+Btw, it would be great to use a QgsExpression for the derived fields
+because of the flexibility but we can also do this in a later step if
+required, so only do this if it is no big deal.
+
+Looking forward to hearing about your progress :)
+Matthias
+
+On 12/19/2015 03:30 PM, Caroline Alexiou wrote:
+> I think either the attachment is encrypted or you didn't attach anythin=
+g, can you try to send again? > > 2015-12-19 15:21 GMT+01:00 Matthias Kuh=
+n <matthias@opengis.ch
+<mailto:matthias@opengis.ch>>: >
+> Content-Type: multipart/mixed;
+>  boundary=3D"------------040302090208010900070708"
+>
+> This is a multi-part message in MIME format.
+> --------------040302090208010900070708
+> Content-Type: multipart/alternative;
+>  boundary=3D"------------020806040001090207000305"
+>
+>
+> --------------020806040001090207000305
+> Content-Type: text/plain; charset=3Dutf-8
+> Content-Transfer-Encoding: quoted-printable
+>
+> Hi Karolina,
+>
+> Attached is the demo dataset which I received. You will probably need t=
+o
+> adjust the excel file a bit in order to have all the fields from the
+> requirements included.
+>
+> Please note, that the additional fields on the shapefile are joined
+> (layer properties -> fields) and hence not editable.
+>
+> Bests and thanks again,
+> Matthias
+>
+> On 12/19/2015 10:11 AM, Caroline Alexiou wrote:
+> > > Sounds good. Can you call me at 076 227 1139? > Bests, > Karolina >=
+ >=3D
+>
+> =3DCE=3DA3=3DCF=3D84=3DCE=3DB9=3DCF=3D82 19 =3DCE=3D94=3DCE=3DB5=3DCE=3D=
+BA 2015 9:11 =3DCE=3DA0=3DCE=3D9C,
+> =3DCE=3D
+> =3DBF =3DCF=3D87=3DCF=3D81=3DCE=3DAE=3DCF=3D83=3DCF=3D84=3DCE=3DB7=3DCF=
+=3D82 "Matthias Kuhn" <matthias@=3D
+> opengis.ch
+> <mailto:matthias@opengis.ch>> =3DCE=3DAD=3DCE=3DB3=3DCF=3D81=3DCE=3DB1=3D=
+CF=3D88=3DCE=3DB5: > >  =3D
+>    Hi Karolina, > >     I am
+> not very available at the keyboard today, so a phone call would be
+> better for me. >     It would probably be best for me to have a call
+> around 2 o'clock. What do you think? > > >     On 12/18/2015 07:50 PM,
+> Caroline Alexiou wrote: >     > Hello Matthias, >     > I will give you=
+
+> a call tommorow. Or perhaps skype would best. >     > caroline_al is my=
+
+> username >     > Bests, >     > Karolina >     > >     > 2015-12-18
+> 17:42 GMT+01:00 Matthias Kuhn <matthias@opengis.ch
+> <mailto:matthias@opengis.ch> >     > <mailto:matthias@opengis.ch
+> <mailto:matthias@opengis.ch>>>: >     >
+> > Content-Type: multipart/alternative;
+> >  boundary=3D3D"------------090906060809040708060802"
+> >
+> > This is a multi-part message in MIME format.
+> > --------------090906060809040708060802
+> > Content-Type: text/plain; charset=3D3Dutf-8
+> > Content-Transfer-Encoding: quoted-printable
+> >
+> > Hi Karolina,
+> >
+> > Sorry for my late reply but the customer still was not too certain wh=
+at=3D
+>
+> > he wants to have, so I could not even tell about the size of the
+> > project. At the moment it looks like this:
+> >
+> > He wants to have a polygon layer (shapefile) and a table (excel) open=
+=2E
+> > There will be a 1:1 relation between the two of them with one field
+> > serving as pk/fk.
+> >
+> > Whenever the user adds a new feature in the shapefile, a new row shou=
+ld=3D
+>
+> > be added in excel with some fields set by default:
+> >  * foreign key
+> >  * area
+> >  * centroid
+> >
+> > Whenever the polygon is changed, the two geometry fields should be
+> > updated accordingly.
+> >
+> > Whenever the user deletes a polygon, the appropriate feature should b=
+e
+> > removed from the table as well by means of fk (or silently fail if
+> > there's no such row).
+> >
+> > The required signals should be available from the QgsVectorLayer obje=
+ct=3D
+> =3D2E
+> >
+> > There would also need to exist the possibility to update the excel la=
+ye=3D
+> r
+> > when it changes outside (QGIS doesn't do this automatically). The API=
+
+> > for this is available, I introduced this recently. To trigger it, eit=
+he=3D
+> r
+> > a button or a QFileSystemWatcher or similar can be used.
+> >
+> > This logic can all live in the .qgs project file as macro, so layer i=
+ds=3D
+>
+> > and field names can be hardcoded (or some global layer id variables
+> > defined on top of the macro, even better for portability).
+> >
+> > What do you think, how much work is this? I think it should be
+> > straightforward, would a day be enough to implement it?
+> > The project should be done by the end of the year, so it would be
+> > awesome if you are available, my time is just running out at the mome=
+nt=3D
+> =3D2E
+> > Just call me if you've got any questions.
+> >
+> > 076 435 67 63
+> >
+> > Bests,
+> > Matthias
+> >
+> > On 12/10/2015 09:46 PM, Caroline Alexiou wrote:
+> > > Hello Matthias, > I am still based in Zurich and I am working 60% f=
+or=3D
+>  a=3D3D
+> >  company, though
+> > I might temporarily increase it in the face of some deadlines. > Is t=
+he=3D
+>
+> > project over Christmas? > How long will the project take? In what
+> > capacity would you need a developer? How many hours per project? (At
+> > least an estimation of the order of magnitude). If you can tell me mo=
+re=3D
+>
+> > about the timelines and what you're looking for, I can give you a mor=
+e
+> > definitive answer regarding my short-term availability. > > Bests, >
+> > Karolina > > 2015-12-10 11:01 GMT+01:00 Matthias Kuhn
+> > <matthias@opengis.ch <mailto:matthias@opengis.ch>>: >
+> > > Content-Type: multipart/mixed;
+> > > boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh"
+> > >
+> > > --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh
+> > > Content-Type: text/plain; charset=3D3D3Dutf-8
+> > > Content-Transfer-Encoding: quoted-printable
+> > >
+> > > Hi Karolina,
+> > >
+> > > How are you doing? Still based in Zurich?
+> > >
+> > > I wondered about your job situation at the moment and if you would =
+ha=3D
+> ve=3D3D
+> >
+> > > any availability in the upcoming weeks. We would have a project or =
+tw=3D
+> o
+> > > where we could require an additional skilled developer.
+> > >
+> > > Looking forward to hearing from you
+> > >
+> > > --=3D3D3D20
+> > > Matthias Kuhn
+> > > OPENGIS.ch - https://www.opengis.ch
+> > > Spatial =3D3D3DE2=3D3D3D80=3D3D3DA2 (Q)GIS =3D3D3DE2=3D3D3D80=3D3D3=
+DA2 PostGIS
+> =3D3D=3D
+> 3DE2=3D3D3D80=3D3D3DA2 =3D3D
+> > Open Source
+> > >
+> > >
+> > > --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh--
+> > > >
+> >
+> > --=3D3D20
+> > Matthias Kuhn
+> > OPENGIS.ch - https://www.opengis.ch
+> > Spatial =3D3DE2=3D3D80=3D3DA2 (Q)GIS =3D3DE2=3D3D80=3D3DA2 PostGIS =3D=
+3DE2=3D3D80=3D3DA2 =3D
+> Open Source
+> >
+> >
+> > --------------090906060809040708060802
+> > Content-Type: text/html; charset=3D3Dutf-8
+> > Content-Transfer-Encoding: quoted-printable
+> >
+> > <html>
+> >   <head>
+> >     <meta content=3D3D3D"text/html; charset=3D3D3Dutf-8" http-equiv=3D=
+3D3D"Co=3D
+> ntent-Ty=3D3D
+> > pe">
+> >   </head>
+> >   <body text=3D3D3D"#000000" bgcolor=3D3D3D"#FFFFFF">
+> >     Hi Karolina,<br>
+> >     <br>
+> >     Sorry for my late reply but the customer still was not too certai=
+n
+> >     what he wants to have, so I could not even tell about the size of=
+
+> >     the project. At the moment it looks like this:<br>
+> >     <br>
+> >     He wants to have a polygon layer (shapefile) and a table (excel)
+> >     open. There will be a 1:1 relation between the two of them with o=
+ne=3D
+>
+> >     field serving as pk/fk.<br>
+> >     <br>
+> >     Whenever the user adds a new feature in the shapefile, a new row
+> >     should be added in excel with some fields set by default:<br>
+> >     =3D3DC2=3D3DA0* foreign key<br>
+> >     =3D3DC2=3D3DA0* area<br>
+> >     =3D3DC2=3D3DA0* centroid<br>
+> >     <br>
+> >     Whenever the polygon is changed, the two geometry fields should b=
+e
+> >     updated accordingly.<br>
+> >     <br>
+> >     Whenever the user deletes a polygon, the appropriate feature shou=
+ld=3D
+>
+> >     be removed from the table as well by means of fk (or silently fai=
+l
+> >     if there's no such row).<br>
+> >     <br>
+> >     The required signals should be available from the QgsVectorLayer
+> >     object.<br>
+> >     <br>
+> >     There would also need to exist the possibility to update the exce=
+l
+> >     layer when it changes outside (QGIS doesn't do this automatically=
+).=3D
+>
+> >     The API for this is available, I introduced this recently. To
+> >     trigger it, either a button or a QFileSystemWatcher or similar ca=
+n
+> >     be used.<br>
+> >     <br>
+> >     This logic can all live in the .qgs project file as macro, so lay=
+er=3D
+>
+> >     ids and field names can be hardcoded (or some global layer id
+> >     variables defined on top of the macro, even better for portabilit=
+y)=3D
+> =3D2E<=3D3D
+> > br>
+> >     <br>
+> >     What do you think, how much work is this? I think it should be
+> >     straightforward, would a day be enough to implement it?<br>
+> >     The project should be done by the end of the year, so it would be=
+
+> >     awesome if you are available, my time is just running out at the
+> >     moment.<br>
+> >     Just call me if you've got any questions.<br>
+> >     <br>
+> >     076 435 67 63<br>
+> >     <br>
+> >     Bests,<br>
+> >     Matthias<br>
+> >     <br>
+> >     On 12/10/2015 09:46 PM, Caroline Alexiou wrote:<br>
+> >     <span style=3D3D3D"white-space: pre;">&gt; Hello Matthias,
+> > &gt; I am still based in Zurich and I am working 60% for a company, t=
+ho=3D
+> ug=3D3D
+> > h I might temporarily increase it in the face of some deadlines.
+> > &gt; Is the project over Christmas?
+> > &gt; How long will the project take? In what capacity would you need =
+a =3D
+> de=3D3D
+> > veloper? How many hours per project? (At least an estimation of the o=
+rd=3D
+> er=3D3D
+> >  of magnitude). If you can tell me more about the timelines and what =
+yo=3D
+> u'=3D3D
+> > re looking for, I can give you a more definitive answer regarding my =
+sh=3D
+> or=3D3D
+> > t-term availability.
+> > &gt;
+> > &gt; Bests,
+> > &gt; Karolina
+> > &gt;
+> > &gt; 2015-12-10 11:01 GMT+01:00 Matthias Kuhn &lt;<a class=3D3D3D"moz=
+-txt=3D
+> -lin=3D3D
+> > k-abbreviated" href=3D3D3D"mailto:matthias@opengis.ch">matthias@openg=
+is.c=3D
+> h</a=3D3D
+> > > <a class=3D3D3D"moz-txt-link-rfc2396E" href=3D3D3D"mailto:matthias@=
+opengi=3D
+> s.ch">=3D3D
+> > &lt;mailto:matthias@opengis.ch&gt;</a>&gt;:
+> > &gt;</span><br>
+> >     <blockquote type=3D3D3D"cite">Content-Type: multipart/mixed;
+> >       boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh"<br>
+> >       <br>
+> >       --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh<br>
+> >       Content-Type: text/plain; charset=3D3D3Dutf-8<br>
+> >       Content-Transfer-Encoding: quoted-printable<br>
+> >       <br>
+> >       Hi Karolina,<br>
+> >       <br>
+> >       How are you doing? Still based in Zurich?<br>
+> >       <br>
+> >       I wondered about your job situation at the moment and if you wo=
+ul=3D
+> d
+> >       have<br>
+> >       any availability in the upcoming weeks. We would have a project=
+ o=3D
+> r
+> >       two<br>
+> >       where we could require an additional skilled developer.<br>
+> >       <br>
+> >       Looking forward to hearing from you<br>
+> >       <br>
+> >       --=3D3D3D20<br>
+> >       Matthias Kuhn<br>
+> >       OPENGIS.ch - <a class=3D3D3D"moz-txt-link-freetext" href=3D3D3D=
+"https=3D
+> ://www=3D3D
+> > =3D3D2Eopengis.ch">https://www.opengis.ch</a><br>
+> >       Spatial =3D3D3DE2=3D3D3D80=3D3D3DA2 (Q)GIS =3D3D3DE2=3D3D3D80=3D=
+3D3DA2 PostGI=3D
+> S
+> > =3D3D3DE2=3D3D3D80=3D3D3D=3D3D
+> > A2 Open Source<br>
+> >       <br>
+> >       <br>
+> >       --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh--<br>
+> >     </blockquote>
+> >     <span style=3D3D3D"white-space: pre;">&gt;
+> > &gt;</span><br>
+> >     <br>
+> >     -- <br>
+> >     Matthias Kuhn<br>
+> >     OPENGIS.ch - <a class=3D3D3D"moz-txt-link-freetext" href=3D3D3D"h=
+ttps:/=3D
+> /www.o=3D3D
+> > pengis.ch">https://www.opengis.ch</a><br>
+> >     Spatial =3D3DE2=3D3D80=3D3DA2 (Q)GIS =3D3DE2=3D3D80=3D3DA2 PostGI=
+S
+> =3D3DE2=3D3D80=3D3D=3D
+> A2 Open Source<br>
+> >     <br>
+> >   </body>
+> > </html>
+> >
+> > --------------090906060809040708060802--
+> >     > >     > >
+>
+> --=3D20
+> Matthias Kuhn
+> OPENGIS.ch - https://www.opengis.ch
+> Spatial =3DE2=3D80=3DA2 (Q)GIS =3DE2=3D80=3DA2 PostGIS =3DE2=3D80=3DA2 =
+Open Source
+>
+>
+> --------------020806040001090207000305
+> Content-Type: text/html; charset=3Dutf-8
+> Content-Transfer-Encoding: quoted-printable
+>
+> <html>
+>   <head>
+>     <meta content=3D3D"text/html; charset=3D3Dutf-8" http-equiv=3D3D"Co=
+ntent-Ty=3D
+> pe">
+>   </head>
+>   <body text=3D3D"#000000" bgcolor=3D3D"#FFFFFF">
+>     Hi Karolina,<br>
+>     <br>
+>     Attached is the demo dataset which I received. You will probably
+>     need to adjust the excel file a bit in order to have all the fields=
+
+>     from the requirements included.<br>
+>     <br>
+>     Please note, that the additional fields on the shapefile are joined=
+
+>     (layer properties -&gt; fields) and hence not editable.<br>
+>     <br>
+>     Bests and thanks again,<br>
+>     Matthias<br>
+>     <br>
+>     On 12/19/2015 10:11 AM, Caroline Alexiou wrote:<br>
+>     <span style=3D3D"white-space: pre;">&gt;
+> &gt; Sounds good. Can you call me at 076 227 1139?
+> &gt; Bests,
+> &gt; Karolina
+> &gt;
+> &gt; =3DCE=3DA3=3DCF=3D84=3DCE=3DB9=3DCF=3D82 19 =3DCE=3D94=3DCE=3DB5=3D=
+CE=3DBA 2015 9:11
+> =3DCE=3DA0=3DCE=3D9C=3D
+> , =3DCE=3DBF =3DCF=3D87=3DCF=3D81=3DCE=3DAE=3DCF=3D83=3DCF=3D84=3DCE=3D=
+B7=3DCF=3D82 "Matthias Kuhn" &lt;<=3D
+> a class=3D3D"moz-txt-link-abbreviated" href=3D3D"mailto:matthias@opengi=
+s.ch">=3D
+> matthias@opengis.ch</a> <a class=3D3D"moz-txt-link-rfc2396E" href=3D3D"=
+mailto=3D
+> :matthias@opengis.ch">&lt;mailto:matthias@opengis.ch&gt;</a>&gt;
+> =3DCE=3DAD=3DCE=3D
+> =3DB3=3DCF=3D81=3DCE=3DB1=3DCF=3D88=3DCE=3DB5:
+> &gt;
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Hi Karolina,
+> &gt;
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 I am not very available at=
+ the keyboard toda=3D
+> y, so a phone call would be better for me.
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 It would probably be best =
+for me to have a c=3D
+> all around 2 o'clock. What do you think?
+> &gt;
+> &gt;
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 On 12/18/2015 07:50 PM, Ca=
+roline Alexiou wro=3D
+> te:
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; Hello Matthias,
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; I will give you a cal=
+l tommorow. Or per=3D
+> haps skype would best.
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; caroline_al is my use=
+rname
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; Bests,
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; Karolina
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt;
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; 2015-12-18 17:42 GMT+=
+01:00 Matthias Kuh=3D
+> n &lt;<a class=3D3D"moz-txt-link-abbreviated" href=3D3D"mailto:matthias=
+@openg=3D
+> is.ch">matthias@opengis.ch</a> <a class=3D3D"moz-txt-link-rfc2396E" hre=
+f=3D3D=3D
+> "mailto:matthias@opengis.ch">&lt;mailto:matthias@opengis.ch&gt;</a>
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt; &lt;<a class=3D3D"moz=
+-txt-link-freetext" =3D
+> href=3D3D"mailto:matthias@opengis.ch">mailto:matthias@opengis.ch</a> <a=
+ cla=3D
+> ss=3D3D"moz-txt-link-rfc2396E" href=3D3D"mailto:matthias@opengis.ch">&l=
+t;mail=3D
+> to:matthias@opengis.ch&gt;</a>&gt;&gt;:
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt;</span><br>
+>     <blockquote type=3D3D"cite">Content-Type: multipart/alternative;<br=
+>
+>       =3DC2=3DA0boundary=3D3D"------------090906060809040708060802"<br>=
+
+>       <br>
+>       This is a multi-part message in MIME format.<br>
+>       --------------090906060809040708060802<br>
+>       Content-Type: text/plain; charset=3D3Dutf-8<br>
+>       Content-Transfer-Encoding: quoted-printable<br>
+>       <br>
+>       Hi Karolina,<br>
+>       <br>
+>       Sorry for my late reply but the customer still was not too certai=
+n
+>       what<br>
+>       he wants to have, so I could not even tell about the size of the<=
+br=3D
+> >
+>       project. At the moment it looks like this:<br>
+>       <br>
+>       He wants to have a polygon layer (shapefile) and a table (excel)
+>       open.<br>
+>       There will be a 1:1 relation between the two of them with one
+>       field<br>
+>       serving as pk/fk.<br>
+>       <br>
+>       Whenever the user adds a new feature in the shapefile, a new row
+>       should<br>
+>       be added in excel with some fields set by default:<br>
+>       =3DC2=3DA0* foreign key<br>
+>       =3DC2=3DA0* area<br>
+>       =3DC2=3DA0* centroid<br>
+>       <br>
+>       Whenever the polygon is changed, the two geometry fields should b=
+e<=3D
+> br>
+>       updated accordingly.<br>
+>       <br>
+>       Whenever the user deletes a polygon, the appropriate feature
+>       should be<br>
+>       removed from the table as well by means of fk (or silently fail i=
+f<=3D
+> br>
+>       there's no such row).<br>
+>       <br>
+>       The required signals should be available from the QgsVectorLayer
+>       object.<br>
+>       <br>
+>       There would also need to exist the possibility to update the exce=
+l
+>       layer<br>
+>       when it changes outside (QGIS doesn't do this automatically). The=
+
+>       API<br>
+>       for this is available, I introduced this recently. To trigger it,=
+
+>       either<br>
+>       a button or a QFileSystemWatcher or similar can be used.<br>
+>       <br>
+>       This logic can all live in the .qgs project file as macro, so
+>       layer ids<br>
+>       and field names can be hardcoded (or some global layer id
+>       variables<br>
+>       defined on top of the macro, even better for portability).<br>
+>       <br>
+>       What do you think, how much work is this? I think it should be<br=
+>
+>       straightforward, would a day be enough to implement it?<br>
+>       The project should be done by the end of the year, so it would be=
+<b=3D
+> r>
+>       awesome if you are available, my time is just running out at the
+>       moment.<br>
+>       Just call me if you've got any questions.<br>
+>       <br>
+>       076 435 67 63<br>
+>       <br>
+>       Bests,<br>
+>       Matthias<br>
+>       <br>
+>       On 12/10/2015 09:46 PM, Caroline Alexiou wrote:<br>
+>       &gt; Hello Matthias, &gt; I am still based in Zurich and I am
+>       working 60% for a=3D3D<br>
+>       =3DC2=3DA0company, though<br>
+>       I might temporarily increase it in the face of some deadlines.
+>       &gt; Is the<br>
+>       project over Christmas? &gt; How long will the project take? In
+>       what<br>
+>       capacity would you need a developer? How many hours per project?
+>       (At<br>
+>       least an estimation of the order of magnitude). If you can tell m=
+e
+>       more<br>
+>       about the timelines and what you're looking for, I can give you a=
+
+>       more<br>
+>       definitive answer regarding my short-term availability. &gt; &gt;=
+
+>       Bests, &gt;<br>
+>       Karolina &gt; &gt; 2015-12-10 11:01 GMT+01:00 Matthias Kuhn<br>
+>       &lt;<a class=3D3D"moz-txt-link-abbreviated" href=3D3D"mailto:matt=
+hias@o=3D
+> pengis.ch">matthias@opengis.ch</a> <a class=3D3D"moz-txt-link-rfc2396E"=
+ hre=3D
+> f=3D3D"mailto:matthias@opengis.ch">&lt;mailto:matthias@opengis.ch&gt;</=
+a>&g=3D
+> t;:
+>       &gt;<br>
+>       &gt; Content-Type: multipart/mixed;<br>
+>       &gt; boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh"<br>
+>       &gt;<br>
+>       &gt; --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh<br>
+>       &gt; Content-Type: text/plain; charset=3D3D3Dutf-8<br>
+>       &gt; Content-Transfer-Encoding: quoted-printable<br>
+>       &gt;<br>
+>       &gt; Hi Karolina,<br>
+>       &gt;<br>
+>       &gt; How are you doing? Still based in Zurich?<br>
+>       &gt;<br>
+>       &gt; I wondered about your job situation at the moment and if you=
+
+>       would have=3D3D<br>
+>       <br>
+>       &gt; any availability in the upcoming weeks. We would have a
+>       project or two<br>
+>       &gt; where we could require an additional skilled developer.<br>
+>       &gt;<br>
+>       &gt; Looking forward to hearing from you<br>
+>       &gt;<br>
+>       &gt; --=3D3D3D20<br>
+>       &gt; Matthias Kuhn<br>
+>       &gt; OPENGIS.ch - <a class=3D3D"moz-txt-link-freetext" href=3D3D"=
+https:=3D
+> //www.opengis.ch">https://www.opengis.ch</a><br>
+>       &gt; Spatial =3D3D3DE2=3D3D3D80=3D3D3DA2 (Q)GIS =3D3D3DE2=3D3D3D8=
+0=3D3D3DA2 Pos=3D
+> tGIS
+>       =3D3D3DE2=3D3D3D80=3D3D3DA2 =3D3D<br>
+>       Open Source<br>
+>       &gt;<br>
+>       &gt;<br>
+>       &gt; --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh--<br>
+>       &gt; &gt;<br>
+>       <br>
+>       --=3D3D20<br>
+>       Matthias Kuhn<br>
+>       OPENGIS.ch - <a class=3D3D"moz-txt-link-freetext" href=3D3D"https=
+://www=3D
+> =3D2Eopengis.ch">https://www.opengis.ch</a><br>
+>       Spatial =3D3DE2=3D3D80=3D3DA2 (Q)GIS =3D3DE2=3D3D80=3D3DA2 PostGI=
+S
+> =3D3DE2=3D3D80=3D3D=3D
+> A2 Open Source<br>
+>       <br>
+>       <br>
+>       --------------090906060809040708060802<br>
+>       Content-Type: text/html; charset=3D3Dutf-8<br>
+>       Content-Transfer-Encoding: quoted-printable<br>
+>       <br>
+>       &lt;html&gt;<br>
+>       =3DC2=3DA0 &lt;head&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;meta content=3D3D3D"text/html;=
+ charset=3D3D3Dutf=3D
+> -8"
+>       http-equiv=3D3D3D"Content-Ty=3D3D<br>
+>       pe"&gt;<br>
+>       =3DC2=3DA0 &lt;/head&gt;<br>
+>       =3DC2=3DA0 &lt;body text=3D3D3D"#000000" bgcolor=3D3D3D"#FFFFFF"&=
+gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Hi Karolina,&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Sorry for my late reply but the cu=
+stomer still w=3D
+> as not too
+>       certain<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 what he wants to have, so I could =
+not even tell =3D
+> about the size
+>       of<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 the project. At the moment it look=
+s like this:&l=3D
+> t;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 He wants to have a polygon layer (=
+shapefile) and=3D
+>  a table
+>       (excel)<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 open. There will be a 1:1 relation=
+ between the t=3D
+> wo of them
+>       with one<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 field serving as pk/fk.&lt;br&gt;<=
+br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Whenever the user adds a new featu=
+re in the shap=3D
+> efile, a new
+>       row<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 should be added in excel with some=
+ fields set by=3D
+>
+>       default:&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 =3D3DC2=3D3DA0* foreign key&lt;br&=
+gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 =3D3DC2=3D3DA0* area&lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 =3D3DC2=3D3DA0* centroid&lt;br&gt;=
+<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Whenever the polygon is changed, t=
+he two geometr=3D
+> y fields
+>       should be<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 updated accordingly.&lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Whenever the user deletes a polygo=
+n, the appropr=3D
+> iate feature
+>       should<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 be removed from the table as well =
+by means of fk=3D
+>  (or silently
+>       fail<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 if there's no such row).&lt;br&gt;=
+<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 The required signals should be ava=
+ilable from th=3D
+> e
+>       QgsVectorLayer<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 object.&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 There would also need to exist the=
+ possibility t=3D
+> o update the
+>       excel<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 layer when it changes outside (QGI=
+S doesn't do t=3D
+> his
+>       automatically).<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 The API for this is available, I i=
+ntroduced this=3D
+>  recently. To<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 trigger it, either a button or a Q=
+FileSystemWatc=3D
+> her or similar
+>       can<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 be used.&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 This logic can all live in the .qg=
+s project file=3D
+>  as macro, so
+>       layer<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 ids and field names can be hardcod=
+ed (or some gl=3D
+> obal layer id<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 variables defined on top of the ma=
+cro, even bett=3D
+> er for
+>       portability).&lt;=3D3D<br>
+>       br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 What do you think, how much work i=
+s this? I thin=3D
+> k it should be<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 straightforward, would a day be en=
+ough to implem=3D
+> ent
+>       it?&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 The project should be done by the =
+end of the yea=3D
+> r, so it would
+>       be<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 awesome if you are available, my t=
+ime is just ru=3D
+> nning out at
+>       the<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 moment.&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Just call me if you've got any que=
+stions.&lt;br&=3D
+> gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 076 435 67 63&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Bests,&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Matthias&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 On 12/10/2015 09:46 PM, Caroline A=
+lexiou wrote:&=3D
+> lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;span style=3D3D3D"white-space:=
+ pre;"&gt;&amp;g=3D
+> t; Hello
+>       Matthias,<br>
+>       &amp;gt; I am still based in Zurich and I am working 60% for a
+>       company, thoug=3D3D<br>
+>       h I might temporarily increase it in the face of some deadlines.<=
+br=3D
+> >
+>       &amp;gt; Is the project over Christmas?<br>
+>       &amp;gt; How long will the project take? In what capacity would
+>       you need a de=3D3D<br>
+>       veloper? How many hours per project? (At least an estimation of
+>       the order=3D3D<br>
+>       =3DC2=3DA0of magnitude). If you can tell me more about the timeli=
+nes an=3D
+> d
+>       what you'=3D3D<br>
+>       re looking for, I can give you a more definitive answer regarding=
+
+>       my shor=3D3D<br>
+>       t-term availability.<br>
+>       &amp;gt;<br>
+>       &amp;gt; Bests,<br>
+>       &amp;gt; Karolina<br>
+>       &amp;gt;<br>
+>       &amp;gt; 2015-12-10 11:01 GMT+01:00 Matthias Kuhn &amp;lt;&lt;a
+>       class=3D3D3D"moz-txt-lin=3D3D<br>
+>       k-abbreviated"
+>       href=3D3D3D<a class=3D3D"moz-txt-link-rfc2396E" href=3D3D"mailto:=
+matthias=3D
+> @opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;<a class=3D3D"moz-txt-=
+link=3D
+> -abbreviated" href=3D3D"mailto:matthias@opengis.ch">matthias@opengis.ch=
+</a>=3D
+> &lt;/a=3D3D<br>
+>       &gt; &lt;a class=3D3D3D"moz-txt-link-rfc2396E"
+>       href=3D3D3D<a class=3D3D"moz-txt-link-rfc2396E" href=3D3D"mailto:=
+matthias=3D
+> @opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;=3D3D<br>
+>       &amp;lt;<a class=3D3D"moz-txt-link-freetext" href=3D3D"mailto:mat=
+thias@=3D
+> opengis.ch&amp;gt">mailto:matthias@opengis.ch&amp;gt</a>;&lt;/a&gt;&amp=
+;g=3D
+> t;:<br>
+>       &amp;gt;&lt;/span&gt;&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;blockquote type=3D3D3D"cite"&g=
+t;Content-Type: =3D
+> multipart/mixed;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 boundary=3D3D3=
+D"SQwxwW01okmj3rUAPx0C75=3D
+> IVM2UiJ3AGh"&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 --SQwxwW01okmj=
+3rUAPx0C75IVM2UiJ3AGh&=3D
+> lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Content-Type: =
+text/plain; charset=3D3D=3D
+> 3Dutf-8&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Content-Transf=
+er-Encoding: quoted-pr=3D
+> intable&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Hi Karolina,&l=
+t;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 How are you do=
+ing? Still based in Zu=3D
+> rich?&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 I wondered abo=
+ut your job situation =3D
+> at the moment and if you
+>       would<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 have&lt;br&gt;=
+<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 any availabili=
+ty in the upcoming wee=3D
+> ks. We would have a
+>       project or<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 two&lt;br&gt;<=
+br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 where we could=
+ require an additional=3D
+>  skilled
+>       developer.&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Looking forwar=
+d to hearing from you&=3D
+> lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 --=3D3D3D20&lt=
+;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Matthias Kuhn&=
+lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 OPENGIS.ch - &=
+lt;a class=3D3D3D"moz-tx=3D
+> t-link-freetext"
+>       href=3D3D3D"<a class=3D3D"moz-txt-link-freetext" href=3D3D"https:=
+//www=3D3D=3D
+> ">https://www=3D3D</a><br>
+>       =3D3D2Eopengis.ch"&gt;<a class=3D3D"moz-txt-link-freetext" href=3D=
+3D"http=3D
+> s://www.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Spatial =3D3D3=
+DE2=3D3D3D80=3D3D3DA2 (Q)GIS=3D
+>  =3D3D3DE2=3D3D3D80=3D3D3DA2 PostGIS
+>       =3D3D3DE2=3D3D3D80=3D3D3D=3D3D<br>
+>       A2 Open Source&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>=
+
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 --SQwxwW01okmj=
+3rUAPx0C75IVM2UiJ3AGh-=3D
+> -&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;/blockquote&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;span style=3D3D3D"white-space:=
+ pre;"&gt;&amp;g=3D
+> t;<br>
+>       &amp;gt;&lt;/span&gt;&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 -- &lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Matthias Kuhn&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 OPENGIS.ch - &lt;a class=3D3D3D"mo=
+z-txt-link-freet=3D
+> ext"
+>       href=3D3D3D"<a class=3D3D"moz-txt-link-freetext"
+> href=3D3D"https://www.o=3D3D=3D
+> ">https://www.o=3D3D</a><br>
+>       pengis.ch"&gt;<a class=3D3D"moz-txt-link-freetext" href=3D3D"http=
+s://ww=3D
+> w.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Spatial =3D3DE2=3D3D80=3D3DA2 (Q)G=
+IS =3D3DE2=3D3D80=3D3DA2 P=3D
+> ostGIS =3D3DE2=3D3D80=3D3DA2 Open
+>       Source&lt;br&gt;<br>
+>       =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &lt;br&gt;<br>
+>       =3DC2=3DA0 &lt;/body&gt;<br>
+>       &lt;/html&gt;<br>
+>       <br>
+>       --------------090906060809040708060802--<br>
+>     </blockquote>
+>     <span style=3D3D"white-space: pre;">&gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &gt;
+> &gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &gt;
+> &gt;</span><br>
+>     <br>
+>     -- <br>
+>     Matthias Kuhn<br>
+>     OPENGIS.ch - <a class=3D3D"moz-txt-link-freetext" href=3D3D"https:/=
+/www.o=3D
+> pengis.ch">https://www.opengis.ch</a><br>
+>     Spatial =3DE2=3D80=3DA2 (Q)GIS =3DE2=3D80=3DA2 PostGIS =3DE2=3D80=3D=
+A2 Open Source<br>
+>     <br>
+>   </body>
+> </html>
+>
+> --------------020806040001090207000305--
+>
+> --------------040302090208010900070708
+> Content-Type: application/zip;
+>  name=3D"Beispiel.zip"
+> Content-Transfer-Encoding: base64
+> Content-Disposition: attachment;
+>  filename=3D"Beispiel.zip"
+>
+> UEsDBBQAAAAAAJuJj0cAAAAAAAAAAAAAAAAJAAAAQmVpc3BpZWwvUEsDBAoAAAAAAKiJj0d=
+Q
+> PIEOBQAAAAUAAAAjAAAAQmVpc3BpZWwvQmVpc3BpZWxfTWFzc25haG1lcG9vbC5jcGdVVEY=
+t
+> OFBLAwQUAAAACAC3jI9HG+sUF0sAAAA0AQAAIwAAAEJlaXNwaWVsL0JlaXNwaWVsX01hc3N=
+u
+> YWhtZXBvb2wuZGJmrYy9CcAgFIQPLFJlgVRvgUCUxNQhC+gEVto4gdv7UyiI5fs4joODT7j=
+t
+> EAA+WKzwwUWf2vxrmenfSV3yOW9dooiFIdTEQhe+kjjIUEsDBBQAAAAIAKiJj0c7h9VlGAE=
+A
+> AMkBAAAjAAAAQmVpc3BpZWwvQmVpc3BpZWxfTWFzc25haG1lcG9vbC5wcmptUF9rgzAQ/y5=
+5
+> DpI/pppHZ6V1zFqs3YtIyNy1FZwyTRns0+/sRkHWe0iO3z/ubl/kz/GhIvGWaybNyyuThG6=
+S
+> fDOD+JiZmLF1VB6ziqzvwGG/TYo8XVfkCaYJOsNDnxO6kkEgdeBxpajQGn8RchHWNd0XaZZ=
+k
+> mDoC9F9tcyGU1fS4S0uMhTOiCHiMB76SQgvFtfaxUWidp0ziMs13FdkOru3B5G9d+3kFk8H=
+Y
+> WDeMJvpuP67uYmLoHYwETVERZUmZFBXprGvd9R3McDLNL0/9laeV8Jn6q9XSMfTnf5bA86V=
+W
+> obzXwmJvA+BWmi3wqbEdmJNt3IAZfMGdbDeBATvhTmc8HpvrgaIfRne5ScSsuN8tAwe30Po=
+H
+> UEsDBBQAAAAIAKiJj0cAGq4oiAEAANoCAAAjAAAAQmVpc3BpZWwvQmVpc3BpZWxfTWFzc25=
+h
+> aG1lcG9vbC5xcGptktuOmzAQhu/7FJGvLeoTB1/SLAJWTYjAaXeFIouSCUFiQQVHlfr0NZt=
+m
+> V1EYX1gz83/2eMa7PHteFyVaJ1QSvvq6+v6DcITjKItv4dl/CtV+8+kWuyTKs/SpRN9gmqB=
+b
+> 0UBQhD3u+1z6DnVdzKS0OwsoC3C4V0mWp+q1RNGuiBFGPiECHQ5YZT/jIhCl5wtHYOo6FAv=
+i
+> OhyT6zossB4VcmZ3ebqJbFHxCND/aeszssSjPJCEzvL9NlUlOkJj5VbpEOoLlzPJXCql4Hw=
+B
+> lZSxGX3MiI8asudordJsW6JkMG0POvvVtb8voDcw1pUZRh3+bd8u5qzX0BsYkYXCPNxEKsp=
+L
+> 1FWmNZcj6OGk62seC8+RLrNt+G/ePTH0zQPiO4JLN+AfdodU1wIQluQuPkJt2lMLR92M7VF=
+X
+> fdPBg2iqqw70qarNYC+id7lT1U2goZrswxs7fjLbgqIfRnN+l7B3yW0Yb2BGsIcutZ5cpxa=
++
+> pPYbviIchYW6uS8Ib7NcJUuTYdQPZvLLP1BLAwQUAAAACAC3jI9HfCwUd2gFAACoBwAAIwA=
+A
+> AEJlaXNwaWVsL0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuc2hwhdQJUMxRHAfwrd3tnyOLiNz=
+H
+> sttB7qlG5a3K2eEo3UmSq4NKNRQdQjFUVNugoqJQUe5bNqNQtI1SsiKiS8dKtY5vI/47mPG=
+f
+> /c/sZ957v/d7v/fen8Hg9WX882GK65gMBhv/RrfqaRZ08ojJLdXLO+wpIl3RxrHU4pPkVDc=
+X
+> ozMUYfz/UcBPuSdWi+z1Vm1NPlH72rFI7TAdK2n8vp2BiRRRQJ8xvYM+LhlX6IG+1dKu8go=
+h
+> RSrHDG+Kg4/N3ZaSCtuH2+Xmw1qlwa5sjM1zrRA0a9Kx0nx9d3ERu1CsQHhw/3GPv2jD1hE=
+d
+> 3FyMr9KtLJ4O95/93qw7gSKjnbwH68FF29eoFSTQuaVJSq5/j6eI1YTnLqZw1gbDPB14d5+=
+H
+> kQQ22ZfneScO47+SsUbwwqH8CbNgvwOhqzTgkw1Jc8qPUEQlpLt+Mjwy6GjoeVg7KqCJA6d=
+Q
+> B2yY8P3gllAVWFbN8jiF2jTw5sXIsJ6lC2WZpnB+C2fwHbnabW9mZ6TDxaaBj7lwqcRXHAn=
+X
+> 3exX1g637st/Ewgr+R/qr4n4fS4X3baEL6kIn0TC01ePKDaC/fV4fprI99fexK7T7ayHFV5=
+Y
+> Cw3hhjgL3RasV7g5RV8A1wqt2mahPgKDg9JlMFu3UdkI9SRVqxVt4Ba1du/98CCpZ4UD7Dn=
+c
+> 3zwL/nM/scWKeHPkz9iMyAdLc05TZMC7Ic8Suni9Z+znuVDtPRfqZx53fUXfB2GvfXIzKKJ=
+R
+> VCt6C4eX8T3mZ1JE3Dyp4wFsVRpRLIR/xV749O30T3B8wU3nuk469uIDD9cMxVxjS1RdR8L=
+s
+> lWVuAtj82UWGCP1L9DtnWnfJxWeqbwyBzWxZ5GxGT92qSiLguhcG/psy6NyP9XGuFWEtHxo=
+s
+> N8V20WurUk0r9oV3XFCsUUF/6cybifZwmIP/Oc0Men5ZxErJdDjMS1SoDa9XaghYAItD3Fz=
+H
+> wHb26dVW8JTDbBkHXmlXxgmB/6xPz2XG/avuqXOe7UiZCYP/+y6zzbpmWSjxSd68wMphGyj=
+C
+> Qh/dniL31puLdxpeKfdKwhNFPkms/BgocqTIL6fc4QqNnSiSXH+plGLyyek0pyv5cKDK00Y=
+f
+> uMKhbaOGM0XaM+MkV+FS/6tLMtFeUTu+wITFJywd828ctJsftQk/A0vIlMjT8GDJ/ithbD5=
+5
+> P9k9g7eaIuMGe1nkwxe9nn2+60x7zruaHD84Lz2q7Qa8ZJTXVn8nuv1RzE5tLXiilmTEG/j=
+S
+> 5xw7U+TPzMocbww3qzsdykYddoqiHx3H/OJv8dlTHSgSZcO1LEW+45+2CobCddGThiYy6bq=
+d
+> ZPGTeEy6/5/1eTWM5bgb8QbWs/zYbhQZTgzSAmDBCSFvE5zdVDgkBu7OC8hlrqPzcZ54Yng=
+x
+> nOWb4RAE688JSXV3p0hs9ixBH7l9mr1tZpAAvhddFJToTu+jjeH6TguMrz5Wk+qN8bwBFzI=
+9
+> XXHmvsVEu2G++RoBUc1rKKL0+YNAHZZaj/6ijHYtpQu3G7AeW5GpoxguzDXSUUJ7ufmck+P=
+W
+> 4tvBsR+gB09tq3/YiPaA2OzZznI+W2a7aCscuaOSo7/27/WnuJVHjUJ9jHOsm32wn1vmJs3=
+X
+> gP3c61Mq4JenQpN0YAQ1a3GhiK/VQM4iOIt5zecWHLanNW0v/Oqa+WQu8hd1B1tWwnONDTd=
+7
+> wxcttivsQf7p8SmfriGfvUa54blMev32OvWUBHZXE363Rn+1E43RHkx6/uVOVx2PIJ5B0ai=
+S
+> due/861Unrmfq0Dv/2yN/N1FcvdocoekKYpBn4ef94w+b3Z6UYpJsOqu5OQYWFm9W/mLXHu=
+/
+> GZvFwxA/2K5mr4vD3/P9AFBLAwQUAAAACAC3jI9HIgTBNlcAAAB8AAAAIwAAAEJlaXNwaWV=
+s
+> L0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuc2h4hYahDkBQGEY/M7umCLJ8jaYp1/6g20RJ8BY=
+e
+> RtAUTRM9hixfEzTfA9ic7ewcQAf4xpwu4HFiW6T7o6XaonVoldzNFdZZIuPUd+WsBP/kgON=
+T
+> w19YS48XUEsDBBQAAAAIALGMj0dC5E2EqxkAADVbAQAXAAAAQmVpc3BpZWwvQnNwX01TUG9=
+v
+> bC5xZ3PsXely40QQ/s9TCFPFQiWxrFsG21WbkA0LzmYhuxy/XLI0tsXqQpKTmOJReBT+8WL=
+0
+> zOi0k92RtDZMlUOxkWa6Wz3dPfONjnSPPv3m5uLNr68vhd+XbiK8fns+fXkhPFulafSVKPq=
+x
+> bfft0BdxZ99JnWfCs9tfb99cXj+bfDIiHFEc/obsNLB8NO71hDsUJ24YjHty3+xLZz+7KOh=
+N
+> PhGEUeqmHpqMRPKbtHjWBsVnaYzQ2TIO15GAHiIrcJAz7kk9wV4h+x0+/iH96qsLetITsst=
+g
+> fpBgr5M09EGDCMWpixIRt9clk0MWyS40fG8FaRjMrmJrPf/nb2AIZrN//prjIdmrNIk8K5A=
+H
+> kibJ8L8hKaqqawbVKecVKrynwhYvUfu9iovbmncc0LUVRUgudVZkSdGHhc7nyE0iF3mHVyy=
+/
+> 8uzaSpLAWvkoCkOvalxJHZomVfQJ8rZq561l5JHWGHlWCqFLmUe+FdlWcGclmah14KbJxEc=
+p
+> eHQk4rO8Bz2kKEgLXR58N5gYpqxow74pD1RjOBioqiQNZN1URyLuLmg3+EQaqoYBtIPBUB0=
+A
+> layYg6E2kEci6S7lWg8gVx1ISt8YGGAizVBUQ9YMVdFALnSXcuEE5GogpT9UFR3oJLCtKcu=
+S
+> CnJxd26hUntsgzAlNpgMRmJ+nHXReU4MNJFGYuU0I3BQkroBNWGcFKokETRZXowWySZrLeS=
+p
+> kxP8a5yEPopt4QQcMBuMVb0/1GR1oGU/OnSEAXQYfVUZaqZS/Agn76BZEk4e4Jc+wD/CyQa=
+O
+> 5ewYeV6UjOcoSZAnnKTh/TIx1bFuqH31VNL60ilcpa+cDsh/QE/cOvaFkyCcOaAxHadaURu=
+G
+> 5jpgWmk4EslxrQ9OZckwJdxX67LW6QoaLl/fXn2VUeCmnCY3oB27EbH5xbfScKAIojD9aaC=
+M
+> xGpXyVD6wLLjMNj4E2rIkbjbU3KBTdwoCV0n76LmGYlFxy7PEoXL2IpWrr3wrOVkYXkJGon=
+1
+> 1sLj4pbLaeN2eJTLx8wOw9jBfWiWxlaQLMLYn7nBIsRUH6ATsNznYMqXsKqU5u0JSWw/0fy=
+N
+> la79N7mAce8MmrGUx9rJhfGCdW95zuwPWGZgdZt5CLTIFitVVgaaYujGsCfyoq8+MGFN+l/=
+p
+> 2wp6/08DYEW0ApoYYn8k1lBodOcm7tz13HRzFsUoQWkibu+kCuoSFs/gChiZA2vuYTAelLj=
+p
+> psifMGo+EjF1nbWN1x6T8/g+JSPNDVaO5hEcr1jJQ0sUOMI6csCq38TWvRssbzDTuJfGa0R=
+G
+> X5DRXYtToaJ+hZ1EQOkf38Y02fYJySq8f4EgemJ0Ea6DtOaDheshsgupXROgwcFnZKnNiLf=
+V
+> xpyCm7wMbmDXfeeie5DbdUoJJMY8GJlUmV5ioWTujIoaH9WeeTD+V0Z7PBL/P3apTdL/zEq=
+M
+> S0Zbq+UNcFzsckhnQlWw6UgVojzdq1P7wn7Z9df+rW3ha56pfV3TdQmdSaA87HkrfRI6GYB=
++
+> ietHnrvYZMvEt26QJlhZLGlqzZGXkVN+0vJeAW9Cj7DD1ghuFeLNuPc69DbLMCgpr60HIoL=
+Q
+> pZsIDu5gfGEMnrES0nVuJcj5qVjsX8DuClQoRUxDoCL8SUFOdNvlKddZp8FC7xRssIZaSbi=
+O
+> bTTpi48L6CeraCSWhJR395Y/3wrPE0A6O4WO/LDoe4c297C+T92kaMOwZ3lrLIf8LqNohzh=
+H
+> QjxjnhjsSCwoCp5sO/rU/QrndyxP3bMw3LWw3be0uHNpe+/S7u6l4f3LI3cweTOJlHIAdy7=
+d
+> V9kh7OBgtr198+LM7E1A6EjMuyv0CK+jlw9455YQS908n17eXlx+IfTQYgbR3DsVnn3upV+=
+/
+> ejudTp4JX4KUbaZCHF0yfgvdoBq8+ByvIhdkq/Qa9HcfyDqBO17AbHBeETQhh/gBTY2umDK=
+w
+> LlnxEqUlR66h4CM/jDcXFmBVIXiKp9TLp8GzuvTX9M59WgxvgS9IN7X5wn5GN3lJuvHQmW8=
+F
+> 1hLFoHccw1OL7Eng48QZcFYv/oS4UhHHTfGKTFTbahPuXQdMcifTJfsNPDe5hC6Cz6V9alG=
+X
+> c9h4YEvhZXK99lJYnQMKKGSwWIY1z9DgbYK+TX2PYi1ez2+CN2GET8VqdOYqNdey8DDxrNx=
+F
+> 3cHB1VX4UlflS12NL3V1vtQ1+FLX5EvdIV/qSgPO9JU405czYJM4QzaJM2iTOMM2iTNwkzh=
+D
+> N4kzeJM4wzeZM3yTOcM3mTN8kznDN5kzfJM5wzeZM3yTOcM3mTN8kznDN4UzfFM4wzeFM3x=
+T
+> OMM3hTN8UzjDN4UzfFM4wzeFM3xTOMM3lTN8UznDN5UzfFM5wzeVM3xTOcM3lTN8UznDN5U=
+z
+> fFM5wzeNM3zTOMM3jTN80zjDN40zfNM4wzeNM3zTOMM3jTN80zjDN50zfNM5wzedM3zTOcM=
+3
+> nTN80znDN50zfNM5wzedM3zTOcM3gzN8MzjDN4MzfDM4wzeDM3wzOMM3gzN8MzjDN4MzfDM=
+4
+> wzeTM3wzOcM3kzN8MznDN5MzfDM5wzeTM3wzOcM3kzN8MznDtyFn+DbkDN+G/xG+lS1J0QR=
+/
+> pg9ZEOAv7u9kIdn489Dz0B3yEiKbDiaB5AkeuiWd1b/np+RE1FabYHnRyqokUIGEMl5uizK=
+4
+> qjlBhMhK6EVtjxzd4lwq6AVh9EKcaqdkreepiIR3496cpJ2agSnT1QzyCMxw4o0ZSb8CWW6=
+A
+> 9bQ0zi63HXphTOgg/9qprBinkq6eypr2Hh6SIyHdZPLn2GrvoQ4XC8gHxqAKJWw+BMpHeAj=
+1
+> 9fX7iNcpDq9ZOW6SrgSPmIGrHHUSeq7DwEHcQq/Tl3VWBsbBvE+dMpMbbiybaJxWJ8t2NJf=
+J
+> NsVqzLt/IOIRgfwLOYRWIQSmFSOrmsiiMqueyoFavVLWuBHeIchIRGY0zLmeQBLqjHuRBZH=
+1
+> QXLRcpxv3JimZqGzNZOQpZJikoGn+g0JpYJ5wMI492DI16GDGrKtFwsUn3dhvsAx/LzghBB=
+u
+> yHvegfeqA++P7XhxJqvmjqW838GadYunSyFAV9m5X4WwHLcIKsp96/5RXlZqxvcygNQ1b3E=
+q
+> pS5Xz2RkCb5aBVtVjBu0FkOSVEbNOG1IqBND/qSXQQKJi5rbIef/eRV6LdgdZLs+EBecChO=
+X
+> m+DUb8/bhA3wNlyEMEeXUMH8nYIEC+gUHlkS0OaqL/JUUAUrE1cYpOeh1+Z6wHlhRW4KDM2=
+G
+> iDlfWL7rbQq+61vhdgUJwoRvvKUgswp5Cdd27XaqT1GawmyOLBtamus/dX03fe0+IA8WhBa=
+T
+> CWTgCNuVIEGSOWYtIMQKCc2mJeaucZl9mQmCMGPXBRnL6LwcYyGdF2MiJI3ddwj2ne0G8hZ=
+v
+> 9OCsZRD8jNzlqry0xqz2z3C/0zJ8Y99KX619SDTbwnluUia7y7hJ3lImZnJAd5dlAHWR0im=
+E
+> Sjnd1mxy8BrFr624RRB5aJE+tW3HyQaZZMByhF06xQ0tnAqpUy/W8R1yLlZW/BzfArwsnSs=
+z
+> GWFXxE1lSp0xC9kdhcy4IvoIUiJOYSa2MYAbZEl6YU1p6H4/f1jz3HOXQUveb8k60Gx7jB+=
+n
+> OPXd/CuY3Gw3i+EcUs/bHmo8+2A7Z6OtgG02aCLBR0HD4RZsOHVuwz1H5K2TBLzTPDJIHne=
+I
+> 6x/xw4A2a16WIvT83TJ2yG1fIeGzBflhE+KGsZuWOyYmsP59bTlb9/JMd3sximAyfOPi4gR=
+2
+> w9lQ4+0G8TVR3YC+LgrkNIw98CGgJer8eCXGs/wpKRMWCeSxE9iztmNk3TRSZjdoNnjCVWa=
+u
+> bj7qZGU54f3uQx6dnZk+qGnm9ArnVWvOH9twtntEQ3nphCUIWrpJYZrvFQE41hvGeJX7ygv=
+n
+> ltd4raMiPsLWjAr6CHuzqiCy22xjkx8tx11XOPsNvEF5n+P3ITeB13ryUDEfwaZU0EewKRX=
+U
+> 2qb160qM6xdhpQ/PLHjGbpf2VBoIIPdsjcccoZaPqSkv3K+1fVa9LeC8tJtsthFw1VXAjx0=
+E
+> /Ixf7bS2IOHuOg9qwrrOhZqwdvMhQq0RIyKvSDvEFWZv9xqkYG/3JqRgb/cyhLC3fZ9BmD8=
+O
+> TkXo48BUhLqgVM79S+vr/tqCE2OA292AREx3+xExbc1HmNtYjzC2Mh69o2z4xKDG+mYTtTH=
+U
+> 7U9XMO+avSkgjJ2f2hIpnR/bFlLajh9Y28YJ5m0TJpivTZRUNztt2BtbKIVPl9rBCeZsc5+=
+G
+> +drcpWG+NvdomK/NC9h1hF+8wv6RVJ5q+trrHirZ4GejjWbdQ5tPMTZPM43Ep75CGRUfcOD=
+a
+> ssVJ0b2gj0fPq1TbbfUqT9XIxdQ7jQV59pKYvMKc0EItI7HaWFCSMWJh5KDebKXwJme+TvM=
+x
+> lT30Czr69VlPwO7HX+Ql9ip2F+k6WNaMuiCvJuss8Hv3LeX2Z0F1Flr3qRdVbsLrLHN47Vp=
+n
+> CYNtB7vkDeeHqNb5K6gPESb5q64PEZLPwupEMf3+TphnISUsoarjDuNDlanWs3myh364Jjw=
+Q
+> qRv4t2a8TU2Lh6eEkO+Wapcoo1+AiljhtqYWfliPnyY/ymRDB4prDPTDjcctQ5ZIahtymFm=
+H
+> Hu8KYYqWR/iyjwN2vVejLd4psJFDcS54GgnLGjyd2OodiY9PLPrZK36RCEXf8sOdPhfGJFb=
+X
+> D9KarCPy+hBP4p22TwpvBtkOJ7tI2bBzqTCGVQJiegIFCVFswUjoOdas7C1ZHmxv7aDnxZh=
++
+> vr4V39P7otJbGMKyaSHyY2GqFuq2/365rbqc/XkOZ3+dw9kf53D2tzm8/WkOX+py9oc5x8J=
+U
+> e9aXM2A7Fqbas76cYduxMNWe9eUM3o6FqfasL2f4dixMtWd9OcO3Y2GqPevLGb4dC1PtV99=
+j
+> Yao968sZvh0LU+1ZX87w7ViYas/6coZvx8JUe9aXM3w7Fqbas76c4duxMNWe9eUM346Fqfa=
+r
+> 77Ew1Z715QzfjoWp9qwvZ/h2LEy1Z305w7djYao968sZvh0LU+1ZX87w7ViYas/6coZvx8J=
+U
+> +9X3WJhqz/pyhm/HwlR71pczfDsWptqzvpzh27Ew1Z715QzfjoWp9qwvZ/h2LEy1Z305w7d=
+j
+> Yar96nssTLVnff8jfKsVpqINUP+oUrZnlJ8KOK2Av/Yha1B2ScgZXWmQ0MnAzKtOxVaS4kR=
+/
+> Kysh3edWgpwykSnOI4xFFFq4zuR7K0jDYHYVW+v5P39DYo1gNvvnrznO2WCvUpyRJJAHkib=
+J
+> 8L8hKaqqa8ZIBMYil4mVWkm4jm00AavhXCNry4McA1O0hCwp48Hnlh99bcfJ+PL17dVXsmS=
+Y
+> EmlyIhenUBlbnkfOs9wqF+E6SMcSZaOp28dQhmOJxChYkkZsFhAHl5i9RTVFSTcpjpSMyfE=
+6
+> 9sarNI2+EsV7P+kvUdhfxn17Ja7rjCOxHEUxsNRNPQSpGPDvstWaQ1IRSIcAHflh0QdpDe4=
+h
+> M94UMpFWnE/yWwA5+V0GwBZxmUYGx2nmFqHillPhn7+2lM7JS6lJTOIpP4sgg4TlxWiRbLL=
+2
+> MpHOb+rkBP8aJ6EPaT6EE0h7MRuMVb0/1GR1oGU/OnSEAXQYfVUZaqZS/Agn76BZEk4e4Jc=
++
+> wD/CyQaO5ewYMsdEyXgOeS4gI81JGt4vE1Md64baV08lrS+dwlX6yumA/Af0NCeIL5wE4cw=
+B
+> nUciUZMqXg4QYk8aSsORSI63eqGBhBju3eqEpCgraCJhmNHgpi0qB9LkxG6E011MLr6VhgN=
+F
+> EIXpTwNlJFa6doxJ8xtbdhwGG39CTToSd3pqfGAfN0qgQE3eSU01EouOx7ggiJeQWWnl2gu=
+Y
+> zhOSOnEk1lurS8+jQUCM17xQlwtxmLqLDa2pUOZuwflFF7BIOkyJl6DpDiTFk3sffJyfFd1=
+B
+> +A1Mxuy0bMATRZhbgfMqJBlA1gm6je1XpG8r5VMpIV9Kz8hUOSNrw5lvBdYSVlZ7HccwnnG=
+v
+> WBB3iTPUqEp/Qlw5PLeGS3RNzuujCSEuYZFu8BBo0cBzGBLUC4DTOTmS6lUIcSPJwYNXqFz=
+R
+> UnI9wVQNc+oXrvTMSVLuAIINL9iYTCibCMTk7ds4tlqjBK/SJDGNQNSCzD5XOPUPTYxatN1=
+A
+> w6A8/TFLGVS2nBfJVAUI3A1JuY3xgLAVF6lLuU1hNMt0tZs+NxsraIdrKMYYI28ggTk5BTP=
+C
+> tasexB5iSgPWFZVhVkLBvHiD6xQUJ7l/72BlCJuBNSQRjJBc4rEiS4o+fBKP+yJl6D94ycP=
+/
+> D+PyrdjHAjLAqSWAmHACA13745+vbk2VAUwUVZOfBBNVkfUPYAkm+SCUgDKCqTbBkGw0jUG=
+E
+> DLsZhkC2848NIeLOai/AAhU6ZDK+ffPiDG4c4XKPLP9Z+Yiy6M7k4ub59PL24vKLHtmzS71=
+T
+> 4RkuFPPq7XQ6efbln38+g4Y//9wik9nIFDYylY1MYyPT2cgMNjKTjWzIRiYNGOkY/SAxOkJ=
+i
+> 9ITE6AqJ0RcSozMkRm9IjO6QGP0hM/pDZvSHzOgPmdEfMqM/ZEZ/yIz+kBn9ITP6Q2b0h8L=
+o
+> D4XRHwqjPxRGfyiM/lAY/aEw+kNh9IfC6A+F0R8qoz9URn+ojP5QGf2hMvpDZfSHyugPldE=
+f
+> KqM/VEZ/aIz+0Bj9oTH6Q2P0h8boD43RHxqjPzRGf2iM/tAY/aEz+kNn9IfO6A+d0R86oz9=
+0
+> Rn/ojP7QGf2hM/pDZ/SHwegPg9EfBqM/DEZ/GIz+MBj9YTD6w2D0h8HoD4PRHyajP0xGf5i=
+M
+> /jAZ/WEy+sNk9IfJ6A+T0R8moz9MRn8MGf0xZPTHcNsfI3HnFrO4+aTPZH4L3Vqu44KOvP9=
+J
+> xP/qyWKHpMvEFJ1ezh0i6TJo2THX8sG07PShycG07PR5ycG07PRRycG07PQpycG07PQBycG=
+0
+> 7PTZyMG07PSxyMG07JYj+XBq8oE+3TIiH05NPvCnW/7jw6nJBwJ1y3Z8ODX5wKBuuY0PpyY=
+f
+> KNQtk/Hh1OQDhbrlLT6cmnygULcsxYdTkw8U6paT+HBq8oFC3TIQH05NPlCoW77hw6nJBwp=
+1
+> yy58ODX/be/setOGoTD8V9BumQih0MIUkLZ1qya1EivbNXKJod6MncVOV/br54R8EujQbHk=
+7
+> kqkqgn18/Dhfb27OGxgqpOclbA8ThgrpOQfbw4ShQno+wfYwYaiQniuwPUwYKqTnAWwPE4Y=
+K
+> 6Tn+2sOEoUJ6/r72MGGokJ6brz1MGCqk591rDxOGCuk59drDhKFCer689jBhqJCeC689TBg=
+q
+> pOe5aw8ThgrpOezaw4ShQnp+uvYwYaiQnnuuPUwYKqTnlWsPE4YK6Tnj2sOEoUJ6Prj2MGG=
+o
+> kJ7rrT1MGCqk53FrDxOGCuk52trDhKFCev619jBhqJCeW609TBgqpOdNaw8ThgrpOdHaw4S=
+h
+> Qnq+s/YwYaiQnsusPUwYKqTnKWsPE4YK6TnI/j1m00G24k6dGWeqM99s9RFGpFe2rjHKWkU=
+S
+> ZTXOqQfeYVsZjBjjMnPlyyepGlpT8ZiiHU/kbIMZjpHE4f534NV7qyHPK5qE+K2UMXlIJBb=
+K
+> 3dV7ofdjrRcVzWiVogjP1Uv/h5QwnoJgPATBeAaC8QgE5AkIBCWM5x9XL20UE4b8uHppo5g=
+w
+> FMjVSxvFhCFCrl7aKCYMFXL10kYxYaiQq5c2iglDhVy9tElMVy9tFBOGCrl6aaOYMFTI1Us=
+b
+> xYShQq5e2igmDBVy9dJGMWGokKuXNooJQ4VcvbRJTFcvbRQThgq5emmjmDBUyNVLG8WEoUK=
+u
+> XtooJgwVcvXSRjFhqJCrlzaKCUOFXL20SUxXL20UE4YKuXppo5gwVMjVSxvFhKFCrl7aKCY=
+M
+> FXL10kYxYaiQq5c2iglDhVy9tElMVy9tFPMfqVCjXrp83XL2tuX0d/pSaP4Nr2TWIrIm1RL=
+h
+> WJJyxCJCkiB6j9eLnSgTz/cD398v0q3hQsaEbTr7XfB5/+vVrJumnwq+xfGq06VILvvT4WV=
+v
+> MhoM+6P8c6k6OFMdV73hxWQ0vig/ne531ex3us/q67Kffjrdndoe5NuY0khMH7AQmHa6kv/=
+c
+> iPFwenk17A1f+6Oe/1rN0rt43c/+VHzCiBTTbafL+DLEaxF4R1fRWmMsDhf2Yb64eTPwr8Z=
++
+> lSM+tnM+XedDCZOvZv7En6gBtd7mkH0p9weWHvawMVCNagUUR7R9gFQ6JB8rnrcPgtNE4jz=
+l
+> A+f01WyNqMCBV/QV2Wojg5uElDkWmO6nf88pj9/RBM9RLOuQ/cA7HlTmeI/YExJZ302MMTv=
+M
+> MBiNAu8w6FSGexyeHN8Maa/hxQRl1Bk53tLoEZ2RpYxr56lWekae03uk2t/tHEdiisNdHuL=
+g
+> mmyIJL/qF8A1XiN1Y1owFH3hFMeIrfBXRpoTBN6psDLPbXp7Sbsjlf2WCFm/nvYt9XfGPyE=
+F
+> OXuHiYgIpss7JARDj1scqfN20PdH/kD9X/kX/nAyHgdeFl7d8Q4nO4GRX0Tn0oREZPGt6U4=
+l
+> LSOKvjse4sP7SP7K/GV2/w28emh18T5xEn5iEsciv/5PMHvHF9o4JOcud9Ba58s521N/4ef=
+O
+> JfnySSkOfl4iFi4F3mzVLmnP30x89BzdRa09zNfrwDuIeen8LhKEPFFHMrupHYv6w64+d+n=
+9
+> Xj/7nLm39wvfRxxersGcC5KeHvMYr4hQG9UyVcMW0TlFKyxa127VVxOMRPKtUpVVQzFknCj=
+B
+> KPsKkhMTB7d4g1lY5lwTqs7hd7s7FB3ToVp3kbhMoLbrjyWB92ND1PdvUEsDBBQAAAAIAI+=
+M
+> j0dqUwSzUikAAAM6AAAUAAAAQmVpc3BpZWwvTWFwcGUyLnhsc3jtW2VYlF0aRhBBQnJEaWk=
+Y
+> upEGkQalG6W7OwWlpUtAQKmhkZYWRenuoZVuGDp3BkF35fuua//stT92DxczZ8557vvE/Zz=
+z
+> zDvveZ9II9zEhbsFhwwHB/cAboyFZtviBhxc0004OBw4ZHhNUWsrB0MrB10lVxtDe21GF0s=
+L
+> 0rSb8DTv4ODh/p/+p1N+TLvVZ2ZMsf3YI4zISmW9xbRcOvgQgTgGhSWkj1uv1A4ow30295P=
+f
+> BNCkvUPhLNY7nnTn23ZhNgvtuov5hEezxKtX//5Im6QhiPI4sXYunP4LTT4uWJ1mFCUi1L+=
+S
+> 62VrG4JRRoVaCdXj8yYeFfR7Pn6QZ6aZTo2BEg3P2+qyjfRQTuqH3adjS7EsOvQXGv1f4mV=
+/
+> 1WpeLc9c4mjtG6B319lYSZPKkgFZQ6z8SAZv9riQYk+aKwdJgH6gAjFattGVhdvKkAjmtsJ=
+6
+> ziUWVbwU15AsHEiUut5RGOhjfa9hburS7Ixn7KhPTgKAZMOeVFerACRUO9GVC4RIhCQs4NJ=
+6
+> xfBRyWMm7FJb5JMiQe+9DSPWPVoP0MQzeOH5PJnEJTiN4VkK2afL21Nkuim5yF6cvPapXlq=
+G
+> O54EcS9Ovn4JkdDGmz5XHqmQAHXx3xcORHGStVstWcPO4WFk5HWw9r3pSpEE4jI5QICDOz9=
+H
+> gPvXRTp7SKl4C7pIx6FrEBW6SHXtDC3smRhhr/9fnP9PF4uzb8LsCyku0uZx46Rwl6c+OJT=
+l
+> cfTka+GNby3E00ry2JI7gWAOz+PWZyQ+hWhD0rsH+6DmXaOSdJd0TPQalDix275v9Sy1VBv=
+N
+> IWUfkbBwHoaS8+ZOS2Bx7u4OHvk9lnFVXA0NJwN9VBNOjfKOYM1Nof/my19V22f34c02s0N=
+f
+> Ov4H8iq6dt77XkZC/O24mtrCI8sEmJ29C9Hn0QwMlANvntDdKdt80C7CesiY1tjzNFeo1K2=
+r
+> fys9rcUsAiSc1+6r0FDJG2DEJ3yoAbxTcdpZelITMDZE42ZQXjnbF0Tc4vqVyxR/zufLB33=
+i
+> rrrONUoGdkq7xJ1Dp/f7qWQ8x9G7vHB/tWx8BGLiIdBcNXR14MMh33CxYPq5cpyt7cz1rK3=
+N
+> YdHtahXdgK6iG3D/4ylfQVa6iRmzDvUsgNk5yQmANerARLaqvIKB3FpGO0b1gM1rZ4qArlp=
+b
+> bUiaCcHa33Wjs9lpn+POdwSc3UZgdjD2TTcciw1eROtOSCcCst5aAbGvOCIO9urySt4a6p1=
+E
+> e5wqgagW+hRc7vkDGsr7AelZZI92qvr82c26mB1Zzex7iNpk1Sfby2ZfHL1SXC3wLausJE2=
+k
+> NZo7rxId27uV6utK0gu5f1uSD90Vrndx4AHwoFFsD3m79sRI1rXLvDH9CG2OME+aOJeD38P=
+f
+> gTSgRZzEmzbKfi4toUZ5Y8ZB5LiNtmFsm759Z8NotrV5cOovXcYVbTUFBeouJ9B9GANa4mL=
+x
+> L86SET0W1s+M6b8R6YLUvj9GCGbE5NDuVYiTeoFSY0GJm2OXLKm/LPqBCFzPH22A4DdJ/52=
+K
+> uJs7lf+8Q8YqTCqK5Fky88PMXtKMm+xcVT01MV5V3u67UdgLCV0J7PgKbvDi1lndqbJ3vq1=
+X
+> flu9DV8mbbrkGXvT5wclzfytLPjQyM9qX/ms1hhtYhHjarA/Ae83PXchoqFiX0MO8kT5gus=
+3
+> vfltU8Nnj6jJ14A4dUPqaVVK1oGiTfCop7a2bTrdIws/3LMBEdqnfOrrZcUWQJY1ffb1VhO=
+d
+> d7HTQ9yKBzfSfNcj8Q4fP8cU027rl3xAwedQgqOiTJJgZhUZIzF/QoZHvB2j82OIcBojoCB=
+P
+> nYHicXovzR1T5lPl4FhKHtz8uDPikJ4fW9Mu95pt7bGj3Rj41Tr5OkL3smfSj87zVNtT4m/=
+l
+> iQp82ddQ+5RlYpAkt9nu8rnC6quHpBlQsVqihBkcuPYwyVPbu+XzjJFhJ9eIewtxaOzHznW=
+5
+> ROv5vgFXzvFarmmzuva74ne2+9e2GZN8bGLhEpJj/bWHTkmCv7ikK7xgdcxx2JuKkqWW/SG=
+I
+> zP1x6juXpp0WanKSqJTtaznjvfeORWLr7THf0pmbXBbckfRUj2Lq3VgIK51T3489bQSCYxc=
+r
+> xI7e2tIlCWtwegoFyd7Ed0oQZ0g/j2RrLaZNzOQZ4ZTuwVjfof5Lt+licP1SCnWZMnQ4ONy=
+f
+> bmNv8tzO0EDRwc7Uytge5jsO8Z1WY9yYzRuIe0TIyf0jccvc2tyM3wteszshpO8ZCTLetAw=
+3
+> HMKOjVLqn3fdu28HTtK1EC/rZ2AnJ30ReRjENpvKJmp3sK4ZGVL0LJmxU3mAd+MxfEf1uEm=
+0
+> tlgDE3URE/lMLStBbPytwrSN6TTndF0d9GQIfDO+M2Ct1vugvN92hQi3LTke41mEhbQmTfg=
+5
+> OP8HMX126NiNA7KNpol1MdAT8CM9bZVv+uOzlhR06Q1Km2MhlEGPRUHiooJS1IoHAqsHvR8=
+U
+> CcK+rZitFLSNT4CoqhQR2S1zuj4d5JqAqU3pNiz6j/bJ8/ftDodrETO8GZMMpOijtW7QkSl=
+D
+> +jXLS+1SgF98RTzNwYJtLvXTWfbwHQ5GYJN3fR24b9AoImeIV1VsseReBG1Omm2sBHEYuyv=
+O
+> y7dZKKfYP0pr5kf9fLfYgFO/M4Rg6MSHC9TEV/kuOUMnzGl53gTkZaWQFC931Bd9SCgZ2UO=
+0
+> Vr5mAvd6Un9EUoa2Izur9IfcNDc+pWkINhzOHJgvh2j0o/5Nwv7XzLe08d5nAD0eUBzrfvL=
+N
+> diR7Hdbf58osE4NDKiznhP8DWUPUA35Y67sHVvuSyF41A6kVgiQqpjVYqAFdq8xHmODjrM+=
+4
+> BulXEhUawbadFO20fJUM4S68Os6n8NOPcnymH91+gUMJJxcDxw0tgH1AFA6h4ZgRy7kNlOq=
+j
+> koJ7S8PxTOxvbcilzNjU7hfypCBbElELBR8ZgMSI7gystFkeQp4Jh80faVYZgKewLR40P2k=
+d
+> y8ojecWNSpFchiYs9LhpQud8Nwn1JCTp+d0V7ULWXnMwyOWzS20mxxrLwvtt+XC6Kcwp4rJ=
+G
+> afxb3Dh3nFQMKhzuNHEL8hXtz2o1mupEuExMGvb7Ux8ttM6MWn1SodJXcXDhJF0u2osQZhx=
+a
+> JlQ825OxYH/mYCGJPxy38GwT5SOWtJ/gRxUfDRPNQIBBgHcoZBe9cIlPcvbFiJ7d+BkTt3r=
+P
+> +HJRMKFY0xcZ/pT3cnNu4fAqKSk7EeYlxigbdt/rOyCxaVzdr4Y2NfvKlnJEV96gpfE79Vh=
+3
+> hTrdBfO47ZCDP28yynvs1wy8QQvMkjZkZpIxFLvjVgd5gMOKXDXNIvqUG+MNKjBbl1xHrVb=
+u
+> mLrWdjHfK2rktDtHFIeDKiSsRimRJIeFlMM5V4x1Q8CWb+jgGUo4jfdBc4jghwN6gYREe7C=
+V
+> UgXlEO8csH1opRjvROs7kYdj6NlffgsP8bVSi74FBxeGD71U/rnIHUwMLQ1/vrLA1viqenc=
+I
+> ARduPd6RIJq984m5kQXT1i13C+OxVaoHKxmz2eWG4SWJkfdba1gePInSf/8kMU4HpW73Cfg=
+W
+> 9iLlqXmFrKliS0MPdecIecGcVaIVKYP6F9b0w52dpTquqWh2PKaJ0Bz7V4pyan1OeXh0hS+=
+j
+> sQiiDcBO1neQMrNWbHyiWNLoGy2dfarcTY9P9xnTGLBm7vH2CM5oZq89FumoaDMU8DVqYvp=
+w
+> X2569FUmC7ZNklz7D1yilxNv4sxjpZ6EYUlqUQuzvKnjTIjAcvLvy6ipY58E2SQhMxI8Zp+=
+I
+> zyruFX3eHKAcNI1K3DfAI1K29plb34mvydlv5UkTIp9JDWB3Ia6SKa5XZTIoGN2z3AthN36=
+/
+> nfc1hrlZh4PbB/wBiAfTYv4qEA6w8tErnWTnZSw/olA6Vgf7j7SxnZoCq+7uYnyamrKRdQ6=
+3
+> 3Vyf4dXhYW5nj0O2TZSY0f2hzZfCyDrs0PyMZ4g8fnkPGyz7ksMjvW/JFR2hSAiLsnUGv/o=
+7
+> 0q4NzxjA4PNiGGByu044PY6A6UkEet5qlKiMGhnnnMbr9Q8OcHC3MyQimrBC7qe8wzKwDaT=
+h
+> kQgqlc7CophEo3wtap+pcl9peVP3jM8xk8+3grnPTVrn06siDkmBOySZBlTg9YBng4OkTKm=
+e
+> 59ujOAtzpc3UGCkpfAdLszNfopEEjSpeh/HSJCwT6Xocj6bqeq+ebM0m4YXXf/hRFXa+GyD=
+v
+> dXhoz4tJpekycxgf7u1+dHComnp2NkGOWhudhkAkQMEy36XssTr+jKVD1rXRIAyjz3tI/94=
+D
+> vR0hrJGKN+shLXA62qRmXxyLl2o1aZFfo7u4ejVPV5Nk2gvTk+sG6SF8bL63VjKw/AJoR9/=
+5
+> 5YsrazlGSpfjOPqrMAv9ABoWkbHUbiH1oE6De89fzjsGY/tkcTd+juweefAtbnSCqmlzhfh=
++
+> 5uvSIBsrHFBI4CClqN0zCoVe04AmzHi/UNJX4M3OSQZQe7blEL+HAdmMn9CAiFdgzsy3dhP=
+G
+> JxZsPI9YBonqQx4ZkFc1SIg/LOxGfOQWTGt/pN9RVdBdjjufh3iKEhjCv+rugJXUohQhmtS=
+p
+> 3fQmbLX4C7PIVkdbAkVk2OkLEpFgsoWHOJwHxGxTmK4YtkKt32ymyEaQ90dFbHAclEFKFIE=
+e
+> rPIMxbWvEw4FGBdvPs9kJT32T2ym4FEEywdVn8sNlOY6aAzw0hbXa/CCMjxw1gVppvnZ5Qv=
+1
+> XYyHUEd4T71AU+vnOg1cde0LRWC/Jy/98fIcy53CuRgnqF/1eRa/c4nPG+QN2GYnFkoHq2T=
+X
+> zZkBuUKmWado7n00DVYioTb8Tk6Wdorc+SxIV5mgl7ZbVr6KTZ9Q5SxX3TJoi3bM7Jw5fH+=
+E
+> e6xYJc/OOTEISTzNpOggz2nEMhCNiD1Ye6StFjwsN2jlKim0d0pNUdYog+2IGvStBCtt05l=
+i
+> oKPLT6z9cxptJ5No+evvbQAhSwBATZDnw7JZTX188s1PWShP+eJs2+4gxvXGNvIMS1jbUQ2=
+y
+> wd3FaUejIZuI0uKSk+9ilC5XDSwTFpHmin4V54+F/4OPdzc9GvLaMQ85R1i+Wu+QE5cdv5M=
+L
+> y5yWDFTmQ1Wt0NPEY1UjPBHQX4yVWD5xe/VkhjVFeN2mal3MAaXZmDzSiOlkhaadfi4twCW=
+G
+> RytILusWCxa3I03QWOHbMzoCkzT2R7Z5Q0KYkxp2DBGxlaGENyfQWFNkNiUWnw9rZIBKNZ8=
+c
+> yADz5ZX3h5HaUyzuzEyGf2vuupEM4sLMeDOVLYUUdjsA4Z3ZfCeLD05nbATg0DmXea4kj4Q=
+2
+> l7ANjJUsRlNEU/3G2IYyDfhw2WoOYY0xlY3bYcIPSVH92bnjIH+NknS3aZr6gIyossFgWch=
+S
+> EnAbPy8tED+fdUll7JaOibZ5jmNE9hCd7eNBTz/fd0+Bt9iyJb+tsNJz8Fpz5CT/8BWCPPr=
+Q
+> aJ2H/3y3aUXFa9H5obmhj1ohUPl7njzJ0fBtJxukpnSkhU/2dB9RKD3cJbDoj0qiZ2U4pwF=
+V
+> wG0OMi0eSEzZhDug4YcfhyC9cqJXw+xgnVTOkvNyZtjGcJ5ng8aSo/n++w+BNIVHo8bxN96=
+K
+> 94qdbYmVF3m+CIoXt8J7TM/ItuuTmR+Yh8E8CJ7HYL5zo7cKb+BWgVseQYzGbte72d3qTgU=
+g
+> WnWmDian20udRS7Nl8eF9hmfdEDEbsIN6ii5z9W2fYMzpixi8XUKhrbwk42mVsa741mYITI=
+C
+> drov3AFFaw1/+UVVIQRvwQZ6fROMCAeHfvlF1cHVwtD+4uomRts6iRnXf4N6TVCtHnQLv4Q=
+C
+> PjeLViFTLjdGBlyAQFW8jGGQxDhadl6vLwGvDLLUsP60MMLn1Y231CmMsvP59ZyGIXc1Cot=
+e
+> 7gBAtQbNexS3EY18JTs3uyfY8KCFvr5V0EuigBelYpJtHpM0pnNzsspIOJBhX0bBPZMg6xl=
+o
+> 6LECUtYo1ti9x8AVwSjfpufclFF2fu6fReLO4SMH+Cpln5iNPmmu1LJxXlW712q39UER3FM=
+A
+> lxNgItLOVsM2OU3JFFpR7aT6gry60LV1MvdtNM8NhZQhDZ4QqQk6pCr4sobnW/k7XMoHDBu=
+r
+> 8nM5p2E62XDygZIpdHTq1lP4cn7Og0p2tqvJxc6Y4YJ19Kv2Dxjjv6aghvH5vSNiy4VDSB5=
+K
+> 0keYocuWD1/qOp3b6erRx6VOx5Bwfp5iVZ7zjsSfubuQD5DvRDqwOTHZkGw1XTXYJby9Xfb=
+d
+> AQQACMQQ26kLcVPi6K25z5ufBntmR5oZPpgQjX2+KJD6CoINz8PgrmPtcvZmqHQqVCzgiIM=
+k
+> kHy06JFuoXj9h/s6zjh6dCZBODctNRkJVRsi0QaWmSner2AsaFZId88Rt4h9NQOjVFZZGLm=
+o
+> eRsBrA09eHabdMtWMO8TD4XXq/QODCcQjaf73XrJZYbevRl+PAc6XK4PfKn+8S1itHncTYh=
+B
+> FUpU64RdOd38c8LJU0LZHt55UBKEzy9IXe2GopFcY4qIFoZAy/yzne0aRsRR/TWIC/4k1dN=
+7
+> uMPPcWWyHO52ZA1LPqF4WpsoF7cvGfm6jPocxI8iibsrSMskoM7NmDC9rJVn7/dNhwb7jTe=
+y
+> 71ugsH+qyRnqX7mmdwmFTy70LoQo9ALq3u9Lb3sTQ0MHe6aLt4vvWG/fjNmBJXDFpkBmZ8K=
+Z
+> +6QOeLgRUY8IdfWag5INjCZfmQgZSspSHO7t92OzmFjTFcZAIuCZqimHRpHu8LueK82CX2Y=
+v
+> y8QpThCiOcrG5GgZzbnletfwu+ItakxQzLG2GtJmHZVm7+6XNpwn8rUtF04i95qYBZSkLCd=
+l
+> jYahp8txpUks+4wHK0TG5gdnPJXPK39qDYykrxETs1L78t4YV1JluYbo22Dq6gPVPHqAfcI=
+k
+> XpqFU5ISmTy+4/ku1dgQUw1gKdVClWJw4nRPmy6kAKwXOacOGbfMNRd7KKAZXyJ1t8ptSj4=
+r
+> OoPJ3Vk+rIKppCyqXIsDoTy5uKb3xz4f62N/sCmnutEyURm4XCo/y80k7AdQnMsoWq5nX4Z=
+v
+> qK5ZI5re6hFj32N65WSHgt2GiO1Cz5mEo/4nlurOTCaVMn1U7pjFLZAcYvfcV4I1IdkBy/D=
+f
+> zlBOm5lUeZfonLRNQzLuFnd4G7QbpTPmRBXj5s0KWNe3NStGFnCFHuXlvS0z+9a+UJWtqIz=
+j
+> CETIq5Ohsy8HHekCSzg1pUy3B6wMeJb3vNeWnbjK3E2dNSEZkkbRUgJmdBhmsnWyYIeEH5G=
+Z
+> 5hOUBT7nNXm57eXtIuVyE+IFMXwd/jg/hOu6d/BCjjoe3d1P8LOYNOYswfCcJ+VdYsMbbRa=
+A
+> RCTvJYSv5nfDGyx4coo43dhIbvKAlzBivBGVCHwxO88mFGWPHrHqcUPCrR6eQpALTrKHQYh=
+1
+> pwCDgXWHiPT+0Y0ItFME6D8q9B8pAs0P0yEE1w/TMYTQ755TFK7IOEMJrsi0ZR+uyKzlNq7=
+I
+> oiU2QGTVkhUgsmmpABDZsXRCnKkcBWRMGalG2CRpCzdBC+47jwBejT9XjbAL0BbuIHJC5IE=
+W
+> 3JyAFjhACwagBeowC1iBU7xg1YM1xqpg0r942URI0RKDmvzrS7i2MJjfCdF0fwTgMeK+iuL=
+W
+> qK/ag0pc46uzOQLY8W0ufIfH54RYN10MXERM1RZmOoCZGENNBGAmo1CTbqiJhx1AlOlgls5=
+f
+> Z7NVGa1uOjrvntsDUlWWHZFPEJwdEaFCvUW/F1pfe1BvVAXbzj64qIDC4KHMmB+A0Doo8+s=
+7
+> hWgcDesBahyV9aaByit7oquBsgizTwGk3blwrmqILf10QsSqupqudyJQbG5EnHjDSxwxHfc=
+Q
+> KigVRUR96pbAuPXeYY9AGjS0Jm18h2dJyBU+8YcGXQ9ShtL7aAEi20Mb2uGN8swFuByv4Y9=
+M
+> vUwSObVcEjn1lUKyKd8it7nDYhZsM/giyOeCCJd6JcIOTKjEPdhjyAUS27BIQudeHC5II28=
+x
+> M5yl8XoWtPXeX++ceomJ1f+d6TOqVufUq/hADLn3BIPFjUkCEoPVolzbRRn3aAEGkyDyM5q=
+v
+> mUr5OBlKeeFCh9QDtH2imU4CTkjcNdFRliV34yXLu9o02r/m8nptORaAk7vRkJZtySvX3r8=
+m
+> OejqcfA0LjsGhfndLTE12CL4+DTAUSQ5Cw0p9yGQNimeeg2r7+zAek/wL0OvieC9eiXo3mb=
+i
+> Cwd3F1piYK3/xM7axh56+ehoqWf13NSC0dnSqGNCN1B/3/WbrWT6oBm7RoEKEFgyFmNCOK7=
+l
+> MKZWKqmhYcKFv0D1TMQ+pkda8a0Jab2kgqgQwhLarIZ9L+pLS+ahZ2YEaHt65jbot8aevTZ=
+6
+> ef5sMbTIjUvUskXWFHVs4ZhYMn00difLU5HTvCHFuestJIENv3PDk0+jq9VoiC2hfIWLNaE=
+9
+> IRnNezu33ILFXtiay87iPXDBK/nwuZPsBMkosffbOk/3XnfvbP4zoGqnFvuK7uqBBWPl4an=
+u
+> yepCuGCk67Y5k3adx9GaYPvJSsOEx3b8aDr1SirJ0LnoBkS9yLC/u1zgOH90fG2sck2/yqJ=
+r
+> 8ixn7/mUx55CVnbluekxmDrpnvrx+HnBGmHSuqel3c6oOoQj86H20X2ehcdnKvNIoxZU7s2=
+q
+> hzVTqd3f1AV2BxRLS7VKm934mysOi8L2+8VprN0H7FVZMdScOZylJxx0+bn3qCf2RbLy98+=
+M
+> 6mIP9UpOGTy1CXlOxyHueHcFrPDYjKfmBLFS653PIqUEecOfHL0BpdZxQwROd/pHVT8KHD4=
+M
+> Tgiu8HQMTc/NBToZqa/klXoqLKXVnYs5eVJ5nWw1Ax/h1ne9BdQxeR3MBACb3t4s4wC66dY=
+6
+> rgyh2MrCa0wGT+I1/9hCYbH+DOAH0rDrnky/xFAJpDFBhFp5nJ/uqwYi3jbBK1j03Krbn9R=
+8
+> oBPzQqUsbf+r86SrsZ9azIsKK7GNEOuG0z0UW214jVYo25TbSgFATxIe7A9ttP5wPgnYhH7=
+b
+> xBBKx/fwocaDOMp32iVQAq5JF30/F0l4ja9QjPVkbZVIvoRQjQWUraj+aBllq+RmWS6MYLs=
+N
+> CGzKvVm2k7pTtwT9FdvT43AuXjVwaVS7dcBgiMp4OYip/uA7ChbiGtT8XLlh8zMqsCkPu2d=
+Z
+> ZafexcXlo0i+tFBNN7SNVO+zQ8B3T+wefGjNwbh9dwEmAXZPvQG0xW6B41WULWnsnkRY1U6=
+/
+> fBFmEnbPemWaLqOcPbJ1qw7EusgQNZrnfMzg9blllskSm5XZtuJOgU2WSUJc9Jto/+XTDpe=
+E
+> NEpTxejUtH0xJsUymXbpDmnR3a7edlzkpMQT3Domt4Q0Qw1hPWGN3KjTkFJjhAW+1L1amd6=
+o
+> spxW+d7jhUXD4DhTsSAx0+zJH7B8hqysF7TTdTK9rAUUxRTog7ziUFoKS1i79RfGhkGGUGM=
+e
+> t39tN08iX+JnuwyS/9Swsp4yfq5zmE6WiSR4AEWu9zgtnlYja5BiKOP9YzYx6b4sKkHoPEC=
+r
+> E1Ti1eL9l5PTofVRnByHtG66O6xi7WX+Tf7sShuEdZc9viTgoOTMfO+28LPDhijBXlUuG6x=
+i
+> mvam0tAOWQewiY2VvW16yz5gkmUiDe6bBS16Qjtm2b+NDel7kp4A/1z6qt+yQAl6CelBtSu=
+7
+> U/sdVig4rSntGlgKWxoGTmMw/Se0NL20aKhRcEUGw9W0cRaQFZOhcyTSgqMq2GHDuCDMbcq=
+9
+> RmiGbX6NME86/zrhg+IH1wizmrIuCRVS3i3Gh+wzKjrEkFdAJ+5IjlvRQaZdskMSRhSWYXl=
+F
+> xMLAxMIEI8KsuJrf5jLfJt8ypVDDKztBcSYoGChFL/UnGOYNMPDDqH9ClzSVwHqxKAEeuhw=
+W
+> UT8dNvBiWOSmmhfDghHmSeVfJ6QqprpGWN1UfY0QH5vgGqG5lMUV4dztS/nTCHsHoaBomyy=
+J
+> X8N/pKB6iaHImqOcz4R6HaLI7yIAxd2MTDN6RYqoapjPekMdVeJi9H9iYyniLjyWLCfv0gm=
+x
+> +9uw22H9IoscGLzsa5ApIAhgmt0rEymxfLVgmq60l6BwvBqnnoasniy+GTus3cu1QsZSwFj=
+M
+> CJsPbEntyzmKfDMUMRLhj9+JG5RReLlQJGBDv+qeqy90p5iskelVDBvphfbBfUaml42BmoU=
+a
+> xuMW5XTlLt1ltU21sD4IQc1+dpW/HwUbtU+BI+7K7hy2xtgKaIpproGjmqIuRJEE/0JfDT6=
+N
+> 2lT8cpJ2LvYAWM9SMoguRnBBSFdMd40wsSnxGuEy9so1QnMJi+uEtMW0l4Qx1DRHc9/r2nE=
+9
+> 5wJhc1ZP0oXr2W+HbX9BxGSqekUkC9sVoUQor7SveLgKSItJGZT1f9l197ZDwcHYIdfAQEn=
+6
+> C1+qz/gnNH0xPawXR1FOV6JOlQU3BV8MSxp84RAXhLnYedcI8yTzrxHC1P+TELb5XSNMxE6=
+6
+> JPwlP8uTMO4eqAHSjAwL85X8t6LuXE7410+/5Iea/eRBuJIfZncpPxQMk/9P8JX89yQe/kJ=
+f
+> ya9HuiR0OSy0X/L7ZCBcDAtGCJP/T0KY/H8SwuT/kxAm/zVCmPyXhL/kF50LFIUaeN3rwhW=
+9
+> kl+PZunJFdFv+UWveNgv5b+wu5JfFCb/n+Bf8r/P+I2+kt8/6g7H5bB6ruS/J/Vw4HJYojD=
+5
+> /ySEyX+NECb/n4Qw+f8khMl/RfhLfoUwblhUEYfKz3ol/+OosKsJb/kt/1XwIb+SH2b3S35=
+W
+> mPx/gn/JL/nwF/qX/BRLEpfDev1L/sgM8qthscLk/5MQJv+fhDD5/ySEyX+NECb/JeEv+bW=
+I
+> ttWgIJIAtq8jV2H/nvTDqwCi/yvsz6hdcV+F/Qu7y7APBUPD/p/gq7CvR7/0C/0r7Bdn6F/=
+1
+> 7FfY/xYVdqXgCGzr/5MQFvb/JISF/T8JL8L+n4SwsH9JqAIL+7CAUFR9RsDo3DXl+kbn1gm=
+Q
+> y6saMiLfF4p6nlS9kijRb/4ONMxzvlravZrXbliqYeiYmacga06++iURbSkOiVrzY9zT6rk=
+j
+> A9RhGalKPtZRO8+KuQ0qzXqWse0mg3YuY80z25I5zVKGc/bR7QXoG9/oNh5YoYTNQ5oI76X=
+3
+> wQreYKauutG201n1srGqnXHqkuNckeFGfckRQPu211HLlCvlrsV8UYmWJP+py6xUFonnTmQ=
+X
+> uaNU6cLAzvLi/or+/kqk96dgr2pr25INaAml5+ASYG4Bp5+MBUhJHZnWzehKlRoEUb2tTTG=
+f
+> kS+ZvmhfyO0t2y32PTGmlr8+ezHEG9zVtTXhPKV9yD2fqfUhbx6iLbrfdMheskjIJEErkbH=
+I
+> 9PH7CYAbLwiRFm/t6CR7cZKnS5fJPtLlqVTvOuYn5fNe/q3dYV3dQ+67mfnSGYug7i9z3c2=
+H
+> kg2LhMOZMRlPd4z3kSW6d9eND04GGfCCKGkJ+miOSj3jgpjqdvraitxEpdTxxRpmBMIg9q6=
+9
+> PHGZWlGPe+O1bb2CGbGZJHMk0heZqr6fxJLjBQFo4zOf7gBUPeYTjFUEwuIzlaAfoZZnZ/d=
+C
+> uorp/GLfpBUxAupoH3paHTjXvjlDk1UdHzQ/SCGO5C8oOVbZ6eUgtJTPW60HeDqgi4/109V=
+Y
+> i5Fof+nd26kbqUwLL5wxcdcw3C9YTDfnBqeojHoCjxbxwypAyk5TwQLV/ulrprET/xmzBqi=
+Z
+> 9/nQJk7BKLWGofxPTJDKqOIFxilNeW/gApNsEstffoH5L5k1yP/s6KOGT1I7BAWFFxMpXVI=
+d
+> lfAz55D69bJsxz3/Vy1j4mWt4LvrZfGJhZc51S//xPfb7lobgj3/lt2O5tqF3bmljnqLUb1=
+5
+> Ef34k0kJXY4WIytwnHW35WGJikphGL+ngLFRw9p8eXDpVCqoyODD2voUZOqQ18NLsylZJ95=
+S
+> d/eYVEClhyezAUi3WBeAgkFrDVrx9irh/IDkrvM2P6J2jrGGi7M++jCyD7NIy2DVUod2xnw=
+I
+> Ur8ua948GoB3FuA+Vr8HNm93VtuKlD2bdVCctLf2PhwOqZyqr3OpWS/i5DlbzRvW1wt/VNE=
+G
+> ZIE0WNdw7gd2CGqErD9KKkQan3HWedxuXjB9fITJdad8Y0x1eNuNYd03V++8Z9giXGv3BrG=
+4
+> bNRS6lK7Xm2qGSR1xsIO4qE2K9eQ8lXX2mrdAqTy8IELZwfJl1M7EjqtoYrZ3g3PomdFLKf=
+n
+> gopn8lO7U1tshkfZkLjjGyn8miVH5/GH4n6pMWL7aG/PTuRBrkfJWl66xiq+pTWAYVbviKA=
+6
+> FY0U94IYtllAX7tbOzBDtyKcfzt5Q+AMtUBRDFD0iJOK5DT2VGvqIIDk9AQUfnpgHH7GQEI=
+Z
+> NGfJpMOiPYwfIZU6BoH0Nqe4vK3jVJI9bnl5REjgoOt9QDBc6K14vr1sfiS/LFOeF30qWNm=
+8
+> e+w9ddyqL3jW9mXpfsEo1mpC7vCGgiuDU6Rbas4wW+qYFP/TsXFa/7ru8ZyTluTtSpdTl8N=
+D
+> AbKEhcZHk9X9st7wGycpIM3+jY5tdzeIoqC2pcDhLE5dPLGz6TaRoeZDtsWDETy3O11Tfu7=
+V
+> nlvmX2fNz+SGJ5wnuozO7NbLvy+tdCS51fl2O3NUmo56HBavJoD79SuNmq14mksWDvUrjZu=
+t
+> eC9yNaX6NV3Fq65nI8mjxbw/cxOjxZdlL0eLkX7mvowWB/zMpY8Wi//M/Rgtbv6Zgzj76+6=
+9
+> fTt5+6xL39XSb2GWwX3CaMuelT9u2PHgYHQqadrZban4pN5msLg/PJWo/Vw6q5nxnEdKcGP=
+n
+> RzuV0FECKK9xB+TGL+7shf22IYS/2TbgeOdg0LyD1dEr9H2qWWxVjq1A/GTVt7dEbJ4WI1E=
+C
+> nAmx3iRzSHetu7zlu8L4a/BOJ1b6GaTH+u1lSVSpll8+PPn2rYj13Ir2/kpc14tKCuXEsjd=
+k
+> S71D41sk2HZUEEH4v/wdUjKvvJkDetIVG1qNBT0V++t3SH1rO0PYDZb/H4b9mSwideWhR6q=
+/
+> Tsme3EHfYMhsv0vJID2w2kpJ1WXiQW5TiYVK+WmoU57pq/pCqrhd16ltV93uybsxC4yuvC7=
+2
+> QFzKtk+BcnSlpj39ZpG67zuQrCiseRHQH/qK2zu5PkWVFluYbnS8q/VkulSCNQVl7J0lcpz=
+e
+> 6te77PtiDm9oCnlBroHylY1xIVz1N7Ri59DMkbW2P23BdaxJPKLOwCXvW9dKglN4ZiL88jZ=
+x
+> tO+0tTUc6LQBQZLH3gwQxun08Cu/sfQWbdj6S9X04o3jtNSMeyyCjUztx81KHKpGI7FwTf6=
+n
+> ZeMBhlpzGj61PKzdu3fA3z2RGKu1Q881/GmR3Dm0Xsa2sgiY0yrcyJVvoTdKS0Wvz1hoXZs=
+w
+> 81FTjjKVy30ro2rwmJpNQ7th6IDrRSaGl06k51/62oOb9+hioY5EBD1QhfnPvvbcxub/rvY=
+7
+> vY2StRpjxvTbR7RD8jl+Yxd110+YpUU3UiwE/0MUv2yoBRmupA2V7wRkh6pOTfJ28VxG3rr=
+R
+> fCixoICU1sZDzR3MXhfV4sN8A0TuNYIfnAD33IZkb0PEKLvQkknhr3svVjVSPLHbFxEesb4=
+Q
+> K7FRK2Z4qmYT5oaa/Fk9SltBg4RXLCeUYH1syOTj/lE5gvhJGn2DzQjWx1uJEBtmg/QfaaB=
+z
+> DsvaLo8DrQ1R+Li0vQwLy4cRmdPNj8dfPQtVibFi8r5HxH8UFxyQfAt4oIQb5IZ4xIEPNg4=
+3
+> BapoqH+URmpTUb/ZGI6whUwXUKVElYbLz+DWM6vvM68aDPEFmPtFsACH8kxi0l8lDX8zyrY=
+U
+> Ct6mKmzELFxLnXqEiSivmc4a04+RVV4VBXn+AAAKGX2WIfmZ1tiyBf7MIp6uT/DDguKqz/N=
+X
+> xLZWjc+YeRqdX33p7FffGG8g2PeVf7+3HzzN8Ln/vZql8iuqTK/AA2bMcNo6k9LWCZUqdHZ=
+r
+> XhK/k+nuH1OMC6nGc4YJk3asOCcHuu2/T07cgGeA+7tH5f5Mf/Hg3E+Cv3uM559TJnR9/NN=
+D
+> PT+Bf/cgwz+nceh5xL9+rOE3z9+fbv+dMG5fO+v+E/z3Z5x/p8eo1088/2b4+wOUvxMQ49p=
+x
+> yt8Ef3965XfaAPzTWZbf0L8/XfA7Bd/767MGv1n+/h7e72RG9Hd39H5y/F38/ee0zfKL43c=
+0
+> /gn/uy31n5MOOwz+e4P9iUa8BatDhf41QRuk5YJ9+gdQSwECPwAUAAAAAACbiY9HAAAAAAA=
+A
+> AAAAAAAACQAkAAAAAAAAABAAAAAAAAAAQmVpc3BpZWwvCgAgAAAAAAABABgAAAcYdFM30QE=
+A
+> GLYowzbRAQAYMHNTN9EBUEsBAj8ACgAAAAAAqImPR1A8gQ4FAAAABQAAACMAJAAAAAAAAAA=
+g
+> AAAAJwAAAEJlaXNwaWVsL0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuY3BnCgAgAAAAAAABABg=
+A
+> APY0gVM30QEAGLYowzbRAcACh4BTN9EBUEsBAj8AFAAAAAgAt4yPRxvrFBdLAAAANAEAACM=
+A
+> JAAAAAAAAAAgAAAAbQAAAEJlaXNwaWVsL0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuZGJmCgA=
+g
+> AAAAAAABABgAACll7VY30QEAGLYowzbRASB8hYBTN9EBUEsBAj8AFAAAAAgAqImPRzuH1WU=
+Y
+> AQAAyQEAACMAJAAAAAAAAAAgAAAA+QAAAEJlaXNwaWVsL0JlaXNwaWVsX01hc3NuYWhtZXB=
+v
+> b2wucHJqCgAgAAAAAAABABgAAPY0gVM30QEAGLYowzbRAaCWi4BTN9EBUEsBAj8AFAAAAAg=
+A
+> qImPRwAariiIAQAA2gIAACMAJAAAAAAAAAAgAAAAUgIAAEJlaXNwaWVsL0JlaXNwaWVsX01=
+h
+> c3NuYWhtZXBvb2wucXBqCgAgAAAAAAABABgAAPY0gVM30QEAGLYowzbRAUAdjYBTN9EBUEs=
+B
+> Aj8AFAAAAAgAt4yPR3wsFHdoBQAAqAcAACMAJAAAAAAAAAAgAAAAGwQAAEJlaXNwaWVsL0J=
+l
+> aXNwaWVsX01hc3NuYWhtZXBvb2wuc2hwCgAgAAAAAAABABgAACll7VY30QEAGLYowzbRAUC=
+e
+> 1HtTN9EBUEsBAj8AFAAAAAgAt4yPRyIEwTZXAAAAfAAAACMAJAAAAAAAAAAgAAAAxAkAAEJ=
+l
+> aXNwaWVsL0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuc2h4CgAgAAAAAAABABgAACll7VY30QE=
+A
+> GLYowzbRAYD1g4BTN9EBUEsBAj8AFAAAAAgAsYyPR0LkTYSrGQAANVsBABcAJAAAAAAAAAA=
+g
+> AAAAXAoAAEJlaXNwaWVsL0JzcF9NU1Bvb2wucWdzCgAgAAAAAAABABgAABs+5lY30QEAGLY=
+o
+> wzbRAQASAeZWN9EBUEsBAj8AFAAAAAgAj4yPR2pTBLNSKQAAAzoAABQAJAAAAAAAAAAgAAA=
+A
+> PCQAAEJlaXNwaWVsL01hcHBlMi54bHN4CgAgAAAAAAABABgAAHsYwFY30QEAGLYowzbRAQA=
+p
+> qxFWN9EBUEsFBgAAAAAJAAkA6AMAAMBNAAAAAA=3D=3D
+> --------------040302090208010900070708--
+> >
+
+--=20
+Matthias Kuhn
+OPENGIS.ch - https://www.opengis.ch
+Spatial =E2=80=A2 (Q)GIS =E2=80=A2 PostGIS =E2=80=A2 Open Source
+
+
+--------------010103040303030009020801
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Ty=
+pe">
+  </head>
+  <body text=3D"#000000" bgcolor=3D"#FFFFFF">
+    Hey Karolina,<br>
+    <br>
+    I think I forgot to write in the specs, that whenever a geometry is
+    adjusted the derived fields will also need to be updated. Do you
+    think this requires a big additional effort?<br>
+    <br>
+    Btw, it would be great to use a QgsExpression for the derived fields
+    because of the flexibility but we can also do this in a later step
+    if required, so only do this if it is no big deal.<br>
+    <br>
+    Looking forward to hearing about your progress :)<br>
+    Matthias<br>
+    <br>
+    On 12/19/2015 03:30 PM, Caroline Alexiou wrote:<br>
+    <span style=3D"white-space: pre;">&gt; I think either the attachment =
+is encrypted or you didn't attach anything, can you try to send again?
+&gt;
+&gt; 2015-12-19 15:21 GMT+01:00 Matthias Kuhn &lt;<a class=3D"moz-txt-lin=
+k-abbreviated" href=3D"mailto:matthias@opengis.ch">matthias@opengis.ch</a=
+> <a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.ch">=
+&lt;mailto:matthias@opengis.ch&gt;</a>&gt;:
+&gt;</span><br>
+    <blockquote type=3D"cite">Content-Type: multipart/mixed;<br>
+      =C2=A0boundary=3D"------------040302090208010900070708"<br>
+      <br>
+      This is a multi-part message in MIME format.<br>
+      --------------040302090208010900070708<br>
+      Content-Type: multipart/alternative;<br>
+      =C2=A0boundary=3D"------------020806040001090207000305"<br>
+      <br>
+      <br>
+      --------------020806040001090207000305<br>
+      Content-Type: text/plain; charset=3Dutf-8<br>
+      Content-Transfer-Encoding: quoted-printable<br>
+      <br>
+      Hi Karolina,<br>
+      <br>
+      Attached is the demo dataset which I received. You will probably
+      need to<br>
+      adjust the excel file a bit in order to have all the fields from
+      the<br>
+      requirements included.<br>
+      <br>
+      Please note, that the additional fields on the shapefile are
+      joined<br>
+      (layer properties -&gt; fields) and hence not editable.<br>
+      <br>
+      Bests and thanks again,<br>
+      Matthias<br>
+      <br>
+      On 12/19/2015 10:11 AM, Caroline Alexiou wrote:<br>
+      &gt; &gt; Sounds good. Can you call me at 076 227 1139? &gt;
+      Bests, &gt; Karolina &gt; &gt;=3D<br>
+      <br>
+      =3DCE=3DA3=3DCF=3D84=3DCE=3DB9=3DCF=3D82 19 =3DCE=3D94=3DCE=3DB5=3D=
+CE=3DBA 2015 9:11
+      =3DCE=3DA0=3DCE=3D9C, =3DCE=3D<br>
+      =3DBF =3DCF=3D87=3DCF=3D81=3DCE=3DAE=3DCF=3D83=3DCF=3D84=3DCE=3DB7=3D=
+CF=3D82 "Matthias Kuhn"
+      &lt;matthias@=3D<br>
+      opengis.ch<br>
+      <a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.=
+ch">&lt;mailto:matthias@opengis.ch&gt;</a>&gt;
+      =3DCE=3DAD=3DCE=3DB3=3DCF=3D81=3DCE=3DB1=3DCF=3D88=3DCE=3DB5: &gt; =
+&gt;=C2=A0 =3D<br>
+      =C2=A0=C2=A0 Hi Karolina, &gt; &gt;=C2=A0=C2=A0=C2=A0=C2=A0 I am<br=
+>
+      not very available at the keyboard today, so a phone call would be<=
+br>
+      better for me. &gt;=C2=A0=C2=A0=C2=A0=C2=A0 It would probably be be=
+st for me to have a
+      call<br>
+      around 2 o'clock. What do you think? &gt; &gt; &gt;=C2=A0=C2=A0=C2=A0=
+=C2=A0 On
+      12/18/2015 07:50 PM,<br>
+      Caroline Alexiou wrote: &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &gt; Hello Mat=
+thias, &gt;=C2=A0=C2=A0=C2=A0=C2=A0
+      &gt; I will give you<br>
+      a call tommorow. Or perhaps skype would best. &gt;=C2=A0=C2=A0=C2=A0=
+=C2=A0 &gt;
+      caroline_al is my<br>
+      username &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &gt; Bests, &gt;=C2=A0=C2=A0=C2=
+=A0=C2=A0 &gt; Karolina &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &gt;
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &gt; 2015-12-18<br>
+      17:42 GMT+01:00 Matthias Kuhn &lt;<a class=3D"moz-txt-link-abbrevia=
+ted" href=3D"mailto:matthias@opengis.ch">matthias@opengis.ch</a><br>
+      <a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.=
+ch">&lt;mailto:matthias@opengis.ch&gt;</a> &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &=
+gt;
+      &lt;<a class=3D"moz-txt-link-freetext" href=3D"mailto:matthias@open=
+gis.ch">mailto:matthias@opengis.ch</a><br>
+      <a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.=
+ch">&lt;mailto:matthias@opengis.ch&gt;</a>&gt;&gt;: &gt;=C2=A0=C2=A0=C2=A0=
+=C2=A0 &gt;<br>
+      &gt; Content-Type: multipart/alternative;<br>
+      &gt;=C2=A0 boundary=3D3D"------------090906060809040708060802"<br>
+      &gt;<br>
+      &gt; This is a multi-part message in MIME format.<br>
+      &gt; --------------090906060809040708060802<br>
+      &gt; Content-Type: text/plain; charset=3D3Dutf-8<br>
+      &gt; Content-Transfer-Encoding: quoted-printable<br>
+      &gt;<br>
+      &gt; Hi Karolina,<br>
+      &gt;<br>
+      &gt; Sorry for my late reply but the customer still was not too
+      certain what=3D<br>
+      <br>
+      &gt; he wants to have, so I could not even tell about the size of
+      the<br>
+      &gt; project. At the moment it looks like this:<br>
+      &gt;<br>
+      &gt; He wants to have a polygon layer (shapefile) and a table
+      (excel) open.<br>
+      &gt; There will be a 1:1 relation between the two of them with one
+      field<br>
+      &gt; serving as pk/fk.<br>
+      &gt;<br>
+      &gt; Whenever the user adds a new feature in the shapefile, a new
+      row should=3D<br>
+      <br>
+      &gt; be added in excel with some fields set by default:<br>
+      &gt;=C2=A0 * foreign key<br>
+      &gt;=C2=A0 * area<br>
+      &gt;=C2=A0 * centroid<br>
+      &gt;<br>
+      &gt; Whenever the polygon is changed, the two geometry fields
+      should be<br>
+      &gt; updated accordingly.<br>
+      &gt;<br>
+      &gt; Whenever the user deletes a polygon, the appropriate feature
+      should be<br>
+      &gt; removed from the table as well by means of fk (or silently
+      fail if<br>
+      &gt; there's no such row).<br>
+      &gt;<br>
+      &gt; The required signals should be available from the
+      QgsVectorLayer object=3D<br>
+      =3D2E<br>
+      &gt;<br>
+      &gt; There would also need to exist the possibility to update the
+      excel laye=3D<br>
+      r<br>
+      &gt; when it changes outside (QGIS doesn't do this automatically).
+      The API<br>
+      &gt; for this is available, I introduced this recently. To trigger
+      it, eithe=3D<br>
+      r<br>
+      &gt; a button or a QFileSystemWatcher or similar can be used.<br>
+      &gt;<br>
+      &gt; This logic can all live in the .qgs project file as macro, so
+      layer ids=3D<br>
+      <br>
+      &gt; and field names can be hardcoded (or some global layer id
+      variables<br>
+      &gt; defined on top of the macro, even better for portability).<br>=
+
+      &gt;<br>
+      &gt; What do you think, how much work is this? I think it should
+      be<br>
+      &gt; straightforward, would a day be enough to implement it?<br>
+      &gt; The project should be done by the end of the year, so it
+      would be<br>
+      &gt; awesome if you are available, my time is just running out at
+      the moment=3D<br>
+      =3D2E<br>
+      &gt; Just call me if you've got any questions.<br>
+      &gt;<br>
+      &gt; 076 435 67 63<br>
+      &gt;<br>
+      &gt; Bests,<br>
+      &gt; Matthias<br>
+      &gt;<br>
+      &gt; On 12/10/2015 09:46 PM, Caroline Alexiou wrote:<br>
+      &gt; &gt; Hello Matthias, &gt; I am still based in Zurich and I am
+      working 60% for=3D<br>
+      =C2=A0a=3D3D<br>
+      &gt;=C2=A0 company, though<br>
+      &gt; I might temporarily increase it in the face of some
+      deadlines. &gt; Is the=3D<br>
+      <br>
+      &gt; project over Christmas? &gt; How long will the project take?
+      In what<br>
+      &gt; capacity would you need a developer? How many hours per
+      project? (At<br>
+      &gt; least an estimation of the order of magnitude). If you can
+      tell me more=3D<br>
+      <br>
+      &gt; about the timelines and what you're looking for, I can give
+      you a more<br>
+      &gt; definitive answer regarding my short-term availability. &gt;
+      &gt; Bests, &gt;<br>
+      &gt; Karolina &gt; &gt; 2015-12-10 11:01 GMT+01:00 Matthias Kuhn<br=
+>
+      &gt; &lt;<a class=3D"moz-txt-link-abbreviated" href=3D"mailto:matth=
+ias@opengis.ch">matthias@opengis.ch</a>
+      <a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.=
+ch">&lt;mailto:matthias@opengis.ch&gt;</a>&gt;: &gt;<br>
+      &gt; &gt; Content-Type: multipart/mixed;<br>
+      &gt; &gt; boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh"<br>
+      &gt; &gt;<br>
+      &gt; &gt; --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh<br>
+      &gt; &gt; Content-Type: text/plain; charset=3D3D3Dutf-8<br>
+      &gt; &gt; Content-Transfer-Encoding: quoted-printable<br>
+      &gt; &gt;<br>
+      &gt; &gt; Hi Karolina,<br>
+      &gt; &gt;<br>
+      &gt; &gt; How are you doing? Still based in Zurich?<br>
+      &gt; &gt;<br>
+      &gt; &gt; I wondered about your job situation at the moment and if
+      you would ha=3D<br>
+      ve=3D3D<br>
+      &gt;<br>
+      &gt; &gt; any availability in the upcoming weeks. We would have a
+      project or tw=3D<br>
+      o<br>
+      &gt; &gt; where we could require an additional skilled developer.<b=
+r>
+      &gt; &gt;<br>
+      &gt; &gt; Looking forward to hearing from you<br>
+      &gt; &gt;<br>
+      &gt; &gt; --=3D3D3D20<br>
+      &gt; &gt; Matthias Kuhn<br>
+      &gt; &gt; OPENGIS.ch - <a class=3D"moz-txt-link-freetext" href=3D"h=
+ttps://www.opengis.ch">https://www.opengis.ch</a><br>
+      &gt; &gt; Spatial =3D3D3DE2=3D3D3D80=3D3D3DA2 (Q)GIS
+      =3D3D3DE2=3D3D3D80=3D3D3DA2 PostGIS =3D3D=3D<br>
+      3DE2=3D3D3D80=3D3D3DA2 =3D3D<br>
+      &gt; Open Source<br>
+      &gt; &gt;<br>
+      &gt; &gt;<br>
+      &gt; &gt; --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh--<br>
+      &gt; &gt; &gt;<br>
+      &gt;<br>
+      &gt; --=3D3D20<br>
+      &gt; Matthias Kuhn<br>
+      &gt; OPENGIS.ch - <a class=3D"moz-txt-link-freetext" href=3D"https:=
+//www.opengis.ch">https://www.opengis.ch</a><br>
+      &gt; Spatial =3D3DE2=3D3D80=3D3DA2 (Q)GIS =3D3DE2=3D3D80=3D3DA2 Pos=
+tGIS
+      =3D3DE2=3D3D80=3D3DA2 =3D<br>
+      Open Source<br>
+      &gt;<br>
+      &gt;<br>
+      &gt; --------------090906060809040708060802<br>
+      &gt; Content-Type: text/html; charset=3D3Dutf-8<br>
+      &gt; Content-Transfer-Encoding: quoted-printable<br>
+      &gt;<br>
+      &gt; &lt;html&gt;<br>
+      &gt;=C2=A0=C2=A0 &lt;head&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;meta content=3D3D3D"text/html; cha=
+rset=3D3D3Dutf-8"
+      http-equiv=3D3D3D"Co=3D<br>
+      ntent-Ty=3D3D<br>
+      &gt; pe"&gt;<br>
+      &gt;=C2=A0=C2=A0 &lt;/head&gt;<br>
+      &gt;=C2=A0=C2=A0 &lt;body text=3D3D3D"#000000" bgcolor=3D3D3D"#FFFF=
+FF"&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Hi Karolina,&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Sorry for my late reply but the custom=
+er still was not
+      too certain<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 what he wants to have, so I could not =
+even tell about the
+      size of<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 the project. At the moment it looks li=
+ke this:&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 He wants to have a polygon layer (shap=
+efile) and a table
+      (excel)<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 open. There will be a 1:1 relation bet=
+ween the two of
+      them with one=3D<br>
+      <br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 field serving as pk/fk.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Whenever the user adds a new feature i=
+n the shapefile, a
+      new row<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 should be added in excel with some fie=
+lds set by
+      default:&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 =3D3DC2=3D3DA0* foreign key&lt;br&gt;<=
+br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 =3D3DC2=3D3DA0* area&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 =3D3DC2=3D3DA0* centroid&lt;br&gt;<br>=
+
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Whenever the polygon is changed, the t=
+wo geometry fields
+      should be<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 updated accordingly.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Whenever the user deletes a polygon, t=
+he appropriate
+      feature should=3D<br>
+      <br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 be removed from the table as well by m=
+eans of fk (or
+      silently fail<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 if there's no such row).&lt;br&gt;<br>=
+
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 The required signals should be availab=
+le from the
+      QgsVectorLayer<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 object.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 There would also need to exist the pos=
+sibility to update
+      the excel<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 layer when it changes outside (QGIS do=
+esn't do this
+      automatically).=3D<br>
+      <br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 The API for this is available, I intro=
+duced this
+      recently. To<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 trigger it, either a button or a QFile=
+SystemWatcher or
+      similar can<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 be used.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 This logic can all live in the .qgs pr=
+oject file as
+      macro, so layer=3D<br>
+      <br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 ids and field names can be hardcoded (=
+or some global
+      layer id<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 variables defined on top of the macro,=
+ even better for
+      portability)=3D<br>
+      =3D2E&lt;=3D3D<br>
+      &gt; br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 What do you think, how much work is th=
+is? I think it
+      should be<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 straightforward, would a day be enough=
+ to implement
+      it?&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 The project should be done by the end =
+of the year, so it
+      would be<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 awesome if you are available, my time =
+is just running out
+      at the<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 moment.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Just call me if you've got any questio=
+ns.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 076 435 67 63&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Bests,&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Matthias&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 On 12/10/2015 09:46 PM, Caroline Alexi=
+ou wrote:&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;span style=3D3D3D"white-space: pre=
+;"&gt;&amp;gt; Hello
+      Matthias,<br>
+      &gt; &amp;gt; I am still based in Zurich and I am working 60% for
+      a company, tho=3D<br>
+      ug=3D3D<br>
+      &gt; h I might temporarily increase it in the face of some
+      deadlines.<br>
+      &gt; &amp;gt; Is the project over Christmas?<br>
+      &gt; &amp;gt; How long will the project take? In what capacity
+      would you need a =3D<br>
+      de=3D3D<br>
+      &gt; veloper? How many hours per project? (At least an estimation
+      of the ord=3D<br>
+      er=3D3D<br>
+      &gt;=C2=A0 of magnitude). If you can tell me more about the timelin=
+es
+      and what yo=3D<br>
+      u'=3D3D<br>
+      &gt; re looking for, I can give you a more definitive answer
+      regarding my sh=3D<br>
+      or=3D3D<br>
+      &gt; t-term availability.<br>
+      &gt; &amp;gt;<br>
+      &gt; &amp;gt; Bests,<br>
+      &gt; &amp;gt; Karolina<br>
+      &gt; &amp;gt;<br>
+      &gt; &amp;gt; 2015-12-10 11:01 GMT+01:00 Matthias Kuhn
+      &amp;lt;&lt;a class=3D3D3D"moz-txt=3D<br>
+      -lin=3D3D<br>
+      &gt; k-abbreviated"
+      href=3D3D3D<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthi=
+as@opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;<a class=3D"moz-txt-li=
+nk-abbreviated" href=3D"mailto:matthias@opengis.c=3D">matthias@opengis.c=3D=
+</a><br>
+      h&lt;/a=3D3D<br>
+      &gt; &gt; &lt;a class=3D3D3D"moz-txt-link-rfc2396E"
+      href=3D3D3D"<a class=3D"moz-txt-link-freetext" href=3D"mailto:matth=
+ias@opengi=3D">mailto:matthias@opengi=3D</a><br>
+      s.ch"&gt;=3D3D<br>
+      &gt; &amp;lt;<a class=3D"moz-txt-link-freetext" href=3D"mailto:matt=
+hias@opengis.ch&amp;gt">mailto:matthias@opengis.ch&amp;gt</a>;&lt;/a&gt;&=
+amp;gt;:<br>
+      &gt; &amp;gt;&lt;/span&gt;&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;blockquote type=3D3D3D"cite"&gt;Co=
+ntent-Type:
+      multipart/mixed;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0
+      boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh"&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --SQwxwW01okmj3rUAPx0C75IV=
+M2UiJ3AGh&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Content-Type: text/plain; =
+charset=3D3D3Dutf-8&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Content-Transfer-Encoding:=
+ quoted-printable&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Hi Karolina,&lt;br&gt;<br>=
+
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 How are you doing? Still b=
+ased in Zurich?&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 I wondered about your job =
+situation at the moment and
+      if you woul=3D<br>
+      d<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 have&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 any availability in the up=
+coming weeks. We would have a
+      project o=3D<br>
+      r<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 two&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 where we could require an =
+additional skilled
+      developer.&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Looking forward to hearing=
+ from you&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --=3D3D3D20&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Matthias Kuhn&lt;br&gt;<br=
+>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 OPENGIS.ch - &lt;a class=3D=
+3D3D"moz-txt-link-freetext"
+      href=3D3D3D"https=3D<br>
+      ://www=3D3D<br>
+      &gt;
+      =3D3D2Eopengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"ht=
+tps://www.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Spatial =3D3D3DE2=3D3D3D80=
+=3D3D3DA2 (Q)GIS
+      =3D3D3DE2=3D3D3D80=3D3D3DA2 PostGI=3D<br>
+      S<br>
+      &gt; =3D3D3DE2=3D3D3D80=3D3D3D=3D3D<br>
+      &gt; A2 Open Source&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --SQwxwW01okmj3rUAPx0C75IV=
+M2UiJ3AGh--&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;/blockquote&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;span style=3D3D3D"white-space: pre=
+;"&gt;&amp;gt;<br>
+      &gt; &amp;gt;&lt;/span&gt;&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 -- &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Matthias Kuhn&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 OPENGIS.ch - &lt;a class=3D3D3D"moz-tx=
+t-link-freetext"
+      href=3D3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https:/=3D">=
+https:/=3D</a><br>
+      /www.o=3D3D<br>
+      &gt; pengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"https=
+://www.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 Spatial =3D3DE2=3D3D80=3D3DA2 (Q)GIS =3D=
+3DE2=3D3D80=3D3DA2 PostGIS
+      =3D3DE2=3D3D80=3D3D=3D<br>
+      A2 Open Source&lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      &gt;=C2=A0=C2=A0 &lt;/body&gt;<br>
+      &gt; &lt;/html&gt;<br>
+      &gt;<br>
+      &gt; --------------090906060809040708060802--<br>
+      &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &gt; &gt;=C2=A0=C2=A0=C2=A0=C2=A0 &gt;=
+ &gt;<br>
+      <br>
+      --=3D20<br>
+      Matthias Kuhn<br>
+      OPENGIS.ch - <a class=3D"moz-txt-link-freetext" href=3D"https://www=
+=2Eopengis.ch">https://www.opengis.ch</a><br>
+      Spatial =3DE2=3D80=3DA2 (Q)GIS =3DE2=3D80=3DA2 PostGIS =3DE2=3D80=3D=
+A2 Open Source<br>
+      <br>
+      <br>
+      --------------020806040001090207000305<br>
+      Content-Type: text/html; charset=3Dutf-8<br>
+      Content-Transfer-Encoding: quoted-printable<br>
+      <br>
+      &lt;html&gt;<br>
+      =C2=A0 &lt;head&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;meta content=3D3D"text/html; charset=3D3Dutf=
+-8"
+      http-equiv=3D3D"Content-Ty=3D<br>
+      pe"&gt;<br>
+      =C2=A0 &lt;/head&gt;<br>
+      =C2=A0 &lt;body text=3D3D"#000000" bgcolor=3D3D"#FFFFFF"&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Hi Karolina,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Attached is the demo dataset which I received. Y=
+ou will
+      probably<br>
+      =C2=A0=C2=A0=C2=A0 need to adjust the excel file a bit in order to =
+have all the
+      fields<br>
+      =C2=A0=C2=A0=C2=A0 from the requirements included.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Please note, that the additional fields on the s=
+hapefile are
+      joined<br>
+      =C2=A0=C2=A0=C2=A0 (layer properties -&amp;gt; fields) and hence no=
+t
+      editable.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Bests and thanks again,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Matthias&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 On 12/19/2015 10:11 AM, Caroline Alexiou wrote:&=
+lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;span style=3D3D"white-space: pre;"&gt;&amp;g=
+t;<br>
+      &amp;gt; Sounds good. Can you call me at 076 227 1139?<br>
+      &amp;gt; Bests,<br>
+      &amp;gt; Karolina<br>
+      &amp;gt;<br>
+      &amp;gt; =3DCE=3DA3=3DCF=3D84=3DCE=3DB9=3DCF=3D82 19 =3DCE=3D94=3DC=
+E=3DB5=3DCE=3DBA 2015 9:11
+      =3DCE=3DA0=3DCE=3D9C=3D<br>
+      , =3DCE=3DBF =3DCF=3D87=3DCF=3D81=3DCE=3DAE=3DCF=3D83=3DCF=3D84=3DC=
+E=3DB7=3DCF=3D82 "Matthias
+      Kuhn" &amp;lt;&lt;=3D<br>
+      a class=3D3D"moz-txt-link-abbreviated"
+      href=3D3D<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias=
+@opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;=3D<br>
+      <a class=3D"moz-txt-link-abbreviated" href=3D"mailto:matthias@openg=
+is.ch">matthias@opengis.ch</a>&lt;/a&gt; &lt;a
+      class=3D3D"moz-txt-link-rfc2396E" href=3D3D"mailto=3D<br>
+      :matthias@opengis.ch"&gt;&amp;lt;<a class=3D"moz-txt-link-freetext"=
+ href=3D"mailto:matthias@opengis.ch&amp;gt">mailto:matthias@opengis.ch&am=
+p;gt</a>;&lt;/a&gt;&amp;gt;
+      =3DCE=3DAD=3DCE=3D<br>
+      =3DB3=3DCF=3D81=3DCE=3DB1=3DCF=3D88=3DCE=3DB5:<br>
+      &amp;gt;<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Hi Karolina,<br>
+      &amp;gt;<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 I am not very avai=
+lable at the
+      keyboard toda=3D<br>
+      y, so a phone call would be better for me.<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 It would probably =
+be best for me
+      to have a c=3D<br>
+      all around 2 o'clock. What do you think?<br>
+      &amp;gt;<br>
+      &amp;gt;<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 On 12/18/2015 07:5=
+0 PM, Caroline
+      Alexiou wro=3D<br>
+      te:<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; Hello Mat=
+thias,<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; I will gi=
+ve you a call
+      tommorow. Or per=3D<br>
+      haps skype would best.<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; caroline_=
+al is my
+      username<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; Bests,<br=
+>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; Karolina<=
+br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt;<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; 2015-12-1=
+8 17:42
+      GMT+01:00 Matthias Kuh=3D<br>
+      n &amp;lt;&lt;a class=3D3D"moz-txt-link-abbreviated"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"mailto:matthia=
+s@openg=3D">mailto:matthias@openg=3D</a><br>
+      is.ch"&gt;<a class=3D"moz-txt-link-abbreviated" href=3D"mailto:matt=
+hias@opengis.ch">matthias@opengis.ch</a>&lt;/a&gt; &lt;a
+      class=3D3D"moz-txt-link-rfc2396E" href=3D3D=3D<br>
+<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.ch">"m=
+ailto:matthias@opengis.ch"</a>&gt;&amp;lt;<a class=3D"moz-txt-link-freete=
+xt" href=3D"mailto:matthias@opengis.ch&amp;gt">mailto:matthias@opengis.ch=
+&amp;gt</a>;&lt;/a&gt;<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt; &amp;lt;&=
+lt;a
+      class=3D3D"moz-txt-link-freetext" =3D<br>
+      href=3D3D<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias=
+@opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;<a class=3D"moz-txt-link=
+-freetext" href=3D"mailto:matthias@opengis.ch">mailto:matthias@opengis.ch=
+</a>&lt;/a&gt;
+      &lt;a cla=3D<br>
+      ss=3D3D"moz-txt-link-rfc2396E"
+      href=3D3D<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias=
+@opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;&amp;lt;mail=3D<br>
+      <a class=3D"moz-txt-link-abbreviated" href=3D"mailto:to:matthias@op=
+engis.ch&amp;gt">to:matthias@opengis.ch&amp;gt</a>;&lt;/a&gt;&amp;gt;&amp=
+;gt;:<br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt;&lt;/span&=
+gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;blockquote type=3D3D"cite"&gt;Content-Type:
+      multipart/alternative;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0
+      =3DC2=3DA0boundary=3D3D"------------090906060809040708060802"&lt;br=
+&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 This is a multi-part message in MIME=
+ format.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --------------0909060608090407080608=
+02&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Content-Type: text/plain; charset=3D=
+3Dutf-8&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Content-Transfer-Encoding: quoted-pr=
+intable&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Hi Karolina,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Sorry for my late reply but the cust=
+omer still was not too
+      certain<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 what&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 he wants to have, so I could not eve=
+n tell about the size of
+      the&lt;br=3D<br>
+      &gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 project. At the moment it looks like=
+ this:&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 He wants to have a polygon layer (sh=
+apefile) and a table
+      (excel)<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 open.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 There will be a 1:1 relation between=
+ the two of them with
+      one<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 field&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 serving as pk/fk.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Whenever the user adds a new feature=
+ in the shapefile, a new
+      row<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 should&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 be added in excel with some fields s=
+et by default:&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0* foreign key&lt;br&gt;<br=
+>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0* area&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0* centroid&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Whenever the polygon is changed, the=
+ two geometry fields
+      should be&lt;=3D<br>
+      br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 updated accordingly.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Whenever the user deletes a polygon,=
+ the appropriate feature<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 should be&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 removed from the table as well by me=
+ans of fk (or silently
+      fail if&lt;=3D<br>
+      br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 there's no such row).&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 The required signals should be avail=
+able from the
+      QgsVectorLayer<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 object.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 There would also need to exist the p=
+ossibility to update the
+      excel<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 layer&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 when it changes outside (QGIS doesn'=
+t do this
+      automatically). The<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 API&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 for this is available, I introduced =
+this recently. To
+      trigger it,<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 either&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 a button or a QFileSystemWatcher or =
+similar can be
+      used.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 This logic can all live in the .qgs =
+project file as macro,
+      so<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 layer ids&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 and field names can be hardcoded (or=
+ some global layer id<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 variables&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 defined on top of the macro, even be=
+tter for
+      portability).&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 What do you think, how much work is =
+this? I think it should
+      be&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 straightforward, would a day be enou=
+gh to implement
+      it?&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 The project should be done by the en=
+d of the year, so it
+      would be&lt;b=3D<br>
+      r&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 awesome if you are available, my tim=
+e is just running out at
+      the<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 moment.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Just call me if you've got any quest=
+ions.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 076 435 67 63&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Bests,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Matthias&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 On 12/10/2015 09:46 PM, Caroline Ale=
+xiou wrote:&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Hello Matthias, &amp;gt; I =
+am still based in Zurich
+      and I am<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 working 60% for a=3D3D&lt;br&gt;<br>=
+
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0company, though&lt;br&gt;<=
+br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 I might temporarily increase it in t=
+he face of some
+      deadlines.<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Is the&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 project over Christmas? &amp;gt; How=
+ long will the project
+      take? In<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 what&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 capacity would you need a developer?=
+ How many hours per
+      project?<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 (At&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 least an estimation of the order of =
+magnitude). If you can
+      tell me<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 more&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 about the timelines and what you're =
+looking for, I can give
+      you a<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 more&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 definitive answer regarding my short=
+-term availability.
+      &amp;gt; &amp;gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Bests, &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Karolina &amp;gt; &amp;gt; 2015-12-1=
+0 11:01 GMT+01:00
+      Matthias Kuhn&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;lt;&lt;a class=3D3D"moz-txt-lin=
+k-abbreviated"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"mailto:matthia=
+s@o=3D">mailto:matthias@o=3D</a><br>
+      pengis.ch"&gt;<a class=3D"moz-txt-link-abbreviated" href=3D"mailto:=
+matthias@opengis.ch">matthias@opengis.ch</a>&lt;/a&gt; &lt;a
+      class=3D3D"moz-txt-link-rfc2396E" hre=3D<br>
+f=3D3D<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias@opengis.=
+ch">"mailto:matthias@opengis.ch"</a>&gt;&amp;lt;<a class=3D"moz-txt-link-=
+freetext" href=3D"mailto:matthias@opengis.ch&amp;gt">mailto:matthias@open=
+gis.ch&amp;gt</a>;&lt;/a&gt;&amp;g=3D<br>
+      t;:<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Content-Type: multipart/mix=
+ed;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;
+      boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh"&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; --SQwxwW01okmj3rUAPx0C75IVM=
+2UiJ3AGh&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Content-Type: text/plain;
+      charset=3D3D3Dutf-8&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Content-Transfer-Encoding:
+      quoted-printable&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Hi Karolina,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; How are you doing? Still ba=
+sed in Zurich?&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; I wondered about your job s=
+ituation at the moment
+      and if you<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 would have=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; any availability in the upc=
+oming weeks. We would
+      have a<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 project or two&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; where we could require an a=
+dditional skilled
+      developer.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Looking forward to hearing =
+from you&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; --=3D3D3D20&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Matthias Kuhn&lt;br&gt;<br>=
+
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; OPENGIS.ch - &lt;a class=3D=
+3D"moz-txt-link-freetext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https:=3D">htt=
+ps:=3D</a><br>
+      //www.opengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"htt=
+ps://www.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; Spatial =3D3D3DE2=3D3D3D80=3D=
+3D3DA2 (Q)GIS
+      =3D3D3DE2=3D3D3D80=3D3D3DA2 Pos=3D<br>
+      tGIS<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3D3D3DE2=3D3D3D80=3D3D3DA2 =3D3D&lt=
+;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Open Source&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; --SQwxwW01okmj3rUAPx0C75IVM=
+2UiJ3AGh--&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; &amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --=3D3D20&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Matthias Kuhn&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 OPENGIS.ch - &lt;a class=3D3D"moz-tx=
+t-link-freetext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https://www=3D=
+">https://www=3D</a><br>
+      =3D2Eopengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"http=
+s://www.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Spatial =3D3DE2=3D3D80=3D3DA2 (Q)GIS=
+ =3D3DE2=3D3D80=3D3DA2 PostGIS
+      =3D3DE2=3D3D80=3D3D=3D<br>
+      A2 Open Source&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --------------0909060608090407080608=
+02&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Content-Type: text/html; charset=3D3=
+Dutf-8&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Content-Transfer-Encoding: quoted-pr=
+intable&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;lt;html&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0 &amp;lt;head&amp;gt;&lt;b=
+r&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;meta content=3D3D3D"text/html;
+      charset=3D3D3Dutf=3D<br>
+      -8"<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 http-equiv=3D3D3D"Content-Ty=3D3D&lt=
+;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 pe"&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0 &amp;lt;/head&amp;gt;&lt;=
+br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0 &amp;lt;body text=3D3D3D"=
+#000000"
+      bgcolor=3D3D3D"#FFFFFF"&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Hi Ka=
+rolina,&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Sorry=
+ for my late reply but the customer
+      still w=3D<br>
+      as not too<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 certain&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 what =
+he wants to have, so I could not
+      even tell =3D<br>
+      about the size<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 of&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 the p=
+roject. At the moment it looks like
+      this:&amp;l=3D<br>
+      t;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 He wa=
+nts to have a polygon layer
+      (shapefile) and=3D<br>
+      =C2=A0a table<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 (excel)&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 open.=
+ There will be a 1:1 relation
+      between the t=3D<br>
+      wo of them<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 with one&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 field=
+ serving as
+      pk/fk.&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Whene=
+ver the user adds a new feature in
+      the shap=3D<br>
+      efile, a new<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 row&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 shoul=
+d be added in excel with some fields
+      set by=3D<br>
+      <br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 default:&amp;lt;br&amp;gt;&lt;br&gt;=
+<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 =3D3D=
+C2=3D3DA0* foreign
+      key&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 =3D3D=
+C2=3D3DA0*
+      area&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 =3D3D=
+C2=3D3DA0*
+      centroid&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Whene=
+ver the polygon is changed, the two
+      geometr=3D<br>
+      y fields<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 should be&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 updat=
+ed
+      accordingly.&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Whene=
+ver the user deletes a polygon, the
+      appropr=3D<br>
+      iate feature<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 should&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 be re=
+moved from the table as well by
+      means of fk=3D<br>
+      =C2=A0(or silently<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 fail&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 if th=
+ere's no such
+      row).&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 The r=
+equired signals should be available
+      from th=3D<br>
+      e<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 QgsVectorLayer&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 objec=
+t.&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 There=
+ would also need to exist the
+      possibility t=3D<br>
+      o update the<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 excel&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 layer=
+ when it changes outside (QGIS
+      doesn't do t=3D<br>
+      his<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 automatically).&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 The A=
+PI for this is available, I
+      introduced this=3D<br>
+      =C2=A0recently. To&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 trigg=
+er it, either a button or a
+      QFileSystemWatc=3D<br>
+      her or similar<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 can&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 be us=
+ed.&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 This =
+logic can all live in the .qgs
+      project file=3D<br>
+      =C2=A0as macro, so<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 layer&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 ids a=
+nd field names can be hardcoded (or
+      some gl=3D<br>
+      obal layer id&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 varia=
+bles defined on top of the macro,
+      even bett=3D<br>
+      er for<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 portability).&amp;lt;=3D3D&lt;br&gt;=
+<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 What =
+do you think, how much work is this?
+      I thin=3D<br>
+      k it should be&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 strai=
+ghtforward, would a day be enough to
+      implem=3D<br>
+      ent<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 it?&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 The p=
+roject should be done by the end of
+      the yea=3D<br>
+      r, so it would<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 be&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 aweso=
+me if you are available, my time is
+      just ru=3D<br>
+      nning out at<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 the&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 momen=
+t.&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Just =
+call me if you've got any
+      questions.&amp;lt;br&amp;=3D<br>
+      gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 076 4=
+35 67 63&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Bests=
+,&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Matth=
+ias&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 On 12=
+/10/2015 09:46 PM, Caroline Alexiou
+      wrote:&amp;=3D<br>
+      lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;span style=3D3D3D"white-space:
+      pre;"&amp;gt;&amp;amp;g=3D<br>
+      t; Hello<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Matthias,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt; I am still based in Zur=
+ich and I am working 60%
+      for a<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 company, thoug=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 h I might temporarily increase it in=
+ the face of some
+      deadlines.&lt;br=3D<br>
+      &gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt; Is the project over Chr=
+istmas?&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt; How long will the proje=
+ct take? In what
+      capacity would<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 you need a de=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 veloper? How many hours per project?=
+ (At least an estimation
+      of<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 the order=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0of magnitude). If you can =
+tell me more about the
+      timelines an=3D<br>
+      d<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 what you'=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 re looking for, I can give you a mor=
+e definitive answer
+      regarding<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 my shor=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 t-term availability.&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt; Bests,&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt; Karolina&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;gt; 2015-12-10 11:01 GMT+01=
+:00 Matthias Kuhn
+      &amp;amp;lt;&amp;lt;a<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 class=3D3D3D"moz-txt-lin=3D3D&lt;br&=
+gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 k-abbreviated"<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 href=3D3D3D&lt;a class=3D3D"moz-txt-=
+link-rfc2396E"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"mailto:matthia=
+s=3D">mailto:matthias=3D</a><br>
+      @opengis.ch"&gt;<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:m=
+atthias@opengis.ch">"mailto:matthias@opengis.ch"</a>&lt;/a&gt;&amp;gt;&lt=
+;a
+      class=3D3D"moz-txt-link=3D<br>
+      -abbreviated"
+      href=3D3D<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthias=
+@opengis.ch">"mailto:matthias@opengis.ch"</a>&gt;<a class=3D"moz-txt-link=
+-abbreviated" href=3D"mailto:matthias@opengis.ch">matthias@opengis.ch</a>=
+&lt;/a&gt;=3D<br>
+      &amp;lt;/a=3D3D&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;gt; &amp;lt;a class=3D3D3D"moz-=
+txt-link-rfc2396E"<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 href=3D3D3D&lt;a class=3D3D"moz-txt-=
+link-rfc2396E"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"mailto:matthia=
+s=3D">mailto:matthias=3D</a><br>
+@opengis.ch"&gt;<a class=3D"moz-txt-link-rfc2396E" href=3D"mailto:matthia=
+s@opengis.ch">"mailto:matthias@opengis.ch"</a>&lt;/a&gt;&amp;gt;=3D3D&lt;=
+br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;amp;lt;&lt;a class=3D3D"moz-txt=
+-link-freetext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"mailto:matthia=
+s@=3D">mailto:matthias@=3D</a><br>
+opengis.ch&amp;amp;gt"&gt;<a class=3D"moz-txt-link-freetext" href=3D"mail=
+to:matthias@opengis.ch&amp;amp;gt">mailto:matthias@opengis.ch&amp;amp;gt<=
+/a>&lt;/a&gt;;&amp;lt;/a&amp;gt;&amp;amp;g=3D<br>
+      t;:&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0
+      &amp;amp;gt;&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;blockquote
+      type=3D3D3D"cite"&amp;gt;Content-Type: =3D<br>
+      multipart/mixed;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0
+      boundary=3D3D3D"SQwxwW01okmj3rUAPx0C75=3D<br>
+      IVM2UiJ3AGh"&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0
+      --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh&amp;=3D<br>
+      lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 Content-Type: text/plain;
+      charset=3D3D=3D<br>
+      3Dutf-8&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 Content-Transfer-Encoding:
+      quoted-pr=3D<br>
+      intable&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 Hi
+      Karolina,&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 How are you doing? Still
+      based in Zu=3D<br>
+      rich?&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 I wondered about your job
+      situation =3D<br>
+      at the moment and if you<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 would&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0
+      have&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 any availability in the
+      upcoming wee=3D<br>
+      ks. We would have a<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 project or&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0
+      two&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 where we could require an
+      additional=3D<br>
+      =C2=A0skilled<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 developer.&amp;lt;br&amp;gt;&lt;br&g=
+t;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 Looking forward to hearing
+      from you&amp;=3D<br>
+      lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0
+      --=3D3D3D20&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 Matthias
+      Kuhn&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 OPENGIS.ch - &amp;lt;a
+      class=3D3D3D"moz-tx=3D<br>
+      t-link-freetext"<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 href=3D3D3D"&lt;a class=3D3D"moz-txt=
+-link-freetext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https://www=3D=
+3D=3D">https://www=3D3D=3D</a><br>
+      "&gt;<a class=3D"moz-txt-link-freetext" href=3D"https://www=3D3D">h=
+ttps://www=3D3D</a>&lt;/a&gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3D3D2Eopengis.ch"&amp;gt;&lt;a
+      class=3D3D"moz-txt-link-freetext" href=3D3D"http=3D<br>
+s://www.opengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"https:/=
+/www.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&amp;lt;/a&amp;gt;&a=
+mp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 Spatial =3D3D3DE2=3D3D3D80=3D3D3DA2
+      (Q)GIS=3D<br>
+      =C2=A0=3D3D3DE2=3D3D3D80=3D3D3DA2 PostGIS<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3D3D3DE2=3D3D3D80=3D3D3D=3D3D&lt;br=
+&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 A2 Open Source&amp;lt;br&amp;gt;&lt;=
+br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0 &amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3D=
+A0=3DC2=3DA0
+      --SQwxwW01okmj3rUAPx0C75IVM2UiJ3AGh-=3D<br>
+      -&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;/blockquote&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;span style=3D3D3D"white-space:
+      pre;"&amp;gt;&amp;amp;g=3D<br>
+      t;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0
+      &amp;amp;gt;&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 -- &a=
+mp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Matth=
+ias Kuhn&amp;lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 OPENG=
+IS.ch - &amp;lt;a
+      class=3D3D3D"moz-txt-link-freet=3D<br>
+      ext"<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 href=3D3D3D"&lt;a class=3D3D"moz-txt=
+-link-freetext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https://www.o=3D=
+3D=3D">https://www.o=3D3D=3D</a><br>
+      "&gt;<a class=3D"moz-txt-link-freetext" href=3D"https://www.o=3D3D"=
+>https://www.o=3D3D</a>&lt;/a&gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 pengis.ch"&amp;gt;&lt;a class=3D3D"m=
+oz-txt-link-freetext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https://ww=3D"=
+>https://ww=3D</a><br>
+w.opengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"https://www.o=
+pengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&amp;lt;/a&amp;gt;&amp;lt;=
+br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 Spati=
+al =3D3DE2=3D3D80=3D3DA2 (Q)GIS
+      =3D3DE2=3D3D80=3D3DA2 P=3D<br>
+      ostGIS =3D3DE2=3D3D80=3D3DA2 Open<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Source&amp;lt;br&amp;gt;&lt;br&gt;<b=
+r>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;=
+lt;br&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =3DC2=3DA0 &amp;lt;/body&amp;gt;&lt;=
+br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &amp;lt;/html&amp;gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --------------0909060608090407080608=
+02--&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;/blockquote&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;span style=3D3D"white-space:
+      pre;"&gt;&amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt;<=
+br>
+      &amp;gt;=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0=3DC2=3DA0 &amp;gt;<br>
+      &amp;gt;&lt;/span&gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 -- &lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Matthias Kuhn&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 OPENGIS.ch - &lt;a class=3D3D"moz-txt-link-freet=
+ext"
+      href=3D3D"<a class=3D"moz-txt-link-freetext" href=3D"https://www.o=3D=
+">https://www.o=3D</a><br>
+      pengis.ch"&gt;<a class=3D"moz-txt-link-freetext" href=3D"https://ww=
+w.opengis.ch">https://www.opengis.ch</a>&lt;/a&gt;&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 Spatial =3DE2=3D80=3DA2 (Q)GIS =3DE2=3D80=3DA2 P=
+ostGIS =3DE2=3D80=3DA2 Open
+      Source&lt;br&gt;<br>
+      =C2=A0=C2=A0=C2=A0 &lt;br&gt;<br>
+      =C2=A0 &lt;/body&gt;<br>
+      &lt;/html&gt;<br>
+      <br>
+      --------------020806040001090207000305--<br>
+      <br>
+      --------------040302090208010900070708<br>
+      Content-Type: application/zip;<br>
+      =C2=A0name=3D"Beispiel.zip"<br>
+      Content-Transfer-Encoding: base64<br>
+      Content-Disposition: attachment;<br>
+      =C2=A0filename=3D"Beispiel.zip"<br>
+      <br>
+UEsDBBQAAAAAAJuJj0cAAAAAAAAAAAAAAAAJAAAAQmVpc3BpZWwvUEsDBAoAAAAAAKiJj0dQ<=
+br>
+PIEOBQAAAAUAAAAjAAAAQmVpc3BpZWwvQmVpc3BpZWxfTWFzc25haG1lcG9vbC5jcGdVVEYt<=
+br>
+OFBLAwQUAAAACAC3jI9HG+sUF0sAAAA0AQAAIwAAAEJlaXNwaWVsL0JlaXNwaWVsX01hc3Nu<=
+br>
+YWhtZXBvb2wuZGJmrYy9CcAgFIQPLFJlgVRvgUCUxNQhC+gEVto4gdv7UyiI5fs4joODT7jt<=
+br>
+EAA+WKzwwUWf2vxrmenfSV3yOW9dooiFIdTEQhe+kjjIUEsDBBQAAAAIAKiJj0c7h9VlGAEA<=
+br>
+AMkBAAAjAAAAQmVpc3BpZWwvQmVpc3BpZWxfTWFzc25haG1lcG9vbC5wcmptUF9rgzAQ/y55<=
+br>
+DpI/pppHZ6V1zFqs3YtIyNy1FZwyTRns0+/sRkHWe0iO3z/ubl/kz/GhIvGWaybNyyuThG6S<=
+br>
+fDOD+JiZmLF1VB6ziqzvwGG/TYo8XVfkCaYJOsNDnxO6kkEgdeBxpajQGn8RchHWNd0XaZZk<=
+br>
+mDoC9F9tcyGU1fS4S0uMhTOiCHiMB76SQgvFtfaxUWidp0ziMs13FdkOru3B5G9d+3kFk8HY<=
+br>
+WDeMJvpuP67uYmLoHYwETVERZUmZFBXprGvd9R3McDLNL0/9laeV8Jn6q9XSMfTnf5bA86VW<=
+br>
+obzXwmJvA+BWmi3wqbEdmJNt3IAZfMGdbDeBATvhTmc8HpvrgaIfRne5ScSsuN8tAwe30PoH<=
+br>
+UEsDBBQAAAAIAKiJj0cAGq4oiAEAANoCAAAjAAAAQmVpc3BpZWwvQmVpc3BpZWxfTWFzc25h<=
+br>
+aG1lcG9vbC5xcGptktuOmzAQhu/7FJGvLeoTB1/SLAJWTYjAaXeFIouSCUFiQQVHlfr0NZtm<=
+br>
+V1EYX1gz83/2eMa7PHteFyVaJ1QSvvq6+v6DcITjKItv4dl/CtV+8+kWuyTKs/SpRN9gmqBb<=
+br>
+0UBQhD3u+1z6DnVdzKS0OwsoC3C4V0mWp+q1RNGuiBFGPiECHQ5YZT/jIhCl5wtHYOo6FAvi<=
+br>
+OhyT6zossB4VcmZ3ebqJbFHxCND/aeszssSjPJCEzvL9NlUlOkJj5VbpEOoLlzPJXCql4HwB<=
+br>
+lZSxGX3MiI8asudordJsW6JkMG0POvvVtb8voDcw1pUZRh3+bd8u5qzX0BsYkYXCPNxEKspL<=
+br>
+1FWmNZcj6OGk62seC8+RLrNt+G/ePTH0zQPiO4JLN+AfdodU1wIQluQuPkJt2lMLR92M7VFX<=
+br>
+fdPBg2iqqw70qarNYC+id7lT1U2goZrswxs7fjLbgqIfRnN+l7B3yW0Yb2BGsIcutZ5cpxa+<=
+br>
+pPYbviIchYW6uS8Ib7NcJUuTYdQPZvLLP1BLAwQUAAAACAC3jI9HfCwUd2gFAACoBwAAIwAA<=
+br>
+AEJlaXNwaWVsL0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuc2hwhdQJUMxRHAfwrd3tnyOLiNzH<=
+br>
+sttB7qlG5a3K2eEo3UmSq4NKNRQdQjFUVNugoqJQUe5bNqNQtI1SsiKiS8dKtY5vI/47mPGf<=
+br>
+/c/sZ957v/d7v/fen8Hg9WX882GK65gMBhv/RrfqaRZ08ojJLdXLO+wpIl3RxrHU4pPkVDcX<=
+br>
+ozMUYfz/UcBPuSdWi+z1Vm1NPlH72rFI7TAdK2n8vp2BiRRRQJ8xvYM+LhlX6IG+1dKu8goh<=
+br>
+RSrHDG+Kg4/N3ZaSCtuH2+Xmw1qlwa5sjM1zrRA0a9Kx0nx9d3ERu1CsQHhw/3GPv2jD1hEd<=
+br>
+3FyMr9KtLJ4O95/93qw7gSKjnbwH68FF29eoFSTQuaVJSq5/j6eI1YTnLqZw1gbDPB14d5+H<=
+br>
+kQQ22ZfneScO47+SsUbwwqH8CbNgvwOhqzTgkw1Jc8qPUEQlpLt+Mjwy6GjoeVg7KqCJA6dQ<=
+br>
+B2yY8P3gllAVWFbN8jiF2jTw5sXIsJ6lC2WZpnB+C2fwHbnabW9mZ6TDxaaBj7lwqcRXHAnX<=
+br>
+3exX1g637st/Ewgr+R/qr4n4fS4X3baEL6kIn0TC01ePKDaC/fV4fprI99fexK7T7ayHFV5Y<=
+br>
+Cw3hhjgL3RasV7g5RV8A1wqt2mahPgKDg9JlMFu3UdkI9SRVqxVt4Ba1du/98CCpZ4UD7Dnc<=
+br>
+3zwL/nM/scWKeHPkz9iMyAdLc05TZMC7Ic8Suni9Z+znuVDtPRfqZx53fUXfB2GvfXIzKKJR<=
+br>
+VCt6C4eX8T3mZ1JE3Dyp4wFsVRpRLIR/xV749O30T3B8wU3nuk469uIDD9cMxVxjS1RdR8Ls<=
+br>
+lWVuAtj82UWGCP1L9DtnWnfJxWeqbwyBzWxZ5GxGT92qSiLguhcG/psy6NyP9XGuFWEtHxos<=
+br>
+N8V20WurUk0r9oV3XFCsUUF/6cybifZwmIP/Oc0Men5ZxErJdDjMS1SoDa9XaghYAItD3FzH<=
+br>
+wHb26dVW8JTDbBkHXmlXxgmB/6xPz2XG/avuqXOe7UiZCYP/+y6zzbpmWSjxSd68wMphGyjC<=
+br>
+Qh/dniL31puLdxpeKfdKwhNFPkms/BgocqTIL6fc4QqNnSiSXH+plGLyyek0pyv5cKDK00Yf<=
+br>
+uMKhbaOGM0XaM+MkV+FS/6tLMtFeUTu+wITFJywd828ctJsftQk/A0vIlMjT8GDJ/ithbD55<=
+br>
+P9k9g7eaIuMGe1nkwxe9nn2+60x7zruaHD84Lz2q7Qa8ZJTXVn8nuv1RzE5tLXiilmTEG/jS<=
+br>
+5xw7U+TPzMocbww3qzsdykYddoqiHx3H/OJv8dlTHSgSZcO1LEW+45+2CobCddGThiYy6bqd<=
+br>
+ZPGTeEy6/5/1eTWM5bgb8QbWs/zYbhQZTgzSAmDBCSFvE5zdVDgkBu7OC8hlrqPzcZ54Yngx<=
+br>
+nOWb4RAE688JSXV3p0hs9ixBH7l9mr1tZpAAvhddFJToTu+jjeH6TguMrz5Wk+qN8bwBFzI9<=
+br>
+XXHmvsVEu2G++RoBUc1rKKL0+YNAHZZaj/6ijHYtpQu3G7AeW5GpoxguzDXSUUJ7ufmck+PW<=
+br>
+4tvBsR+gB09tq3/YiPaA2OzZznI+W2a7aCscuaOSo7/27/WnuJVHjUJ9jHOsm32wn1vmJs3X<=
+br>
+gP3c61Mq4JenQpN0YAQ1a3GhiK/VQM4iOIt5zecWHLanNW0v/Oqa+WQu8hd1B1tWwnONDTd7<=
+br>
+wxcttivsQf7p8SmfriGfvUa54blMev32OvWUBHZXE363Rn+1E43RHkx6/uVOVx2PIJ5B0aiS<=
+br>
+due/861Unrmfq0Dv/2yN/N1FcvdocoekKYpBn4ef94w+b3Z6UYpJsOqu5OQYWFm9W/mLXHu/<=
+br>
+GZvFwxA/2K5mr4vD3/P9AFBLAwQUAAAACAC3jI9HIgTBNlcAAAB8AAAAIwAAAEJlaXNwaWVs<=
+br>
+L0JlaXNwaWVsX01hc3NuYWhtZXBvb2wuc2h4hYahDkBQGEY/M7umCLJ8jaYp1/6g20RJ8BYe<=
+br>
+RtAUTRM9hixfEzTfA9ic7ewcQAf4xpwu4HFiW6T7o6XaonVoldzNFdZZIuPUd+WsBP/kgONT<=
+br>
+w19YS48XUEsDBBQAAAAIALGMj0dC5E2EqxkAADVbAQAXAAAAQmVpc3BpZWwvQnNwX01TUG9v<=
+br>
+bC5xZ3PsXely40QQ/s9TCFPFQiWxrFsG21WbkA0LzmYhuxy/XLI0tsXqQpKTmOJReBT+8WL0<=
+br>
+zOi0k92RtDZMlUOxkWa6Wz3dPfONjnSPPv3m5uLNr68vhd+XbiK8fns+fXkhPFulafSVKPqx<=
+br>
+bfft0BdxZ99JnWfCs9tfb99cXj+bfDIiHFEc/obsNLB8NO71hDsUJ24YjHty3+xLZz+7KOhN<=
+br>
+PhGEUeqmHpqMRPKbtHjWBsVnaYzQ2TIO15GAHiIrcJAz7kk9wV4h+x0+/iH96qsLetITsstg<=
+br>
+fpBgr5M09EGDCMWpixIRt9clk0MWyS40fG8FaRjMrmJrPf/nb2AIZrN//prjIdmrNIk8K5AH<=
+br>
+kibJ8L8hKaqqawbVKecVKrynwhYvUfu9iovbmncc0LUVRUgudVZkSdGHhc7nyE0iF3mHVyy/<=
+br>
+8uzaSpLAWvkoCkOvalxJHZomVfQJ8rZq561l5JHWGHlWCqFLmUe+FdlWcGclmah14KbJxEcp<=
+br>
+eHQk4rO8Bz2kKEgLXR58N5gYpqxow74pD1RjOBioqiQNZN1URyLuLmg3+EQaqoYBtIPBUB0A<=
+br>
+layYg6E2kEci6S7lWg8gVx1ISt8YGGAizVBUQ9YMVdFALnSXcuEE5GogpT9UFR3oJLCtKcuS<=
+br>
+CnJxd26hUntsgzAlNpgMRmJ+nHXReU4MNJFGYuU0I3BQkroBNWGcFKokETRZXowWySZrLeSp<=
+br>
+kxP8a5yEPopt4QQcMBuMVb0/1GR1oGU/OnSEAXQYfVUZaqZS/Agn76BZEk4e4Jc+wD/CyQaO<=
+br>
+5ewYeV6UjOcoSZAnnKTh/TIx1bFuqH31VNL60ilcpa+cDsh/QE/cOvaFkyCcOaAxHadaURuG<=
+br>
+5jpgWmk4EslxrQ9OZckwJdxX67LW6QoaLl/fXn2VUeCmnCY3oB27EbH5xbfScKAIojD9aaCM<=
+br>
+xGpXyVD6wLLjMNj4E2rIkbjbU3KBTdwoCV0n76LmGYlFxy7PEoXL2IpWrr3wrOVkYXkJGon1<=
+br>
+1sLj4pbLaeN2eJTLx8wOw9jBfWiWxlaQLMLYn7nBIsRUH6ATsNznYMqXsKqU5u0JSWw/0fyN<=
+br>
+la79N7mAce8MmrGUx9rJhfGCdW95zuwPWGZgdZt5CLTIFitVVgaaYujGsCfyoq8+MGFN+l/p<=
+br>
+2wp6/08DYEW0ApoYYn8k1lBodOcm7tz13HRzFsUoQWkibu+kCuoSFs/gChiZA2vuYTAelLjp<=
+br>
+psifMGo+EjF1nbWN1x6T8/g+JSPNDVaO5hEcr1jJQ0sUOMI6csCq38TWvRssbzDTuJfGa0RG<=
+br>
+X5DRXYtToaJ+hZ1EQOkf38Y02fYJySq8f4EgemJ0Ea6DtOaDheshsgupXROgwcFnZKnNiLfV<=
+br>
+xpyCm7wMbmDXfeeie5DbdUoJJMY8GJlUmV5ioWTujIoaH9WeeTD+V0Z7PBL/P3apTdL/zEqM<=
+br>
+S0Zbq+UNcFzsckhnQlWw6UgVojzdq1P7wn7Z9df+rW3ha56pfV3TdQmdSaA87HkrfRI6GYB+<=
+br>
+ietHnrvYZMvEt26QJlhZLGlqzZGXkVN+0vJeAW9Cj7DD1ghuFeLNuPc69DbLMCgpr60HIoLQ<=
+br>
+pZsIDu5gfGEMnrES0nVuJcj5qVjsX8DuClQoRUxDoCL8SUFOdNvlKddZp8FC7xRssIZaSbiO<=
+br>
+bTTpi48L6CeraCSWhJR395Y/3wrPE0A6O4WO/LDoe4c297C+T92kaMOwZ3lrLIf8LqNohzhH<=
+br>
+QjxjnhjsSCwoCp5sO/rU/QrndyxP3bMw3LWw3be0uHNpe+/S7u6l4f3LI3cweTOJlHIAdy7d<=
+br>
+V9kh7OBgtr198+LM7E1A6EjMuyv0CK+jlw9455YQS908n17eXlx+IfTQYgbR3DsVnn3upV+/<=
+br>
+ejudTp4JX4KUbaZCHF0yfgvdoBq8+ByvIhdkq/Qa9HcfyDqBO17AbHBeETQhh/gBTY2umDKw<=
+br>
+LlnxEqUlR66h4CM/jDcXFmBVIXiKp9TLp8GzuvTX9M59WgxvgS9IN7X5wn5GN3lJuvHQmW8F<=
+br>
+1hLFoHccw1OL7Eng48QZcFYv/oS4UhHHTfGKTFTbahPuXQdMcifTJfsNPDe5hC6Cz6V9alGX<=
+br>
+c9h4YEvhZXK99lJYnQMKKGSwWIY1z9DgbYK+TX2PYi1ez2+CN2GET8VqdOYqNdey8DDxrNxF<=
+br>
+3cHB1VX4UlflS12NL3V1vtQ1+FLX5EvdIV/qSgPO9JU405czYJM4QzaJM2iTOMM2iTNwkzhD<=
+br>
+N4kzeJM4wzeZM3yTOcM3mTN8kznDN5kzfJM5wzeZM3yTOcM3mTN8kznDN4UzfFM4wzeFM3xT<=
+br>
+OMM3hTN8UzjDN4UzfFM4wzeFM3xTOMM3lTN8UznDN5UzfFM5wzeVM3xTOcM3lTN8UznDN5Uz<=
+br>
+fFM5wzeNM3zTOMM3jTN80zjDN40zfNM4wzeNM3zTOMM3jTN80zjDN50zfNM5wzedM3zTOcM3<=
+br>
+nTN80znDN50zfNM5wzedM3zTOcM3gzN8MzjDN4MzfDM4wzeDM3wzOMM3gzN8MzjDN4MzfDM4<=
+br>
+wzeTM3wzOcM3kzN8MznDN5MzfDM5wzeTM3wzOcM3kzN8MznDtyFn+DbkDN+G/xG+lS1J0QR/<=
+br>
+pg9ZEOAv7u9kIdn489Dz0B3yEiKbDiaB5AkeuiWd1b/np+RE1FabYHnRyqokUIGEMl5uizK4<=
+br>
+qjlBhMhK6EVtjxzd4lwq6AVh9EKcaqdkreepiIR3496cpJ2agSnT1QzyCMxw4o0ZSb8CWW6A<=
+br>
+9bQ0zi63HXphTOgg/9qprBinkq6eypr2Hh6SIyHdZPLn2GrvoQ4XC8gHxqAKJWw+BMpHeAj1<=
+br>
+9fX7iNcpDq9ZOW6SrgSPmIGrHHUSeq7DwEHcQq/Tl3VWBsbBvE+dMpMbbiybaJxWJ8t2NJfJ<=
+br>
+NsVqzLt/IOIRgfwLOYRWIQSmFSOrmsiiMqueyoFavVLWuBHeIchIRGY0zLmeQBLqjHuRBZH1<=
+br>
+QXLRcpxv3JimZqGzNZOQpZJikoGn+g0JpYJ5wMI492DI16GDGrKtFwsUn3dhvsAx/LzghBBu<=
+br>
+yHvegfeqA++P7XhxJqvmjqW838GadYunSyFAV9m5X4WwHLcIKsp96/5RXlZqxvcygNQ1b3Eq<=
+br>
+pS5Xz2RkCb5aBVtVjBu0FkOSVEbNOG1IqBND/qSXQQKJi5rbIef/eRV6LdgdZLs+EBecChOX<=
+br>
+m+DUb8/bhA3wNlyEMEeXUMH8nYIEC+gUHlkS0OaqL/JUUAUrE1cYpOeh1+Z6wHlhRW4KDM2G<=
+br>
+iDlfWL7rbQq+61vhdgUJwoRvvKUgswp5Cdd27XaqT1GawmyOLBtamus/dX03fe0+IA8WhBaT<=
+br>
+CWTgCNuVIEGSOWYtIMQKCc2mJeaucZl9mQmCMGPXBRnL6LwcYyGdF2MiJI3ddwj2ne0G8hZv<=
+br>
+9OCsZRD8jNzlqry0xqz2z3C/0zJ8Y99KX619SDTbwnluUia7y7hJ3lImZnJAd5dlAHWR0imE<=
+br>
+Sjnd1mxy8BrFr624RRB5aJE+tW3HyQaZZMByhF06xQ0tnAqpUy/W8R1yLlZW/BzfArwsnSsz<=
+br>
+GWFXxE1lSp0xC9kdhcy4IvoIUiJOYSa2MYAbZEl6YU1p6H4/f1jz3HOXQUveb8k60Gx7jB+n<=
+br>
+OPXd/CuY3Gw3i+EcUs/bHmo8+2A7Z6OtgG02aCLBR0HD4RZsOHVuwz1H5K2TBLzTPDJIHneI<=
+br>
+6x/xw4A2a16WIvT83TJ2yG1fIeGzBflhE+KGsZuWOyYmsP59bTlb9/JMd3sximAyfOPi4gR2<=
+br>
+w9lQ4+0G8TVR3YC+LgrkNIw98CGgJer8eCXGs/wpKRMWCeSxE9iztmNk3TRSZjdoNnjCVWau<=
+br>
+bj7qZGU54f3uQx6dnZk+qGnm9ArnVWvOH9twtntEQ3nphCUIWrpJYZrvFQE41hvGeJX7ygvn<=
+br>
+ltd4raMiPsLWjAr6CHuzqiCy22xjkx8tx11XOPsNvEF5n+P3ITeB13ryUDEfwaZU0EewKRXU<=
+br>
+2qb160qM6xdhpQ/PLHjGbpf2VBoIIPdsjcccoZaPqSkv3K+1fVa9LeC8tJtsthFw1VXAjx0E<=
+br>
+/Ixf7bS2IOHuOg9qwrrOhZqwdvMhQq0RIyKvSDvEFWZv9xqkYG/3JqRgb/cyhLC3fZ9BmD8O<=
+br>
+TkXo48BUhLqgVM79S+vr/tqCE2OA292AREx3+xExbc1HmNtYjzC2Mh69o2z4xKDG+mYTtTHU<=
+br>
+7U9XMO+avSkgjJ2f2hIpnR/bFlLajh9Y28YJ5m0TJpivTZRUNztt2BtbKIVPl9rBCeZsc5+G<=
+br>
++drcpWG+NvdomK/NC9h1hF+8wv6RVJ5q+trrHirZ4GejjWbdQ5tPMTZPM43Ep75CGRUfcODa<=
+br>
+ssVJ0b2gj0fPq1TbbfUqT9XIxdQ7jQV59pKYvMKc0EItI7HaWFCSMWJh5KDebKXwJme+TvMx<=
+br>
+lT30Czr69VlPwO7HX+Ql9ip2F+k6WNaMuiCvJuss8Hv3LeX2Z0F1Flr3qRdVbsLrLHN47Vpn<=
+br>
+CYNtB7vkDeeHqNb5K6gPESb5q64PEZLPwupEMf3+TphnISUsoarjDuNDlanWs3myh364JjwQ<=
+br>
+qRv4t2a8TU2Lh6eEkO+Wapcoo1+AiljhtqYWfliPnyY/ymRDB4prDPTDjcctQ5ZIahtymFmH<=
+br>
+Hu8KYYqWR/iyjwN2vVejLd4psJFDcS54GgnLGjyd2OodiY9PLPrZK36RCEXf8sOdPhfGJFbX<=
+br>
+D9KarCPy+hBP4p22TwpvBtkOJ7tI2bBzqTCGVQJiegIFCVFswUjoOdas7C1ZHmxv7aDnxZh+<=
+br>
+vr4V39P7otJbGMKyaSHyY2GqFuq2/365rbqc/XkOZ3+dw9kf53D2tzm8/WkOX+py9oc5x8JU<=
+br>
+e9aXM2A7Fqbas76cYduxMNWe9eUM3o6FqfasL2f4dixMtWd9OcO3Y2GqPevLGb4dC1PtV99j<=
+br>
+Yao968sZvh0LU+1ZX87w7ViYas/6coZvx8JUe9aXM3w7Fqbas76c4duxMNWe9eUM346Fqfar<=
+br>
+77Ew1Z715QzfjoWp9qwvZ/h2LEy1Z305w7djYao968sZvh0LU+1ZX87w7ViYas/6coZvx8JU<=
+br>
++9X3WJhqz/pyhm/HwlR71pczfDsWptqzvpzh27Ew1Z715QzfjoWp9qwvZ/h2LEy1Z305w7dj<=
+br>
+Yar96nssTLVnff8jfKsVpqINUP+oUrZnlJ8KOK2Av/Yha1B2ScgZXWmQ0MnAzKtOxVaS4kR/<=
+br>
+Kysh3edWgpwykSnOI4xFFFq4zuR7K0jDYHYVW+v5P39DYo1gNvvnrznO2WCvUpyRJJAHkibJ<=
+br>
+8L8hKaqqa8ZIBMYil4mVWkm4jm00AavhXCNry4McA1O0hCwp48Hnlh99bcfJ+PL17dVXsmSY<=
+br>
+EmlyIhenUBlbnkfOs9wqF+E6SMcSZaOp28dQhmOJxChYkkZsFhAHl5i9RTVFSTcpjpSMyfE6<=
+br>
+9sarNI2+EsV7P+kvUdhfxn17Ja7rjCOxHEUxsNRNPQSpGPDvstWaQ1IRSIcAHflh0QdpDe4h<=
+br>
+M94UMpFWnE/yWwA5+V0GwBZxmUYGx2nmFqHillPhn7+2lM7JS6lJTOIpP4sgg4TlxWiRbLL2<=
+br>
+MpHOb+rkBP8aJ6EPaT6EE0h7MRuMVb0/1GR1oGU/OnSEAXQYfVUZaqZS/Agn76BZEk4e4Jc+<=
+br>
+wD/CyQaO5ewYMsdEyXgOeS4gI81JGt4vE1Md64baV08lrS+dwlX6yumA/Af0NCeIL5wE4cwB<=
+br>
+nUciUZMqXg4QYk8aSsORSI63eqGBhBju3eqEpCgraCJhmNHgpi0qB9LkxG6E011MLr6VhgNF<=
+br>
+EIXpTwNlJFa6doxJ8xtbdhwGG39CTToSd3pqfGAfN0qgQE3eSU01EouOx7ggiJeQWWnl2guY<=
+br>
+zhOSOnEk1lurS8+jQUCM17xQlwtxmLqLDa2pUOZuwflFF7BIOkyJl6DpDiTFk3sffJyfFd1B<=
+br>
++A1Mxuy0bMATRZhbgfMqJBlA1gm6je1XpG8r5VMpIV9Kz8hUOSNrw5lvBdYSVlZ7HccwnnGv<=
+br>
+WBB3iTPUqEp/Qlw5PLeGS3RNzuujCSEuYZFu8BBo0cBzGBLUC4DTOTmS6lUIcSPJwYNXqFzR<=
+br>
+UnI9wVQNc+oXrvTMSVLuAIINL9iYTCibCMTk7ds4tlqjBK/SJDGNQNSCzD5XOPUPTYxatN1A<=
+br>
+w6A8/TFLGVS2nBfJVAUI3A1JuY3xgLAVF6lLuU1hNMt0tZs+NxsraIdrKMYYI28ggTk5BTPC<=
+br>
+tasexB5iSgPWFZVhVkLBvHiD6xQUJ7l/72BlCJuBNSQRjJBc4rEiS4o+fBKP+yJl6D94ycP/<=
+br>
+D+PyrdjHAjLAqSWAmHACA13745+vbk2VAUwUVZOfBBNVkfUPYAkm+SCUgDKCqTbBkGw0jUGE<=
+br>
+DLsZhkC2848NIeLOai/AAhU6ZDK+ffPiDG4c4XKPLP9Z+Yiy6M7k4ub59PL24vKLHtmzS71T<=
+br>
+4RkuFPPq7XQ6efbln38+g4Y//9wik9nIFDYylY1MYyPT2cgMNjKTjWzIRiYNGOkY/SAxOkJi<=
+br>
+9ITE6AqJ0RcSozMkRm9IjO6QGP0hM/pDZvSHzOgPmdEfMqM/ZEZ/yIz+kBn9ITP6Q2b0h8Lo<=
+br>
+D4XRHwqjPxRGfyiM/lAY/aEw+kNh9IfC6A+F0R8qoz9URn+ojP5QGf2hMvpDZfSHyugPldEf<=
+br>
+KqM/VEZ/aIz+0Bj9oTH6Q2P0h8boD43RHxqjPzRGf2iM/tAY/aEz+kNn9IfO6A+d0R86oz90<=
+br>
+Rn/ojP7QGf2hM/pDZ/SHwegPg9EfBqM/DEZ/GIz+MBj9YTD6w2D0h8HoD4PRHyajP0xGf5iM<=
+br>
+/jAZ/WEy+sNk9IfJ6A+T0R8moz9MRn8MGf0xZPTHcNsfI3HnFrO4+aTPZH4L3Vqu44KOvP9J<=
+br>
+xP/qyWKHpMvEFJ1ezh0i6TJo2THX8sG07PShycG07PR5ycG07PRRycG07PQpycG07PQBycG0<=
+br>
+7PTZyMG07PSxyMG07JYj+XBq8oE+3TIiH05NPvCnW/7jw6nJBwJ1y3Z8ODX5wKBuuY0PpyYf<=
+br>
+KNQtk/Hh1OQDhbrlLT6cmnygULcsxYdTkw8U6paT+HBq8oFC3TIQH05NPlCoW77hw6nJBwp1<=
+br>
+yy58ODX/be/setOGoTD8V9BumQih0MIUkLZ1qya1EivbNXKJod6MncVOV/br54R8EujQbHk7<=
+br>
+kqkqgn18/Dhfb27OGxgqpOclbA8ThgrpOQfbw4ShQno+wfYwYaiQniuwPUwYKqTnAWwPE4YK<=
+br>
+6Tn+2sOEoUJ6/r72MGGokJ6brz1MGCqk591rDxOGCuk59drDhKFCer689jBhqJCeC689TBgq<=
+br>
+pOe5aw8ThgrpOezaw4ShQnp+uvYwYaiQnnuuPUwYKqTnlWsPE4YK6Tnj2sOEoUJ6Prj2MGGo<=
+br>
+kJ7rrT1MGCqk53FrDxOGCuk52trDhKFCev619jBhqJCeW609TBgqpOdNaw8ThgrpOdHaw4Sh<=
+br>
+Qnq+s/YwYaiQnsusPUwYKqTnKWsPE4YK6TnI/j1m00G24k6dGWeqM99s9RFGpFe2rjHKWkUS<=
+br>
+ZTXOqQfeYVsZjBjjMnPlyyepGlpT8ZiiHU/kbIMZjpHE4f534NV7qyHPK5qE+K2UMXlIJBbK<=
+br>
+3dV7ofdjrRcVzWiVogjP1Uv/h5QwnoJgPATBeAaC8QgE5AkIBCWM5x9XL20UE4b8uHppo5gw<=
+br>
+FMjVSxvFhCFCrl7aKCYMFXL10kYxYaiQq5c2iglDhVy9tElMVy9tFBOGCrl6aaOYMFTI1Usb<=
+br>
+xYShQq5e2igmDBVy9dJGMWGokKuXNooJQ4VcvbRJTFcvbRQThgq5emmjmDBUyNVLG8WEoUKu<=
+br>
+XtooJgwVcvXSRjFhqJCrlzaKCUOFXL20SUxXL20UE4YKuXppo5gwVMjVSxvFhKFCrl7aKCYM<=
+br>
+FXL10kYxYaiQq5c2iglDhVy9tElMVy9tFPMfqVCjXrp83XL2tuX0d/pSaP4Nr2TWIrIm1RLh<=
+br>
+WJJyxCJCkiB6j9eLnSgTz/cD398v0q3hQsaEbTr7XfB5/+vVrJumnwq+xfGq06VILvvT4WVv<=
+br>
+MhoM+6P8c6k6OFMdV73hxWQ0vig/ne531ex3us/q67Kffjrdndoe5NuY0khMH7AQmHa6kv/c<=
+br>
+iPFwenk17A1f+6Oe/1rN0rt43c/+VHzCiBTTbafL+DLEaxF4R1fRWmMsDhf2Yb64eTPwr8Z+<=
+br>
+lSM+tnM+XedDCZOvZv7En6gBtd7mkH0p9weWHvawMVCNagUUR7R9gFQ6JB8rnrcPgtNE4jzl<=
+br>
+A+f01WyNqMCBV/QV2Wojg5uElDkWmO6nf88pj9/RBM9RLOuQ/cA7HlTmeI/YExJZ302MMTvM<=
+br>
+MBiNAu8w6FSGexyeHN8Maa/hxQRl1Bk53tLoEZ2RpYxr56lWekae03uk2t/tHEdiisNdHuLg<=
+br>
+mmyIJL/qF8A1XiN1Y1owFH3hFMeIrfBXRpoTBN6psDLPbXp7Sbsjlf2WCFm/nvYt9XfGPyEF<=
+br>
+OXuHiYgIpss7JARDj1scqfN20PdH/kD9X/kX/nAyHgdeFl7d8Q4nO4GRX0Tn0oREZPGt6U4l<=
+br>
+LSOKvjse4sP7SP7K/GV2/w28emh18T5xEn5iEsciv/5PMHvHF9o4JOcud9Ba58s521N/4efO<=
+br>
+JfnySSkOfl4iFi4F3mzVLmnP30x89BzdRa09zNfrwDuIeen8LhKEPFFHMrupHYv6w64+d+n9<=
+br>
+Xj/7nLm39wvfRxxersGcC5KeHvMYr4hQG9UyVcMW0TlFKyxa127VVxOMRPKtUpVVQzFknCjB<=
+br>
+KPsKkhMTB7d4g1lY5lwTqs7hd7s7FB3ToVp3kbhMoLbrjyWB92ND1PdvUEsDBBQAAAAIAI+M<=
+br>
+j0dqUwSzUikAAAM6AAAUAAAAQmVpc3BpZWwvTWFwcGUyLnhsc3jtW2VYlF0aRhBBQnJEaWkY<=
+br>
+upEGkQalG6W7OwWlpUtAQKmhkZYWRenuoZVuGDp3BkF35fuua//stT92DxczZ8557vvE/Zzz<=
+br>
+zDvveZ9II9zEhbsFhwwHB/cAboyFZtviBhxc0004OBw4ZHhNUWsrB0MrB10lVxtDe21GF0sL<=
+br>
+0rSb8DTv4ODh/p/+p1N+TLvVZ2ZMsf3YI4z

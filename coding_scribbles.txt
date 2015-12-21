@@ -1,0 +1,28 @@
+allLayers = QgsMapLayerRegistry.instance().mapLayers()
+layer  = allLayers['Beispiel_Massnahmepool20151215171314988'] # todo: get by name later
+excell = allLayers['Mappe220151215173213697']
+#allLayers['Beispiel_Massnahmepool20151215171314988'].name()
+
+ef = [f for f in excell.getFeatures()][0]
+excell.startEditing()
+excell.addFeature(ef)
+excell.commitChanges()
+
+KEY_LAYER="ef_key"
+KEY_EXCEL="EF_KEY" # or Field1 though
+
+# todo nice logging if something goes wrong in custom window
+
+#get all feechurs
+feats = [f for f in layer.getFeatures()]
+for f in feats:
+    f.fieldNameIndex(KEY_LAYER)
+    f.geometry().area()
+    f.geometry().centroid().asPoint()
+
+
+# todo: how to macro?
+
+# http://qgis.org/api/classQgsVectorLayer.html#ad64d9c5712cfb2363b2ee9421dbf9ad2
+# how to get updated geoms from vector layer
+# http://qgis.org/api/classQgsFeature.html
