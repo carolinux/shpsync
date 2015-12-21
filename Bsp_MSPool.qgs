@@ -17,10 +17,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>785476.55875634157564491</xmin>
-      <ymin>191279.78106402538833208</ymin>
-      <xmax>792134.55487031943630427</xmax>
-      <ymax>193959.73088625058881007</ymax>
+      <xmin>688115</xmin>
+      <ymin>108845</ymin>
+      <xmax>838685</xmax>
+      <ymax>220355</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -1561,10 +1561,10 @@
     </Identify>
     <Macros>
       <pythonCode type="QString">def openProject():
-    QgsMessageLog.logMessage("FOO","Special project opened")
+	pass
 
 def saveProject():
-    pass
+	pass
 
 def closeProject():
     pass
