@@ -72,21 +72,35 @@ def changed_geom(layerId, geoms):
 def update_excel_from_shp():
     pass
 
+
+def updateShpLayer(fksToRemove):
+    layer = layer_from_name(shpName)
+    feats = [f for f in layer.getFeatures()]
+    layer.startEditing()
+    for f in feats:
+         if f.attribute(shpKeyName) in fksToRemove:
+             layer.deleteFeature(f.id())
+    layer.commitChanges()
+     
+
 def update_shp_from_excel():
     info("Excel updated. Need to edit shapefile accordingly!")
     excelFks = get_fk_set(excelName, excelKeyName,skipFirst=True)
     shpFks = get_fk_set(shpName,shpKeyName,skipFirst=False)
     # TODO somewhere here I should refresh the join
     # TODO also special warning if shp layer is in edit mode
+    info("Keys in excel"+str(excelFks))
+    info("Keys in shp"+str(shpFks))
     if shpFks==excelFks:
         info("Excel and Shp layer have the same rows. No update necessary")
         return
     inShpButNotInExcel = shpFks - excelFks
     inExcelButNotInShp = excelFks - shpFks
     if inExcelButNotInShp:
-         warn("There are rows in the excel file with no matching geometry. Can't update shapefile from those.")
+         warn("There are rows in the excel file with no matching geometry {}. Can't update shapefile from those.".format(inExcelButNotInShp))
     if inShpButNotInExcel:
-        warn("Will remove features "+str(inShpButNotInExcel)+"from shapefile because they have been removed from excel") 
+        info("Will remove features "+str(inShpButNotInExcel)+"from shapefile because they have been removed from excel")
+        updateShpLayer(inShpButNotInExcel)
 
 def handle_connections(filename):
     global filewatcher # otherwise the object is lost
@@ -97,8 +111,6 @@ def handle_connections(filename):
     shpLayer.committedFeaturesRemoved.connect(removed_geom)
     shpLayer.committedGeometriesChanges.connect(changed_geom)
     shpLayer.editingStopped.connect(update_excel_from_shp)
-
-
 
 
 handle_connections("/home/carolinux/Projects/Beispiel/Mappe2.xlsx")
