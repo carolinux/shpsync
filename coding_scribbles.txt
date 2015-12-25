@@ -12,6 +12,7 @@ KEY_LAYER="ef_key"
 KEY_EXCEL="EF_KEY" # or Field1 though
 
 # todo nice logging if something goes wrong in custom window
+# todo how to know exactly what changed by editing?
 
 #get all feechurs
 feats = [f for f in layer.getFeatures()]
