@@ -8,21 +8,47 @@ filewatcher=None
 logTag="OpenGIS"
 excelName="Beispiel"
 excelKeyName="Field1"
+excelPath="/home/carolinux/Projects/Beispiel/Mappe2.xlsx"
 areaKey="Field9"
 centroidKey="Field14"
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
 
-#TODO: initial sync between excel and shp?
-#TODO: WHY the forceReload doesnt work???
 
+#TODO: WHY the forceReload doesnt work???
+# break qgsogrprovider.cpp:2444
+# printqstring mFilePath
+# iface.activeLayer().setDataSource("/home/carolinux/Projects/Beispiel/Mappe2.xlsx","Beispiel","ogr")
+#iface.addVectorLayer("/home/carolinux/Projects/Beispiel/Mappe2.xlsx","Beispiel2","ogr")
+#l= iface.activeLayer()
+#l.dataProvider().forceReload();l.reload();l.dataProvider().reloadData();l.triggerRepaint();
+#print l.featureCount()
 shpAdd = {}
 shpChange = {}
 shpRemove = Set([])
 
 
 def reload_excel():
+    path = excelPath
     layer = layer_from_name(excelName)
+    return
+    # none of this works
+    from PyQt4.QtXml import *
+    from qgis.core import *
+    from PyQt4.QtXml import *
+    newDatasourceProvider = "ogr"
+    XMLDocument = QDomDocument("style")
+    XMLMapLayers = QDomElement()
+    XMLMapLayers = XMLDocument.createElement("maplayers")
+    XMLMapLayer = QDomElement()
+    XMLMapLayer = XMLDocument.createElement("maplayer")
+    layer.writeLayerXML(XMLMapLayer,XMLDocument)
+    XMLMapLayer.firstChildElement("datasource").firstChild().setNodeValue(path)
+    XMLMapLayer.firstChildElement("provider").firstChild().setNodeValue(newDatasourceProvider)
+    XMLMapLayers.appendChild(XMLMapLayer)
+    XMLDocument.appendChild(XMLMapLayers)
+    layer.readLayerXML(XMLMapLayer)
+    layer.reload()
     layer.dataProvider().forceReload()
 
 def get_fk_set(layerName, fkName, skipFirst=True, fids=None):
@@ -60,7 +86,7 @@ def error(msg):
     QgsMessageLog.logMessage(str(msg), logTag, QgsMessageLog.CRITICAL)
 
 def excel_changed():
-    info("Excel changed in disk")
+    info("Excel changed in disk - need to sync")
     reload_excel()
     update_shp_from_excel()
 
@@ -137,8 +163,10 @@ def updateShpLayer(fksToRemove):
      
 
 def update_shp_from_excel():
-    info("Excel updated. Need to edit shapefile accordingly!")
+   
     excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
+    if not excelFks:
+        return
     shpFks = Set(get_fk_set(shpName,shpKeyName,skipFirst=False))
     # TODO somewhere here I should refresh the join
     # TODO also special warning if shp layer is in edit mode
@@ -155,7 +183,9 @@ def update_shp_from_excel():
         info("Will remove features "+str(inShpButNotInExcel)+"from shapefile because they have been removed from excel")
         updateShpLayer(inShpButNotInExcel)
 
-def handle_connections(filename):
+def init(filename):
+    info("Initial Syncing between shp and excel")
+    update_shp_from_excel()
     global filewatcher # otherwise the object is lost
     filewatcher = QFileSystemWatcher([filename])
     filewatcher.fileChanged.connect(excel_changed)
@@ -166,4 +196,4 @@ def handle_connections(filename):
     shpLayer.editingStopped.connect(update_excel_from_shp)
 
 
-handle_connections("/home/carolinux/Projects/Beispiel/Mappe2.xlsx")
+init(excelPath)
