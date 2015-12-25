@@ -14,8 +14,9 @@ shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
 
 #TODO: initial sync between excel and shp?
+#TODO: WHY the forceReload doesnt work???
 
-shpAdd = Set([])
+shpAdd = {}
 shpChange = {}
 shpRemove = Set([])
 
@@ -63,10 +64,12 @@ def excel_changed():
     reload_excel()
     update_shp_from_excel()
 
-def added_geom(layerId, fids):
-    fks_to_add = get_fk_set(shpName,shpKeyName,skipFirst=False,fids=fids)
+def added_geom(layerId, feats):
+    info("added feats "+str(feats))
+    fks_to_add = [feat.attribute(shpKeyName) for feat in feats]
     global shpAdd
-    shpAdd = Set(fks_to_add)
+    shpAdd = {k:v for (k,v) in zip(fks_to_add, feats)}
+
 
 def removed_geom(layerId, fids):
     fks_to_remove = get_fk_set(shpName,shpKeyName,skipFirst=False,fids=fids)
@@ -81,13 +84,13 @@ def changed_geom(layerId, geoms):
     fks_to_change = get_fk_set(shpName,shpKeyName,skipFirst=False,fids=fids)
     global shpChange
     shpChange = {k:v for (k,v) in zip(fks_to_change, feats)}
-    info("changed"+str(shpChange))
+    #info("changed"+str(shpChange))
 
 def update_excel_from_shp():
     info("Will now update excel from edited shapefile")
-    info(shpChange)
-    info(shpAdd)
-    info(shpRemove)
+    info("changing:"+str(shpChange))
+    info("adding:"+str(shpAdd))
+    info("removing"+str(shpRemove))
     layer = layer_from_name(excelName)
     shp = layer_from_name(shpName)
     layer.startEditing()
@@ -95,22 +98,30 @@ def update_excel_from_shp():
 
     for f in feats:
         key = f.attribute(excelKeyName)
+        flds = f.fields()
         if key in shpRemove:
             layer.deleteFeature(f.id())
         if key in shpChange.keys():
            shpf = shpChange[key]
            f.setAttribute(areaKey, str(shpf.geometry().area()))
            f.setAttribute(centroidKey, str(shpf.geometry().centroid().asPoint()))
-           info("Set {} area to {}".format(key,str(shpf.geometry().area() )))
+           layer.updateFeature(f)
+           #info("Set {} area to {}".format(key,str(shpf.geometry().area() )))
 
-    for newf in shpAdd:
-        pass
+    for key in shpAdd.keys():
+        shpf = shpAdd[key]
+        f = QgsFeature(flds)
+        f.setAttribute(areaKey, str(shpf.geometry().area()))
+        f.setAttribute(centroidKey, str(shpf.geometry().centroid().asPoint()))
+        f.setAttribute(excelKeyName, key)
+        layer.addFeature(f)
+        
 
     layer.commitChanges()
     global shpAdd
     global shpChange
     global shpRemove
-    shpAdd = Set([])
+    shpAdd = {}
     shpChange = {}
     shpRemove = Set([]) 
 
