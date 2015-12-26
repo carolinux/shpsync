@@ -27,3 +27,15 @@ for f in feats:
 # http://qgis.org/api/classQgsVectorLayer.html#ad64d9c5712cfb2363b2ee9421dbf9ad2
 # how to get updated geoms from vector layer
 # http://qgis.org/api/classQgsFeature.html
+
+#TODO: WHY the forceReload doesnt work???
+# break qgsogrprovider.cpp:2444
+# printqstring mFilePath
+# iface.activeLayer().setDataSource("/home/carolinux/Projects/Beispiel/Mappe2.xlsx","Beispiel","ogr")
+#iface.addVectorLayer("/home/carolinux/Projects/Beispiel/Mappe2.xlsx","Beispiel2","ogr")
+#l= iface.activeLayer()
+# iface.activeLayer().dataProvider().forceReload()
+#l.dataProvider().forceReload();l.reload();l.dataProvider().reloadData();l.triggerRepaint();
+#print l.featureCount()
+# http://gis.stackexchange.com/questions/159950/make-a-qgis-layer-update-from-a-changed-data-source
+

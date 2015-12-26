@@ -4,25 +4,26 @@ from datetime import datetime
 from qgis._core import QgsMessageLog, QgsMapLayerRegistry, QgsFeatureRequest
 from PyQt4.QtCore import QFileSystemWatcher
 
-filewatcher=None
+def layer_from_name(layerName):
+    # Important: If multiple layers with same name exist, it will return the first one it finds
+    for (id, layer) in QgsMapLayerRegistry.instance().mapLayers().iteritems():
+        if unicode(layer.name()) == layerName:
+            return layer
+    return None
+
+# configurable
 logTag="OpenGIS"
 excelName="Beispiel"
 excelKeyName="Field1"
-excelPath="/home/carolinux/Projects/Beispiel/Mappe2.xlsx"
+excelPath=layer_from_name(excelName).publicSource()
 areaKey="Field9"
 centroidKey="Field14"
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
 
 
-#TODO: WHY the forceReload doesnt work???
-# break qgsogrprovider.cpp:2444
-# printqstring mFilePath
-# iface.activeLayer().setDataSource("/home/carolinux/Projects/Beispiel/Mappe2.xlsx","Beispiel","ogr")
-#iface.addVectorLayer("/home/carolinux/Projects/Beispiel/Mappe2.xlsx","Beispiel2","ogr")
-#l= iface.activeLayer()
-#l.dataProvider().forceReload();l.reload();l.dataProvider().reloadData();l.triggerRepaint();
-#print l.featureCount()
+# state variables 
+filewatcher=None
 shpAdd = {}
 shpChange = {}
 shpRemove = Set([])
@@ -31,24 +32,7 @@ shpRemove = Set([])
 def reload_excel():
     path = excelPath
     layer = layer_from_name(excelName)
-    return
-    # none of this works
-    from PyQt4.QtXml import *
-    from qgis.core import *
-    from PyQt4.QtXml import *
-    newDatasourceProvider = "ogr"
-    XMLDocument = QDomDocument("style")
-    XMLMapLayers = QDomElement()
-    XMLMapLayers = XMLDocument.createElement("maplayers")
-    XMLMapLayer = QDomElement()
-    XMLMapLayer = XMLDocument.createElement("maplayer")
-    layer.writeLayerXML(XMLMapLayer,XMLDocument)
-    XMLMapLayer.firstChildElement("datasource").firstChild().setNodeValue(path)
-    XMLMapLayer.firstChildElement("provider").firstChild().setNodeValue(newDatasourceProvider)
-    XMLMapLayers.appendChild(XMLMapLayer)
-    XMLDocument.appendChild(XMLMapLayers)
-    layer.readLayerXML(XMLMapLayer)
-    layer.reload()
+    # carolinux: this doesn't work on my Ubuntu installation - we just end up with empty excel
     layer.dataProvider().forceReload()
 
 def get_fk_set(layerName, fkName, skipFirst=True, fids=None):
@@ -66,15 +50,7 @@ def get_fk_set(layerName, fkName, skipFirst=True, fids=None):
         fk = f.attribute(fkName)
         fkSet.append(fk)
     return fkSet
-        
-
-def layer_from_name(layerName):
-    # Important: If multiple layers with same name exist, it will return the first one it finds
-    for (id, layer) in QgsMapLayerRegistry.instance().mapLayers().iteritems():
-        if unicode(layer.name()) == layerName:
-            return layer
-    return None
-
+       
 
 def info(msg):
     QgsMessageLog.logMessage(str(msg), logTag, QgsMessageLog.INFO)
@@ -166,6 +142,7 @@ def update_shp_from_excel():
    
     excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
     if not excelFks:
+        warn("Excel file seems to be empty! That probably means something went horribly wrong")
         return
     shpFks = Set(get_fk_set(shpName,shpKeyName,skipFirst=False))
     # TODO somewhere here I should refresh the join
