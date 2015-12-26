@@ -1,8 +1,10 @@
 from sets import Set
 from datetime import datetime
 
-from qgis._core import QgsMessageLog, QgsMapLayerRegistry, QgsFeatureRequest
+from qgis._core import QgsMessageLog, QgsMapLayerRegistry, QgsFeatureRequest, QgsFeature
+from qgis.utils import iface
 from PyQt4.QtCore import QFileSystemWatcher
+from PyQt4 import QtGui
 
 def layer_from_name(layerName):
     # Important: If multiple layers with same name exist, it will return the first one it finds
@@ -12,12 +14,14 @@ def layer_from_name(layerName):
     return None
 
 # configurable
-logTag="OpenGIS"
+logTag="OpenGIS" # in which tab log messages appear
+# excel layer
 excelName="Beispiel"
 excelKeyName="Field1"
 excelPath=layer_from_name(excelName).publicSource()
 areaKey="Field9"
 centroidKey="Field14"
+# shpfile layer
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
 
@@ -34,6 +38,10 @@ def reload_excel():
     layer = layer_from_name(excelName)
     # carolinux: this doesn't work on my Ubuntu installation - we just end up with empty excel
     layer.dataProvider().forceReload()
+
+def showWarning(msg):
+    QtGui.QMessageBox.information(iface.mainWindow(),'Warning',msg)
+
 
 def get_fk_set(layerName, fkName, skipFirst=True, fids=None):
     layer = layer_from_name(layerName)
@@ -57,6 +65,7 @@ def info(msg):
 
 def warn(msg):
     QgsMessageLog.logMessage(str(msg), logTag)
+    showWarning(str(msg))
 
 def error(msg):
     QgsMessageLog.logMessage(str(msg), logTag, QgsMessageLog.CRITICAL)
@@ -142,7 +151,7 @@ def update_shp_from_excel():
    
     excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
     if not excelFks:
-        warn("Excel file seems to be empty! That probably means something went horribly wrong")
+        warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong")
         return
     shpFks = Set(get_fk_set(shpName,shpKeyName,skipFirst=False))
     # TODO somewhere here I should refresh the join
@@ -171,6 +180,3 @@ def init(filename):
     shpLayer.committedFeaturesRemoved.connect(removed_geom)
     shpLayer.committedGeometriesChanges.connect(changed_geom)
     shpLayer.editingStopped.connect(update_excel_from_shp)
-
-
-init(excelPath)

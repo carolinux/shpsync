@@ -17,10 +17,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>688115</xmin>
-      <ymin>108845</ymin>
-      <xmax>838685</xmax>
-      <ymax>220355</ymax>
+      <xmin>785574.28677855711430311</xmin>
+      <ymin>189950.92875904304673895</ymin>
+      <xmax>791438.34775770083069801</xmax>
+      <ymax>193103.92094782501226291</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -1503,17 +1503,17 @@
     </Paths>
     <WMSServiceTitle type="QString"></WMSServiceTitle>
     <WFSLayers type="QStringList"/>
+    <WMSRestrictedLayers type="QStringList"/>
     <WMSContactMail type="QString"></WMSContactMail>
     <WMSRestrictedComposers type="QStringList"/>
-    <WMSRestrictedLayers type="QStringList"/>
     <PositionPrecision>
       <DecimalPlaces type="int">2</DecimalPlaces>
       <Automatic type="bool">true</Automatic>
       <DegreeFormat type="QString">D</DegreeFormat>
     </PositionPrecision>
     <WCSUrl type="QString"></WCSUrl>
-    <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
     <WMSContactPhone type="QString"></WMSContactPhone>
+    <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
     <WMSServiceAbstract type="QString"></WMSServiceAbstract>
     <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
     <Measure>
@@ -1560,11 +1560,14 @@
       <disabledLayers type="QStringList"/>
     </Identify>
     <Macros>
-      <pythonCode type="QString">def openProject():
-	pass
+      <pythonCode type="QString">
+
+from shp_excel_sync import *
+def openProject():
+    init(excelPath)
 
 def saveProject():
-	pass
+    pass
 
 def closeProject():
     pass
