@@ -17,7 +17,7 @@ def layer_from_name(layerName):
 logTag="OpenGIS" # in which tab log messages appear
 # excel layer
 excelName="Beispiel"
-excelKeyName="Field1"
+excelKeyName="EFKey"
 excelPath=layer_from_name(excelName).publicSource()
 areaKey="Field9"
 centroidKey="Field14"
@@ -42,7 +42,6 @@ def reload_excel():
     if fsize==0:
         info("File empty. Won't reload yet")
         return
-    # carolinux: this doesn't work on my Ubuntu installation - we just end up with empty excel
     layer.dataProvider().forceReload()
 
 def showWarning(msg):
@@ -103,11 +102,43 @@ def changed_geom(layerId, geoms):
     shpChange = {k:v for (k,v) in zip(fks_to_change, feats)}
     #info("changed"+str(shpChange))
 
-def update_excel_from_shp():
-    info("Will now update excel from edited shapefile")
-    info("changing:"+str(shpChange))
-    info("adding:"+str(shpAdd))
-    info("removing"+str(shpRemove))
+
+def update_excel_programmatically():
+    import pandas as pd #0.17
+    df = pd.read_excel(excelPath)
+    keyField = df.columns[0] # FIXME: this should be settable
+    areaField = df.columns[8]
+    cField = df.columns[13]
+    df = df.set_index(keyField, drop=False)
+    #info(str(df))
+    df = df[~df[keyField].isin(shpRemove)]
+    for key in shpChange.keys():
+       shpf = shpChange[key]
+       area = str(shpf.geometry().area())
+       centroid = str(shpf.geometry().centroid().asPoint())
+       df.loc[key,areaField] = area
+       df.loc[key,cField] = centroid
+    
+    for key in shpAdd.keys():
+       shpf = shpAdd[key]
+       area = str(shpf.geometry().area())
+       centroid = str(shpf.geometry().centroid().asPoint())
+       df2 = pd.DataFrame([['']*len(df.columns)],columns=df.columns)
+       df2.loc[0,areaField] = area
+       df2.loc[0,cField] = centroid
+       df2.loc[0,keyField] = key
+       #TODO what about the other fields? 
+       df = df.append(df2)
+        
+
+    #df2 = pd.DataFrame(columns=df.columns)
+    #info("changed?")
+    #info(str(df))
+
+    df.to_excel(excelPath, index=False, columns=None)
+
+def update_excel_via_qgis():
+    # This function doesn't work for xls files
     layer = layer_from_name(excelName)
     shp = layer_from_name(shpName)
     layer.startEditing()
@@ -131,10 +162,19 @@ def update_excel_from_shp():
         f.setAttribute(areaKey, str(shpf.geometry().area()))
         f.setAttribute(centroidKey, str(shpf.geometry().centroid().asPoint()))
         f.setAttribute(excelKeyName, key)
+        #TODO: What about other attributes
         layer.addFeature(f)
         
 
     layer.commitChanges()
+
+def update_excel_from_shp():
+    info("Will now update excel from edited shapefile")
+    info("changing:"+str(shpChange))
+    info("adding:"+str(shpAdd))
+    info("removing"+str(shpRemove))
+    update_excel_programmatically()
+    #update_excel_via_qgis()
     global shpAdd
     global shpChange
     global shpRemove
@@ -155,7 +195,7 @@ def updateShpLayer(fksToRemove):
 
 def update_shp_from_excel():
    
-    excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
+    excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=False))
     if not excelFks:
         warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong. Won't sync.")
         return
