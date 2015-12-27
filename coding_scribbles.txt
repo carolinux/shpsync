@@ -1,3 +1,13 @@
+new OGRXLSXDriver
+
+ OGRSFDriverH poDriver;
+  QgsApplication::registerOgrDrivers();
+
+  poDriver = OGRGetDriverByName( ogrDriverName.toLocal8Bit().data() );
+OGRReleaseDataSource
+
+
+
 allLayers = QgsMapLayerRegistry.instance().mapLayers()
 layer  = allLayers['Beispiel_Massnahmepool20151215171314988'] # todo: get by name later
 excell = allLayers['Mappe220151215173213697']

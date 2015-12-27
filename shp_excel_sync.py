@@ -36,6 +36,12 @@ shpRemove = Set([])
 def reload_excel():
     path = excelPath
     layer = layer_from_name(excelName)
+    import os
+    fsize=os.stat(excelPath).st_size 
+    info("fsize "+str(fsize))
+    if fsize==0:
+        info("File empty. Won't reload yet")
+        return
     # carolinux: this doesn't work on my Ubuntu installation - we just end up with empty excel
     layer.dataProvider().forceReload()
 
@@ -151,7 +157,7 @@ def update_shp_from_excel():
    
     excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
     if not excelFks:
-        warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong")
+        warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong. Won't sync.")
         return
     shpFks = Set(get_fk_set(shpName,shpKeyName,skipFirst=False))
     # TODO somewhere here I should refresh the join
@@ -170,7 +176,7 @@ def update_shp_from_excel():
         updateShpLayer(inShpButNotInExcel)
 
 def init(filename):
-    info("Initial Syncing between shp and excel")
+    info("Initial Syncing excel to shp")
     update_shp_from_excel()
     global filewatcher # otherwise the object is lost
     filewatcher = QFileSystemWatcher([filename])

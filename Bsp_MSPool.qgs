@@ -894,7 +894,7 @@
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>Mappe220151215173213697</id>
-      <datasource>./Mappe2.xlsx</datasource>
+      <datasource>./Mappe2.xls</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
