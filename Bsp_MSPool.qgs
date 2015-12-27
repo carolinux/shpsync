@@ -71,6 +71,7 @@
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>Beispiel_Massnahmepool20151215171314988</id>
       <datasource>./Beispiel_Massnahmepool.shp</datasource>
+      <shortname></shortname>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -102,274 +103,355 @@
         <edittype widgetv2type="TextEdit" name="ef_key">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field2">
+        <edittype widgetv2type="TextEdit" name="Beispiel_EFKey">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field3">
+        <edittype widgetv2type="TextEdit" name="Beispiel_AuftragsNR">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field4">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Name">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field5">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Eigentum">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field6">
+        <edittype widgetv2type="TextEdit" name="Beispiel_FEE_Nr">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field7">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Zweck_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field8">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Zweck_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field9">
+        <edittype widgetv2type="TextEdit" name="Beispiel_KT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field10">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Flaeche_a">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field11">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Jahr_Plan">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field12">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Jahr_max">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field13">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_2PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field14">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_2PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field15">
+        <edittype widgetv2type="TextEdit" name="Beispiel_LinieNR">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field16">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Laenge_m">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field17">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Verfa_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field18">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Verfa_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field19">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Dritt_2PS">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field20">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holzanfall">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field21">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_Verk">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field22">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_Eigen">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field23">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_LL">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field24">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_SH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field25">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_IH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field26">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_EH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field27">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Preis_SH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field28">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 26">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field29">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 27">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field30">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 28">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field31">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 29">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field32">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 30">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field33">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 31">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field34">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 32">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field35">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 33">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field36">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 34">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field37">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 35">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field38">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 36">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field39">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 37">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field40">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 38">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field41">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 39">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field42">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 40">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field43">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 41">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field44">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 42">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field45">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 43">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field46">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 44">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field47">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 45">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field48">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 46">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field49">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 47">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field50">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 48">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field51">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 49">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field52">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 50">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field53">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 51">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field54">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Preis_IH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field55">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Preis_EH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field56">
+        <edittype widgetv2type="TextEdit" name="Beispiel_HErlos_tot">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field57">
+        <edittype widgetv2type="TextEdit" name="Beispiel_HErlos_m3">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field58">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_1PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field59">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_1PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field60">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beh_Flache">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field61">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Dritt_1PS">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field62">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_3PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field63">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_3PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field64">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Anzahl">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field65">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Dritt_3PS">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field66">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitrag_m3">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field67">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitrag_a">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field68">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitrag_St">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field69">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitragtot">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field70">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kosten_m3">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field71">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kosten_a">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field72">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kosten_St">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field73">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kostentot">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field74">
+        <edittype widgetv2type="TextEdit" name="Beispiel_KostenRes">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field75">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field76">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field77">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS_30">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field78">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field79">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field80">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 60">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field81">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 70">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field82">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 80">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field83">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_K_frem">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field84">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_K_M_EV">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field85">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_K_ubr">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field86">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field87">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field88">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 30">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field89">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field90">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field91">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 60">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS_10">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS_20">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 30">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 40">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 50">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 60">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_tot">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_m3">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_a">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_St">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Jahr_Ausf">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_IST">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ausf_TEXT">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_Beu_J">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_Beu_T">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_EF_J">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_EF_T">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -563,14 +645,18 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform>.</editform>
-      <editforminit/>
-      <featformsuppress>0</featformsuppress>
       <annotationform>.</annotationform>
-      <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions/>
+      <editform>.</editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <widgets/>
       <conditionalstyles>
         <rowstyles/>
         <fieldstyles/>
@@ -579,274 +665,355 @@
         <edittype widgetv2type="TextEdit" name="ef_key">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field2">
+        <edittype widgetv2type="TextEdit" name="Beispiel_EFKey">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field3">
+        <edittype widgetv2type="TextEdit" name="Beispiel_AuftragsNR">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field4">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Name">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field5">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Eigentum">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field6">
+        <edittype widgetv2type="TextEdit" name="Beispiel_FEE_Nr">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field7">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Zweck_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field8">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Zweck_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field9">
+        <edittype widgetv2type="TextEdit" name="Beispiel_KT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field10">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Flaeche_a">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field11">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Jahr_Plan">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field12">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Jahr_max">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field13">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_2PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field14">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_2PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field15">
+        <edittype widgetv2type="TextEdit" name="Beispiel_LinieNR">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field16">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Laenge_m">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field17">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Verfa_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field18">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Verfa_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field19">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Dritt_2PS">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field20">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holzanfall">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field21">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_Verk">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field22">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_Eigen">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field23">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_LL">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field24">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_SH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field25">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_IH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field26">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_EH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field27">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Preis_SH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field28">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 26">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field29">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 27">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field30">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 28">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field31">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 29">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field32">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 30">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field33">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 31">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field34">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 32">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field35">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 33">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field36">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 34">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field37">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 35">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field38">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 36">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field39">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 37">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field40">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 38">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field41">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 39">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field42">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 40">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field43">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 41">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field44">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 42">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field45">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 43">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field46">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 44">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field47">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 45">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field48">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 46">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field49">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 47">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field50">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 48">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field51">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 49">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field52">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 50">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field53">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Unnamed: 51">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field54">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Preis_IH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field55">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Preis_EH">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field56">
+        <edittype widgetv2type="TextEdit" name="Beispiel_HErlos_tot">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field57">
+        <edittype widgetv2type="TextEdit" name="Beispiel_HErlos_m3">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field58">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_1PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field59">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_1PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field60">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beh_Flache">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field61">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Dritt_1PS">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field62">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_3PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field63">
+        <edittype widgetv2type="TextEdit" name="Beispiel_M_3PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field64">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Anzahl">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field65">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Dritt_3PS">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field66">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitrag_m3">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field67">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitrag_a">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field68">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitrag_St">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field69">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Beitragtot">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field70">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kosten_m3">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field71">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kosten_a">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field72">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kosten_St">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field73">
+        <edittype widgetv2type="TextEdit" name="Beispiel_Kostentot">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field74">
+        <edittype widgetv2type="TextEdit" name="Beispiel_KostenRes">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field75">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field76">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field77">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS_30">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field78">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field79">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field80">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 60">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field81">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 70">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field82">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_KS 80">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field83">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_K_frem">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field84">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_K_M_EV">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field85">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS2_K_ubr">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field86">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field87">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field88">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 30">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field89">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field90">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Beispiel_Field91">
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 60">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS1_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS_10">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS_20">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 30">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 40">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 50">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 60">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_PS3_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_tot">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_m3">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_a">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ergebn_St">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Jahr_Ausf">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Holz_IST">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Ausf_TEXT">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_Beu_J">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_Beu_T">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_EF_J">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Beispiel_Term_EF_T">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -854,6 +1021,7 @@
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <id>Kanton_Graubünden__Übersichtsplan20151215171344657</id>
       <datasource>contextualWMSLegend=0&amp;crs=EPSG:21781&amp;dpiMode=all&amp;featureCount=10&amp;format=image/png&amp;layers=WMS_Uebersichtsplan&amp;styles=&amp;url=http://wms.geo.gr.ch/uebersichtsplan</datasource>
+      <shortname></shortname>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -895,6 +1063,7 @@
     <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>Mappe220151215173213697</id>
       <datasource>./Mappe2.xls</datasource>
+      <shortname></shortname>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -922,564 +1091,724 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="Field1">
+        <edittype widgetv2type="TextEdit" name="EFKey">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field2">
+        <edittype widgetv2type="TextEdit" name="AuftragsNR">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field3">
+        <edittype widgetv2type="TextEdit" name="Name">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field4">
+        <edittype widgetv2type="TextEdit" name="Eigentum">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field5">
+        <edittype widgetv2type="TextEdit" name="FEE_Nr">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field6">
+        <edittype widgetv2type="TextEdit" name="Zweck_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field7">
+        <edittype widgetv2type="TextEdit" name="Zweck_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field8">
+        <edittype widgetv2type="TextEdit" name="KT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field9">
+        <edittype widgetv2type="TextEdit" name="Flaeche_a">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field10">
+        <edittype widgetv2type="TextEdit" name="Jahr_Plan">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field11">
+        <edittype widgetv2type="TextEdit" name="Jahr_max">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field12">
+        <edittype widgetv2type="TextEdit" name="M_2PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field13">
+        <edittype widgetv2type="TextEdit" name="M_2PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field14">
+        <edittype widgetv2type="TextEdit" name="LinieNR">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field15">
+        <edittype widgetv2type="TextEdit" name="Laenge_m">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field16">
+        <edittype widgetv2type="TextEdit" name="Verfa_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field17">
+        <edittype widgetv2type="TextEdit" name="Verfa_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field18">
+        <edittype widgetv2type="TextEdit" name="Dritt_2PS">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field19">
+        <edittype widgetv2type="TextEdit" name="Holzanfall">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field20">
+        <edittype widgetv2type="TextEdit" name="Holz_Verk">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field21">
+        <edittype widgetv2type="TextEdit" name="Holz_Eigen">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field22">
+        <edittype widgetv2type="TextEdit" name="Holz_LL">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field23">
+        <edittype widgetv2type="TextEdit" name="Holz_SH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field24">
+        <edittype widgetv2type="TextEdit" name="Holz_IH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field25">
+        <edittype widgetv2type="TextEdit" name="Holz_EH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field26">
+        <edittype widgetv2type="TextEdit" name="Preis_SH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field27">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 26">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field28">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 27">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field29">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 28">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field30">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 29">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field31">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 30">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field32">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 31">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field33">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 32">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field34">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 33">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field35">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 34">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field36">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 35">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field37">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 36">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field38">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 37">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field39">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 38">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field40">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 39">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field41">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 40">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field42">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 41">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field43">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 42">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field44">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 43">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field45">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 44">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field46">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 45">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field47">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 46">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field48">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 47">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field49">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 48">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field50">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 49">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field51">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 50">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field52">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 51">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field53">
+        <edittype widgetv2type="TextEdit" name="Preis_IH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field54">
+        <edittype widgetv2type="TextEdit" name="Preis_EH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field55">
+        <edittype widgetv2type="TextEdit" name="HErlos_tot">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field56">
+        <edittype widgetv2type="TextEdit" name="HErlos_m3">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field57">
+        <edittype widgetv2type="TextEdit" name="M_1PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field58">
+        <edittype widgetv2type="TextEdit" name="M_1PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field59">
+        <edittype widgetv2type="TextEdit" name="Beh_Flache">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field60">
+        <edittype widgetv2type="TextEdit" name="Dritt_1PS">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field61">
+        <edittype widgetv2type="TextEdit" name="M_3PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field62">
+        <edittype widgetv2type="TextEdit" name="M_3PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field63">
+        <edittype widgetv2type="TextEdit" name="Anzahl">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field64">
+        <edittype widgetv2type="TextEdit" name="Dritt_3PS">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field65">
+        <edittype widgetv2type="TextEdit" name="Beitrag_m3">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field66">
+        <edittype widgetv2type="TextEdit" name="Beitrag_a">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field67">
+        <edittype widgetv2type="TextEdit" name="Beitrag_St">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field68">
+        <edittype widgetv2type="TextEdit" name="Beitragtot">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field69">
+        <edittype widgetv2type="TextEdit" name="Kosten_m3">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field70">
+        <edittype widgetv2type="TextEdit" name="Kosten_a">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field71">
+        <edittype widgetv2type="TextEdit" name="Kosten_St">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field72">
+        <edittype widgetv2type="TextEdit" name="Kostentot">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field73">
+        <edittype widgetv2type="TextEdit" name="KostenRes">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field74">
+        <edittype widgetv2type="TextEdit" name="PS2_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field75">
+        <edittype widgetv2type="TextEdit" name="PS2_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field76">
+        <edittype widgetv2type="TextEdit" name="PS2_KS_30">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field77">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field78">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field79">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 60">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field80">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 70">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field81">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 80">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field82">
+        <edittype widgetv2type="TextEdit" name="PS2_K_frem">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field83">
+        <edittype widgetv2type="TextEdit" name="PS2_K_M_EV">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field84">
+        <edittype widgetv2type="TextEdit" name="PS2_K_ubr">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field85">
+        <edittype widgetv2type="TextEdit" name="PS1_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field86">
+        <edittype widgetv2type="TextEdit" name="PS1_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field87">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 30">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field88">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field89">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field90">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 60">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field91">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS_10">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS_20">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 30">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 40">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 50">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 60">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_tot">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_m3">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_a">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_St">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Jahr_Ausf">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Holz_IST">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ausf_TEXT">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_Beu_J">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_Beu_T">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_EF_J">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_EF_T">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <editform>.</editform>
-      <editforminit/>
-      <featformsuppress>0</featformsuppress>
       <annotationform>.</annotationform>
-      <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions/>
+      <editform>.</editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <widgets/>
       <conditionalstyles>
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="Field1">
+        <edittype widgetv2type="TextEdit" name="EFKey">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field2">
+        <edittype widgetv2type="TextEdit" name="AuftragsNR">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field3">
+        <edittype widgetv2type="TextEdit" name="Name">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field4">
+        <edittype widgetv2type="TextEdit" name="Eigentum">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field5">
+        <edittype widgetv2type="TextEdit" name="FEE_Nr">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field6">
+        <edittype widgetv2type="TextEdit" name="Zweck_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field7">
+        <edittype widgetv2type="TextEdit" name="Zweck_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field8">
+        <edittype widgetv2type="TextEdit" name="KT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field9">
+        <edittype widgetv2type="TextEdit" name="Flaeche_a">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field10">
+        <edittype widgetv2type="TextEdit" name="Jahr_Plan">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field11">
+        <edittype widgetv2type="TextEdit" name="Jahr_max">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field12">
+        <edittype widgetv2type="TextEdit" name="M_2PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field13">
+        <edittype widgetv2type="TextEdit" name="M_2PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field14">
+        <edittype widgetv2type="TextEdit" name="LinieNR">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field15">
+        <edittype widgetv2type="TextEdit" name="Laenge_m">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field16">
+        <edittype widgetv2type="TextEdit" name="Verfa_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field17">
+        <edittype widgetv2type="TextEdit" name="Verfa_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field18">
+        <edittype widgetv2type="TextEdit" name="Dritt_2PS">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field19">
+        <edittype widgetv2type="TextEdit" name="Holzanfall">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field20">
+        <edittype widgetv2type="TextEdit" name="Holz_Verk">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field21">
+        <edittype widgetv2type="TextEdit" name="Holz_Eigen">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field22">
+        <edittype widgetv2type="TextEdit" name="Holz_LL">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field23">
+        <edittype widgetv2type="TextEdit" name="Holz_SH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field24">
+        <edittype widgetv2type="TextEdit" name="Holz_IH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field25">
+        <edittype widgetv2type="TextEdit" name="Holz_EH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field26">
+        <edittype widgetv2type="TextEdit" name="Preis_SH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field27">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 26">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field28">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 27">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field29">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 28">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field30">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 29">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field31">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 30">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field32">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 31">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field33">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 32">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field34">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 33">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field35">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 34">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field36">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 35">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field37">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 36">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field38">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 37">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field39">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 38">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field40">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 39">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field41">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 40">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field42">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 41">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field43">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 42">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field44">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 43">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field45">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 44">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field46">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 45">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field47">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 46">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field48">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 47">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field49">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 48">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field50">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 49">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field51">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 50">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field52">
+        <edittype widgetv2type="TextEdit" name="Unnamed: 51">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field53">
+        <edittype widgetv2type="TextEdit" name="Preis_IH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field54">
+        <edittype widgetv2type="TextEdit" name="Preis_EH">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field55">
+        <edittype widgetv2type="TextEdit" name="HErlos_tot">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field56">
+        <edittype widgetv2type="TextEdit" name="HErlos_m3">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field57">
+        <edittype widgetv2type="TextEdit" name="M_1PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field58">
+        <edittype widgetv2type="TextEdit" name="M_1PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field59">
+        <edittype widgetv2type="TextEdit" name="Beh_Flache">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field60">
+        <edittype widgetv2type="TextEdit" name="Dritt_1PS">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field61">
+        <edittype widgetv2type="TextEdit" name="M_3PS_TYP">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field62">
+        <edittype widgetv2type="TextEdit" name="M_3PS_TEXT">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field63">
+        <edittype widgetv2type="TextEdit" name="Anzahl">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field64">
+        <edittype widgetv2type="TextEdit" name="Dritt_3PS">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field65">
+        <edittype widgetv2type="TextEdit" name="Beitrag_m3">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field66">
+        <edittype widgetv2type="TextEdit" name="Beitrag_a">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field67">
+        <edittype widgetv2type="TextEdit" name="Beitrag_St">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field68">
+        <edittype widgetv2type="TextEdit" name="Beitragtot">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field69">
+        <edittype widgetv2type="TextEdit" name="Kosten_m3">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field70">
+        <edittype widgetv2type="TextEdit" name="Kosten_a">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field71">
+        <edittype widgetv2type="TextEdit" name="Kosten_St">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field72">
+        <edittype widgetv2type="TextEdit" name="Kostentot">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field73">
+        <edittype widgetv2type="TextEdit" name="KostenRes">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field74">
+        <edittype widgetv2type="TextEdit" name="PS2_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field75">
+        <edittype widgetv2type="TextEdit" name="PS2_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field76">
+        <edittype widgetv2type="TextEdit" name="PS2_KS_30">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field77">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field78">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field79">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 60">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field80">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 70">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field81">
+        <edittype widgetv2type="TextEdit" name="PS2_KS 80">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field82">
+        <edittype widgetv2type="TextEdit" name="PS2_K_frem">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field83">
+        <edittype widgetv2type="TextEdit" name="PS2_K_M_EV">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field84">
+        <edittype widgetv2type="TextEdit" name="PS2_K_ubr">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field85">
+        <edittype widgetv2type="TextEdit" name="PS1_KS_10">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field86">
+        <edittype widgetv2type="TextEdit" name="PS1_KS_20">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field87">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 30">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field88">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 40">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field89">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 50">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field90">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 60">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="Field91">
+        <edittype widgetv2type="TextEdit" name="PS1_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS1_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS_10">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS_20">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 30">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 40">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 50">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 60">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 70">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_KS 80">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_K_frem">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_K_M_EV">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="PS3_K_ubr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_tot">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_m3">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_a">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ergebn_St">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Jahr_Ausf">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Holz_IST">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Ausf_TEXT">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_Beu_J">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_Beu_T">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_EF_J">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Term_EF_T">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
