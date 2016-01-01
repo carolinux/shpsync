@@ -123,7 +123,7 @@ def update_excel_programmatically():
 
     from xlutils.copy import copy # http://pypi.python.org/pypi/xlutils
     from xlrd import open_workbook # http://pypi.python.org/pypi/xlrd
-    from xlwt import easyxf # http://pypi.python.org/pypi/xlwt
+    import xlwt
 
     rb = open_workbook(excelPath,formatting_info=True)
     r_sheet = rb.sheet_by_index(0) # read only copy
