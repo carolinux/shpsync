@@ -16,14 +16,14 @@ def layer_from_name(layerName):
 # configurable
 logTag="OpenGIS" # in which tab log messages appear
 # excel layer
-excelName="Beispiel"
-excelHasFormattedHeaderRow=True
+excelName="Beispiel"# the layer name
+excelSheetName="Sheet1"
 excelFkIdx = 0
 excelCentroidIdx = 14
 excelAreaIdx = 8
 excelPath=layer_from_name(excelName).publicSource()
 excelKeyName = [f for f in layer_from_name(excelName).getFeatures()][0].fields().at(excelFkIdx).name()
-skipFirstLineExcel = not excelHasFormattedHeaderRow
+skipFirstLineExcel = True
 # shpfile layer
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
@@ -109,11 +109,13 @@ def changed_geom(layerId, geoms):
 def write_feature_to_excel(sheet, idx, feat):
    area = str(feat.geometry().area())
    centroid = str(feat.geometry().centroid().asPoint())
-   for i in range(len(feat.fields().count())):
+   for i in range(feat.fields().count()):
+       
        fname = feat.fields().at(i).name()
-       sheet.write(idx,i, feat.attribute(fname))
-   sheet(write, idx, excelCentroidIdx, centroid)
-   sheet(write, idx, excelAreaIdx, area)
+       info("writing field"+fname)
+       sheet.write(idx,i, str(feat.attribute(fname)))
+   sheet.write(idx, excelCentroidIdx, centroid)
+   sheet.write(idx, excelAreaIdx, area)
 
 def write_rowvals_to_excel(sheet, idx, vals):
     for i,v in enumerate(vals):
@@ -126,9 +128,10 @@ def update_excel_programmatically():
     import xlwt
 
     rb = open_workbook(excelPath,formatting_info=True)
-    r_sheet = rb.sheet_by_index(0) # read only copy
+    r_sheet = rb.sheet_by_name(excelSheetName) # read only copy
     wb = xlwt.Workbook()
-    w_sheet = wb.add_sheet(0, cell_overwrite_ok=True)
+    w_sheet = wb.add_sheet(excelSheetName, cell_overwrite_ok=True)
+    write_idx = 0
     
     for row_index in range(r_sheet.nrows):
         #print(r_sheet.cell(row_index,1).value)
@@ -136,8 +139,8 @@ def update_excel_programmatically():
         if fk in shpRemove:
             continue
         if fk in shpChange.keys():
-            shpf = shpChange[key]
-            write_feature_to_excel(w_sheet, write_index, shpf)
+            shpf = shpChange[fk]
+            write_feature_to_excel(w_sheet, write_idx, shpf)
             vals = r_sheet.row_values(row_index)
             write_rowvals_to_excel(w_sheet, write_idx, vals)
            
@@ -145,15 +148,15 @@ def update_excel_programmatically():
             vals = r_sheet.row_values(row_index)
             write_rowvals_to_excel(w_sheet, write_idx, vals)
        
-        write_index+=1
+        write_idx+=1
          
          
     for key in shpAdd.keys():
         shpf = shpAdd[key]
-        write_feature_to_excel(sheet, write_index, shpf)
+        write_feature_to_excel(sheet, write_idx, shpf)
         write_idx+=1
 
-    wb.save(excelPath+"_new") #TODO fix after testing
+    wb.save(excelPath)
 
 
 def update_excel_from_shp():
