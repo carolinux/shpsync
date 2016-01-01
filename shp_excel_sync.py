@@ -132,7 +132,6 @@ def write_rowvals_to_excel(sheet, idx, vals, ignore=None):
 
 def update_excel_programmatically():
 
-    from xlutils.copy import copy # http://pypi.python.org/pypi/xlutils
     from xlrd import open_workbook # http://pypi.python.org/pypi/xlrd
     import xlwt
 
