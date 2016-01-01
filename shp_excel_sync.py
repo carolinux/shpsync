@@ -17,10 +17,10 @@ def layer_from_name(layerName):
 logTag="OpenGIS" # in which tab log messages appear
 # excel layer
 excelName="Beispiel"
-excelKeyName="EFKey"
+excelFkIdx = 0
+excelCentroidIdx = 14
+excelAreaIdx = 8
 excelPath=layer_from_name(excelName).publicSource()
-areaKey="Field9"
-centroidKey="Field14"
 # shpfile layer
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
@@ -103,70 +103,54 @@ def changed_geom(layerId, geoms):
     #info("changed"+str(shpChange))
 
 
+def write_feature_to_excel(sheet, idx, feat):
+   area = str(feat.geometry().area())
+   centroid = str(feat.geometry().centroid().asPoint())
+   for i in range(len(feat.fields().keys())):
+       sheet.write(idx,i, feat.attribute(i))
+   sheet(write, idx, excelCentroidIdx, centroid)
+   sheet(write, idx, excelAreaIdx, area)
+
+def write_rowvals_to_excel(sheet, idx, vals):
+    for i,v in enumerate(vals):
+        sheet.write(idx,i,v)
+
 def update_excel_programmatically():
-    import pandas as pd #0.17
-    df = pd.read_excel(excelPath)
-    keyField = df.columns[0] # FIXME: this should be settable
-    areaField = df.columns[8]
-    cField = df.columns[13]
-    df = df.set_index(keyField, drop=False)
-    #info(str(df))
-    df = df[~df[keyField].isin(shpRemove)]
-    for key in shpChange.keys():
-       shpf = shpChange[key]
-       area = str(shpf.geometry().area())
-       centroid = str(shpf.geometry().centroid().asPoint())
-       df.loc[key,areaField] = area
-       df.loc[key,cField] = centroid
+
+    from xlutils.copy import copy # http://pypi.python.org/pypi/xlutils
+    from xlrd import open_workbook # http://pypi.python.org/pypi/xlrd
+    from xlwt import easyxf # http://pypi.python.org/pypi/xlwt
+
+    rb = open_workbook(excelPath,formatting_info=True)
+    r_sheet = rb.sheet_by_index(0) # read only copy
+    wb = xlwt.Workbook()
+    w_sheet = wb.add_sheet(0, cell_overwrite_ok=True)
     
+    for row_index in range(r_sheet.nrows):
+        #print(r_sheet.cell(row_index,1).value)
+        fk = r_sheet.cell(row_index, excelFkIdx).value
+        if fk in shpRemove:
+            continue
+        if fk in shpChange.keys():
+            shpf = shpChange[key]
+            write_feature_to_excel(w_sheet, write_index, shpf)
+            vals = r_sheet.row_values(row_index)
+            write_rowvals_to_excel(w_sheet, write_idx, vals)
+           
+        else:# else just copy the row
+            vals = r_sheet.row_values(row_index)
+            write_rowvals_to_excel(w_sheet, write_idx, vals)
+       
+        write_index+=1
+         
+         
     for key in shpAdd.keys():
        shpf = shpAdd[key]
-       area = str(shpf.geometry().area())
-       centroid = str(shpf.geometry().centroid().asPoint())
-       df2 = pd.DataFrame([['']*len(df.columns)],columns=df.columns)
-       df2.loc[0,areaField] = area
-       df2.loc[0,cField] = centroid
-       df2.loc[0,keyField] = key
-       #TODO what about the other fields? 
-       df = df.append(df2)
-        
+       write_feature_to_excel(sheet, write_index, shpf)
+       write_idx+=1
 
-    #df2 = pd.DataFrame(columns=df.columns)
-    #info("changed?")
-    #info(str(df))
+    wb.save(excelPath+"_new") #TODO fix after testing
 
-    df.to_excel(excelPath, index=False, columns=None)
-
-def update_excel_via_qgis():
-    # This function doesn't work for xls files
-    layer = layer_from_name(excelName)
-    shp = layer_from_name(shpName)
-    layer.startEditing()
-    feats = [f for f in layer.getFeatures()]
-
-    for f in feats:
-        key = f.attribute(excelKeyName)
-        flds = f.fields()
-        if key in shpRemove:
-            layer.deleteFeature(f.id())
-        if key in shpChange.keys():
-           shpf = shpChange[key]
-           f.setAttribute(areaKey, str(shpf.geometry().area()))
-           f.setAttribute(centroidKey, str(shpf.geometry().centroid().asPoint()))
-           layer.updateFeature(f)
-           #info("Set {} area to {}".format(key,str(shpf.geometry().area() )))
-
-    for key in shpAdd.keys():
-        shpf = shpAdd[key]
-        f = QgsFeature(flds)
-        f.setAttribute(areaKey, str(shpf.geometry().area()))
-        f.setAttribute(centroidKey, str(shpf.geometry().centroid().asPoint()))
-        f.setAttribute(excelKeyName, key)
-        #TODO: What about other attributes
-        layer.addFeature(f)
-        
-
-    layer.commitChanges()
 
 def update_excel_from_shp():
     info("Will now update excel from edited shapefile")
@@ -174,7 +158,6 @@ def update_excel_from_shp():
     info("adding:"+str(shpAdd))
     info("removing"+str(shpRemove))
     update_excel_programmatically()
-    #update_excel_via_qgis()
     global shpAdd
     global shpChange
     global shpRemove
@@ -195,7 +178,7 @@ def updateShpLayer(fksToRemove):
 
 def update_shp_from_excel():
    
-    excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=False))
+    excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
     if not excelFks:
         warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong. Won't sync.")
         return
