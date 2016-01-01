@@ -17,17 +17,18 @@ def layer_from_name(layerName):
 logTag="OpenGIS" # in which tab log messages appear
 # excel layer
 excelName="Beispiel"# the layer name
-excelSheetName="Sheet1"
+excelSheetName="Beispiel"
 excelFkIdx = 0
 excelCentroidIdx = 14
 excelAreaIdx = 8
 excelPath=layer_from_name(excelName).publicSource()
 excelKeyName = [f for f in layer_from_name(excelName).getFeatures()][0].fields().at(excelFkIdx).name()
-skipFirstLineExcel = True
 # shpfile layer
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
 
+# non configurable - no edits beyond this point
+skipFirstLineExcel = True
 
 # state variables 
 filewatcher=None
@@ -113,13 +114,21 @@ def write_feature_to_excel(sheet, idx, feat):
        
        fname = feat.fields().at(i).name()
        info("writing field"+fname)
-       sheet.write(idx,i, str(feat.attribute(fname)))
+       val = feat.attribute(fname)
+       if val is None:
+           val=''
+       else:
+           val = str(val)
+       sheet.write(idx,i, val)
    sheet.write(idx, excelCentroidIdx, centroid)
    sheet.write(idx, excelAreaIdx, area)
 
-def write_rowvals_to_excel(sheet, idx, vals):
+def write_rowvals_to_excel(sheet, idx, vals, ignore=None):
+    if ignore is None:
+        ignore = []
     for i,v in enumerate(vals):
-        sheet.write(idx,i,v)
+        if i not in ignore:
+            sheet.write(idx,i,v)
 
 def update_excel_programmatically():
 
@@ -142,7 +151,8 @@ def update_excel_programmatically():
             shpf = shpChange[fk]
             write_feature_to_excel(w_sheet, write_idx, shpf)
             vals = r_sheet.row_values(row_index)
-            write_rowvals_to_excel(w_sheet, write_idx, vals)
+            write_rowvals_to_excel(w_sheet, write_idx, vals,
+                    ignore=[excelCentroidIdx, excelAreaIdx])
            
         else:# else just copy the row
             vals = r_sheet.row_values(row_index)
@@ -153,7 +163,7 @@ def update_excel_programmatically():
          
     for key in shpAdd.keys():
         shpf = shpAdd[key]
-        write_feature_to_excel(sheet, write_idx, shpf)
+        write_feature_to_excel(w_sheet, write_idx, shpf)
         write_idx+=1
 
     wb.save(excelPath)
@@ -190,7 +200,6 @@ def update_shp_from_excel():
         warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong. Won't sync.")
         return
     shpFks = Set(get_fk_set(shpName,shpKeyName,skipFirst=False))
-    # TODO somewhere here I should refresh the join
     # TODO also special warning if shp layer is in edit mode
     info("Keys in excel"+str(excelFks))
     info("Keys in shp"+str(shpFks))
