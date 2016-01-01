@@ -17,10 +17,13 @@ def layer_from_name(layerName):
 logTag="OpenGIS" # in which tab log messages appear
 # excel layer
 excelName="Beispiel"
+excelHasFormattedHeaderRow=True
 excelFkIdx = 0
 excelCentroidIdx = 14
 excelAreaIdx = 8
 excelPath=layer_from_name(excelName).publicSource()
+excelKeyName = [f for f in layer_from_name(excelName).getFeatures()][0].fields().at(excelFkIdx).name()
+skipFirstLineExcel = not excelHasFormattedHeaderRow
 # shpfile layer
 shpName="Beispiel_Massnahmepool"
 shpKeyName="ef_key"
@@ -106,8 +109,9 @@ def changed_geom(layerId, geoms):
 def write_feature_to_excel(sheet, idx, feat):
    area = str(feat.geometry().area())
    centroid = str(feat.geometry().centroid().asPoint())
-   for i in range(len(feat.fields().keys())):
-       sheet.write(idx,i, feat.attribute(i))
+   for i in range(len(feat.fields().count())):
+       fname = feat.fields().at(i).name()
+       sheet.write(idx,i, feat.attribute(fname))
    sheet(write, idx, excelCentroidIdx, centroid)
    sheet(write, idx, excelAreaIdx, area)
 
@@ -145,9 +149,9 @@ def update_excel_programmatically():
          
          
     for key in shpAdd.keys():
-       shpf = shpAdd[key]
-       write_feature_to_excel(sheet, write_index, shpf)
-       write_idx+=1
+        shpf = shpAdd[key]
+        write_feature_to_excel(sheet, write_index, shpf)
+        write_idx+=1
 
     wb.save(excelPath+"_new") #TODO fix after testing
 
@@ -178,7 +182,7 @@ def updateShpLayer(fksToRemove):
 
 def update_shp_from_excel():
    
-    excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=True))
+    excelFks = Set(get_fk_set(excelName, excelKeyName,skipFirst=skipFirstLineExcel))
     if not excelFks:
         warn("Qgis thinks that the Excel file is empty. That probably means something went horribly wrong. Won't sync.")
         return
